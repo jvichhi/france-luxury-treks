@@ -228,6 +228,31 @@
   .login-error { color: var(--warn); font-size: .82rem; margin-top: .6rem; min-height: 1.1em; }
   #siteContent { display: none; }
 
+  /* FX rate bar */
+  .fxbar {
+    display: flex; flex-wrap: wrap; gap: .5rem 1rem; align-items: center;
+    background: linear-gradient(180deg, #FFFFFF, #F7F4F0);
+    border: 1px solid var(--line); border-radius: 10px;
+    padding: .7rem 1.1rem; margin: 0 0 1.4rem;
+    font-family: var(--sans); font-size: .85rem; color: var(--muted);
+    box-shadow: 0 3px 12px rgba(70, 62, 54, .05);
+  }
+  .fx-title { color: #6E6A60; }
+  .fx-title strong { color: var(--rose-deep); }
+  .fxbar label { display: flex; align-items: center; gap: .35rem; color: #5E6267; font-weight: 600; font-size: .82rem; }
+  .fxbar input {
+    width: 5.4rem; padding: .32rem .55rem; border: 1px solid #DCD3C7; border-radius: 7px;
+    font-size: .9rem; color: var(--ink); background: #FEFDFC;
+  }
+  .fxbar input:focus { outline: none; border-color: var(--rose); box-shadow: 0 0 0 3px rgba(168, 107, 98, .18); }
+  .fxbar button {
+    border: 1px solid var(--rose); background: transparent; color: var(--rose-deep);
+    padding: .32rem .8rem; border-radius: 999px; font-size: .8rem; font-weight: 600;
+    font-family: var(--sans); cursor: pointer; transition: all .15s;
+  }
+  .fxbar button:hover { background: var(--rose-deep); color: #fff; }
+  .fx-hint { font-size: .78rem; color: #A49D92; font-style: italic; }
+
   @media (max-width: 700px) {
     .checklist-grid { grid-template-columns: 1fr; }
     header h1 { font-size: 1.9rem; }
@@ -265,6 +290,16 @@
     Nine options total: the six core itineraries (the original five picks plus the new hotel-to-hotel <strong>Mont Blanc Deluxe</strong> upgrade) and three newly researched regions. Every accommodation has been checked for private rooms, real pampering, and spa access &mdash; nights that fall short are flagged with ⚠️. Click any option below to expand its full plan. All prices are do-it-yourself estimates &mdash; flights, hotels, transfers and lift tickets &mdash; with guided tours shown only as clearly-labelled benchmarks for comparison.
   </div>
 
+  <div class="fxbar" id="fxBar">
+    <span class="fx-title">Every price on this page shows in <strong>C$</strong>, converted from its original currency — set your rates (Canadian dollars per 1 unit):</span>
+    <label>EUR <input id="fxEUR" type="number" step="0.001" min="0.2" value="1.62"></label>
+    <label>USD <input id="fxUSD" type="number" step="0.001" min="0.2" value="1.38"></label>
+    <label>CHF <input id="fxCHF" type="number" step="0.001" min="0.2" value="1.75"></label>
+    <label>GBP <input id="fxGBP" type="number" step="0.001" min="0.2" value="1.86"></label>
+    <button type="button" id="fxReset">Reset defaults</button>
+    <span class="fx-hint">Defaults are the rates on 6 Sep 2026. Stored on this device — update them as the trip nears and every price updates instantly.</span>
+  </div>
+
   <div class="nav-pills"><a href="#montblanc" class="pill">Mont Blanc Half-Circuit</a><a href="#basecamp" class="pill">Chamonix Basecamp (DIY Self-Guided)</a><a href="#mbdeluxe" class="pill">Mont Blanc Deluxe (Hotel-to-Hotel)</a><a href="#luberon" class="pill">Luberon, Provence</a><a href="#verdon" class="pill">Gorges du Verdon</a><a href="#pyrenees" class="pill">French Pyrenees</a></div>
 
   <details class="option" id="montblanc">
@@ -275,15 +310,15 @@
     </summary>
     <div class="option-body">
       <div class="gallery"><img src="https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/6367472c-8d8c-5746-a7fd-0f64048e7b9d/975d885a-439f-5b69-a55b-c116adbe9126.jpg" alt="Mont Blanc Half-Circuit" loading="lazy"><img src="https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/d5ee2e84-c3b2-5ef8-b38d-43bfc20168c3/d7ff18e3-348f-5ccf-aebe-af5204199232.jpg" alt="Mont Blanc Half-Circuit" loading="lazy"></div>
-      <div class="stat-strip"><div class="stat"><strong>~70 km</strong>Total distance</div><div class="stat"><strong>~4,500 m</strong>Total ascent</div><div class="stat"><strong>~€600–900 est.</strong>DIY hotels + refuges, 7 nights pp</div><div class="stat"><strong>CAD 900–1,300</strong>Round-trip flight pp</div></div>
+      <div class="stat-strip"><div class="stat"><strong>~70 km</strong>Total distance</div><div class="stat"><strong>~4,500 m</strong>Total ascent</div><div class="stat"><strong>~<span class="px" data-cur="EUR" data-v="600–900">€600–900</span> est.</strong>DIY hotels + refuges, 7 nights pp</div><div class="stat"><strong><span class="px" data-cur="CAD" data-v="900–1300">CAD 900–1,300</span></strong>Round-trip flight pp</div></div>
       <div class="warning-box">⚠️ <strong>Accommodation caveat:</strong> Nights 3&ndash;4 are unavoidable mountain-refuge stays (Croix du Bonhomme, Les Mottets): shared dorms or basic private rooms, no spa, communal bathrooms. This is the trade-off for hiking the high mountain stage &mdash; every commercial TMB operator uses the same refuges. Note for a mid-to-late September trip: most refuges close around 20 September, so this option really only fits July through early September &mdash; the Mont Blanc Deluxe option above has no refuge dependency at all.</div>
 
       <h3>Flights &amp; Transfers from Montreal</h3>
       <table class="info-table">
         <tr><th>Gateway airport</th><td>Geneva (GVA), Switzerland</td></tr>
         <tr><th>Flight</th><td>Air Canada, nonstop, ~7h35m</td></tr>
-        <tr><th>Estimated price</th><td>CAD 900–1,300 round-trip economy in summer (fares as low as CAD 600–800 have appeared off-peak on Air Transat/Swiss connections)</td></tr>
-        <tr><th>Airport transfer</th><td>Geneva Airport → Chamonix/Les Houches: ~1h15 by shared shuttle bus or Mont Blanc Express train via Saint-Gervais, roughly €45–60 per person one-way</td></tr>
+        <tr><th>Estimated price</th><td><span class="px" data-cur="CAD" data-v="900–1300">CAD 900–1,300</span> round-trip economy in summer (fares as low as <span class="px" data-cur="CAD" data-v="600–800">CAD 600–800</span> have appeared off-peak on Air Transat/Swiss connections)</td></tr>
+        <tr><th>Airport transfer</th><td>Geneva Airport → Chamonix/Les Houches: ~1h15 by shared shuttle bus or Mont Blanc Express train via Saint-Gervais, roughly <span class="px" data-cur="EUR" data-v="45–60">€45–60</span> per person one-way</td></tr>
       </table>
 
       <h3>End-to-End Itinerary (Montreal to Montreal)</h3>
@@ -311,22 +346,22 @@
     </summary>
     <div class="option-body">
       <div class="gallery"><img src="https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/b3cd61c6-b94f-5d0f-b5ff-df05158ebb12/9a2ebc1f-858c-502c-a341-8e85c9477cff.jpg" alt="Chamonix Basecamp (DIY Self-Guided)" loading="lazy"><img src="https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/d5ee2e84-c3b2-5ef8-b38d-43bfc20168c3/d7ff18e3-348f-5ccf-aebe-af5204199232.jpg" alt="Chamonix Basecamp (DIY Self-Guided)" loading="lazy"></div>
-      <div class="stat-strip"><div class="stat"><strong>~60 km</strong>Total distance (day hikes)</div><div class="stat"><strong>~4,000 m (est.)</strong>Total ascent across 6 days</div><div class="stat"><strong>~CAD 1,800–2,300</strong>Hotel only, 7 nights</div><div class="stat"><strong>CAD 900–1,300</strong>Round-trip flight pp</div></div>
+      <div class="stat-strip"><div class="stat"><strong>~60 km</strong>Total distance (day hikes)</div><div class="stat"><strong>~4,000 m (est.)</strong>Total ascent across 6 days</div><div class="stat"><strong>~<span class="px" data-cur="CAD" data-v="1800–2300">CAD 1,800–2,300</span></strong>Hotel only, 7 nights</div><div class="stat"><strong><span class="px" data-cur="CAD" data-v="900–1300">CAD 900–1,300</span></strong>Round-trip flight pp</div></div>
       <div class="warning-box">⚠️ <strong>Accommodation caveat:</strong> 5 of the 6 hiking days are on well-marked valley trails that don't require a guide in summer. Day 3 (Aiguille du Midi) is the one exception: the cable car and viewing terraces are fully self-guided, but if you want to walk out onto the glacier itself, a local half-day mountain guide is strongly recommended rather than optional.</div>
-      <div class="note"><strong>Cost reality check:</strong> this is the self-guided mirror of the <strong>57hours "Hidden Mont Blanc" 5-star tour</strong> (~US$4,200&ndash;5,800 pp guided) &mdash; same residence, same six day-hike routes &mdash; at roughly a third of the price. No guide, no group, no airport-transfer package; everything below is bookable directly.</div>
+      <div class="note"><strong>Cost reality check:</strong> this is the self-guided mirror of the <strong>57hours "Hidden Mont Blanc" 5-star tour</strong> (~<span class="px" data-cur="USD" data-v="4200–5800">US$4,200&ndash;5,800</span> pp guided) &mdash; same residence, same six day-hike routes &mdash; at roughly a third of the price. No guide, no group, no airport-transfer package; everything below is bookable directly.</div>
 
       <h3>Flights &amp; Transfers from Montreal</h3>
       <table class="info-table">
         <tr><th>Gateway airport</th><td>Geneva (GVA), Switzerland</td></tr>
         <tr><th>Flight</th><td>Air Canada, nonstop, ~7h35m &mdash; same gateway as the Mont Blanc Half-Circuit option</td></tr>
-        <tr><th>Estimated price</th><td>CAD 900–1,300 round-trip economy in summer</td></tr>
-        <tr><th>Airport transfer</th><td>Geneva Airport → Chamonix: ~1h15 by shared shuttle bus (~€45–60pp) or Mont Blanc Express train via Saint-Gervais</td></tr>
+        <tr><th>Estimated price</th><td><span class="px" data-cur="CAD" data-v="900–1300">CAD 900–1,300</span> round-trip economy in summer</td></tr>
+        <tr><th>Airport transfer</th><td>Geneva Airport → Chamonix: ~1h15 by shared shuttle bus (~<span class="px" data-cur="EUR" data-v="45–60">€45–60</span>pp) or Mont Blanc Express train via Saint-Gervais</td></tr>
       </table>
 
       <h3>End-to-End Itinerary (Montreal to Montreal)</h3>
       <table>
         <thead><tr><th>Day</th><th>Stage</th><th>Details</th></tr></thead>
-        <tbody><tr class=""><td>Day 0</td><td>Montreal (YUL)</td><td>Evening departure on overnight direct flight to Geneva</td></tr><tr class=""><td>Day 1</td><td>Geneva → Chamonix</td><td>Arrive, shuttle to Chamonix, check in to <strong>Résidence Le Cristal de Jade</strong> (5-star, indoor pool, 2 whirlpool baths, sauna, steam room, 3 treatment rooms), settle in</td></tr><tr class=""><td>Day 2</td><td>Cordon loop, Haute-Savoie</td><td>Self-guided, ~11 km, +809m, well-marked valley trail, no guide needed; return to spa hotel each night</td></tr><tr class="warnrow"><td>Day 3</td><td>Montenvers train → Mer de Glace → Balcon Nord → Aiguille du Midi ⚠️</td><td>~5.4 km, +660m. Montenvers/Mer de Glace self-guided via train (no booking needed beyond the ticket); Aiguille du Midi cable car is self-guided sightseeing, but consider a paid half-day local mountain guide (~€150–200pp) only if you want to walk onto the glacier itself</td></tr><tr class=""><td>Day 4</td><td>Val Veny &amp; Courmayeur day trip, Italy</td><td>~7.2 km, +545m. Self-drive or Mont Blanc Tunnel bus, then Skyway Monte Bianco cable car and a self-guided loop near the Bonatti hut</td></tr><tr class=""><td>Day 5</td><td>Passy Nature Reserve</td><td>~7.4 km, +751m/-744m, self-guided, well-marked reserve trails</td></tr><tr class=""><td>Day 6</td><td>Lac d'Émosson, dinosaur tracks, dam</td><td>~11.3 km, +400m. Self-guided via the Petit Train de Montagne funicular from Châtelard, Switzerland</td></tr><tr class=""><td>Day 7</td><td>Les Contamines-Montjoie nature reserve</td><td>~12 km, +860m, self-guided, final spa evening at Cristal de Jade</td></tr><tr class=""><td>Day 8</td><td>Chamonix → Geneva → Montreal</td><td>Morning transfer to Geneva, evening direct flight home</td></tr></tbody>
+        <tbody><tr class=""><td>Day 0</td><td>Montreal (YUL)</td><td>Evening departure on overnight direct flight to Geneva</td></tr><tr class=""><td>Day 1</td><td>Geneva → Chamonix</td><td>Arrive, shuttle to Chamonix, check in to <strong>Résidence Le Cristal de Jade</strong> (5-star, indoor pool, 2 whirlpool baths, sauna, steam room, 3 treatment rooms), settle in</td></tr><tr class=""><td>Day 2</td><td>Cordon loop, Haute-Savoie</td><td>Self-guided, ~11 km, +809m, well-marked valley trail, no guide needed; return to spa hotel each night</td></tr><tr class="warnrow"><td>Day 3</td><td>Montenvers train → Mer de Glace → Balcon Nord → Aiguille du Midi ⚠️</td><td>~5.4 km, +660m. Montenvers/Mer de Glace self-guided via train (no booking needed beyond the ticket); Aiguille du Midi cable car is self-guided sightseeing, but consider a paid half-day local mountain guide (~<span class="px" data-cur="EUR" data-v="150–200">€150–200</span>pp) only if you want to walk onto the glacier itself</td></tr><tr class=""><td>Day 4</td><td>Val Veny &amp; Courmayeur day trip, Italy</td><td>~7.2 km, +545m. Self-drive or Mont Blanc Tunnel bus, then Skyway Monte Bianco cable car and a self-guided loop near the Bonatti hut</td></tr><tr class=""><td>Day 5</td><td>Passy Nature Reserve</td><td>~7.4 km, +751m/-744m, self-guided, well-marked reserve trails</td></tr><tr class=""><td>Day 6</td><td>Lac d'Émosson, dinosaur tracks, dam</td><td>~11.3 km, +400m. Self-guided via the Petit Train de Montagne funicular from Châtelard, Switzerland</td></tr><tr class=""><td>Day 7</td><td>Les Contamines-Montjoie nature reserve</td><td>~12 km, +860m, self-guided, final spa evening at Cristal de Jade</td></tr><tr class=""><td>Day 8</td><td>Chamonix → Geneva → Montreal</td><td>Morning transfer to Geneva, evening direct flight home</td></tr></tbody>
       </table>
 
       <h3>Where to Eat</h3>
@@ -348,10 +383,10 @@
     </summary>
     <div class="option-body">
       <div class="gallery"><img src="https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/6367472c-8d8c-5746-a7fd-0f64048e7b9d/975d885a-439f-5b69-a55b-c116adbe9126.jpg" alt="Mont Blanc Deluxe (Hotel-to-Hotel)" loading="lazy"><img src="https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/d5ee2e84-c3b2-5ef8-b38d-43bfc20168c3/d7ff18e3-348f-5ccf-aebe-af5204199232.jpg" alt="Mont Blanc Deluxe (Hotel-to-Hotel)" loading="lazy"></div>
-      <div class="stat-strip"><div class="stat"><strong>~70 km</strong>5 walking days</div><div class="stat"><strong>~4,600 m (est.)</strong>Total ascent</div><div class="stat"><strong>~€1,000–1,500 pp est.</strong>7 nights hotels + hops, mid-Sept rates</div><div class="stat"><strong>CAD 1,100–1,700</strong>Round-trip flight pp</div></div>
-      <div class="warning-box">⚠️ <strong>What makes this different:</strong> every night is a deluxe hotel with pool/spa &mdash; no refuge stays at all. The trade-off is that two walking days end in a different valley than the next trailhead, so Days 3&ndash;5 need short road hops (taxi or PostBus, ~€40&ndash;140 per leg est.) between hotel bases. Routes and timings are marked ~: they mirror the guided "deluxe" TMB corridor stage-for-stage but should be re-checked against current maps/trail conditions before you go. For your mid-September window: the passes are normally snow-free and September is one of the driest months of the season, but overnight frost above ~2,400 m is routine and daylight ends ~19:30 &mdash; start early, carry full layers, and check conditions daily. Snow can dust the high cols after a storm, at which point the Fenêtre d'Arpette variant (Day 4) turns serious &mdash; the classic Bovine route is the safe default. Summer-only lifts begin closing in the second half of September (the Flégère gondola's last day was 13 September 2026), so the Day 6 finale below is planned on foot &mdash; verify closure dates before relying on any lift.</div>
+      <div class="stat-strip"><div class="stat"><strong>~70 km</strong>5 walking days</div><div class="stat"><strong>~4,600 m (est.)</strong>Total ascent</div><div class="stat"><strong>~<span class="px" data-cur="EUR" data-v="1000–1500">€1,000–1,500</span> pp est.</strong>7 nights hotels + hops, mid-Sept rates</div><div class="stat"><strong><span class="px" data-cur="CAD" data-v="1100–1700">CAD 1,100–1,700</span></strong>Round-trip flight pp</div></div>
+      <div class="warning-box">⚠️ <strong>What makes this different:</strong> every night is a deluxe hotel with pool/spa &mdash; no refuge stays at all. The trade-off is that two walking days end in a different valley than the next trailhead, so Days 3&ndash;5 need short road hops (taxi or PostBus, ~<span class="px" data-cur="EUR" data-v="40–140">€40&ndash;140</span> per leg est.) between hotel bases. Routes and timings are marked ~: they mirror the guided "deluxe" TMB corridor stage-for-stage but should be re-checked against current maps/trail conditions before you go. For your mid-September window: the passes are normally snow-free and September is one of the driest months of the season, but overnight frost above ~2,400 m is routine and daylight ends ~19:30 &mdash; start early, carry full layers, and check conditions daily. Snow can dust the high cols after a storm, at which point the Fenêtre d'Arpette variant (Day 4) turns serious &mdash; the classic Bovine route is the safe default. Summer-only lifts begin closing in the second half of September (the Flégère gondola's last day was 13 September 2026), so the Day 6 finale below is planned on foot &mdash; verify closure dates before relying on any lift.</div>
       <div class="note">
-        <strong>Why this option:</strong> the anniversary trip where you still hike the real TMB mountain corridor &mdash; Grand Col Ferret, Champex, Col de Balme &mdash; but sleep in a 4&ndash;5-star spa hotel every single night and cross all three countries. It is the DIY version of the <strong>Summit Guides "TMB Deluxe hotel-to-hotel"</strong> tour your wife found (~€4,350 pp guided, same corridor and hotel towns, group departures, luggage trucked for you). Doing it self-guided with the same hotel beds lands roughly €2,900&ndash;3,400 pp cheaper at September shoulder rates &mdash; the main things you give up are the guides, the scheduled group transfers, and someone else doing the booking.
+        <strong>Why this option:</strong> the anniversary trip where you still hike the real TMB mountain corridor &mdash; Grand Col Ferret, Champex, Col de Balme &mdash; but sleep in a 4&ndash;5-star spa hotel every single night and cross all three countries. It is the DIY version of the <strong>Summit Guides "TMB Deluxe hotel-to-hotel"</strong> tour your wife found (~<span class="px" data-cur="EUR" data-v="4350">€4,350</span> pp guided, same corridor and hotel towns, group departures, luggage trucked for you). Doing it self-guided with the same hotel beds lands roughly <span class="px" data-cur="EUR" data-v="2900–3400">€2,900&ndash;3,400</span> pp cheaper at September shoulder rates &mdash; the main things you give up are the guides, the scheduled group transfers, and someone else doing the booking.
         <br><br>
         <strong>Anniversary planner notes (14&ndash;21 September window):</strong> book flights January&ndash;March and hotels by March&ndash;May &mdash; the September shoulder books more easily than July and rates drop 20&ndash;30%, but TMB weeks are selling out earlier every year; reserve the two starred tables (Albert 1er, La Table d'Adrien) 3&ndash;6 weeks ahead &mdash; both close for the season around 30 September; Skyway and QC Terme slots are easy in September but still book online a few days ahead; hot-air balloon only on weather-permitting days. Insurance must cover trekking above 2,500 m with helicopter-evacuation and cross-border rescue (FR/IT/CH) &mdash; most credit-card cover excludes it. After mid-September the trails empty out and the weather windows turn stable-but-cold: start early, carry full layers, and check pass conditions daily.
       </div>
@@ -360,21 +395,21 @@
       <table class="info-table">
         <tr><th>Gateway airport</th><td>Geneva (GVA), Switzerland</td></tr>
         <tr><th>Flight</th><td>Air Canada, nonstop, ~7h35m (seasonal summer service &mdash; the only nonstop YUL&ndash;GVA)</td></tr>
-        <tr><th>Estimated price</th><td>CAD 1,100&ndash;1,700 round-trip economy in peak summer; a mid-September departure typically lands in the lower half of that range (July averages ~C$1,700; June and late-season fares from ~C$1,000)</td></tr>
-        <tr><th>Airport transfer (in)</th><td>Geneva Airport → Courmayeur: ~2h15 door-to-door. No shared shuttle serves Courmayeur direct &mdash; take the shared GVA&rarr;Chamonix van (€46&ndash;60 pp) then a taxi through the Mont Blanc tunnel (~40 min, toll ~€56, ~€150&ndash;200 per car est.), or one private car GVA&rarr;Courmayeur (~€330&ndash;400 est.)</td></tr>
-        <tr><th>Airport transfer (out)</th><td>Chamonix → Geneva Airport: ~1h15&ndash;2h shared shuttle (SAT bus €30 pp one-way/€50 return; Mountain Drop-offs ~€46&ndash;60 pp), timed for the afternoon AC flight</td></tr>
+        <tr><th>Estimated price</th><td><span class="px" data-cur="CAD" data-v="1100–1700">CAD 1,100&ndash;1,700</span> round-trip economy in peak summer; a mid-September departure typically lands in the lower half of that range (July averages ~C$1,700; June and late-season fares from ~C$1,000)</td></tr>
+        <tr><th>Airport transfer (in)</th><td>Geneva Airport → Courmayeur: ~2h15 door-to-door. No shared shuttle serves Courmayeur direct &mdash; take the shared GVA&rarr;Chamonix van (<span class="px" data-cur="EUR" data-v="46–60">€46&ndash;60</span> pp) then a taxi through the Mont Blanc tunnel (~40 min, toll ~<span class="px" data-cur="EUR" data-v="56">€56</span>, ~<span class="px" data-cur="EUR" data-v="150–200">€150&ndash;200</span> per car est.), or one private car GVA&rarr;Courmayeur (~<span class="px" data-cur="EUR" data-v="330–400">€330&ndash;400</span> est.)</td></tr>
+        <tr><th>Airport transfer (out)</th><td>Chamonix → Geneva Airport: ~1h15&ndash;2h shared shuttle (SAT bus <span class="px" data-cur="EUR" data-v="30">€30</span> pp one-way/<span class="px" data-cur="EUR" data-v="50">€50</span> return; Mountain Drop-offs ~<span class="px" data-cur="EUR" data-v="46–60">€46&ndash;60</span> pp), timed for the afternoon AC flight</td></tr>
       </table>
 
       <h3>End-to-End Itinerary (Montreal to Montreal)</h3>
       <table>
         <thead><tr><th>Day</th><th>Stage</th><th>Details</th></tr></thead>
-        <tbody><tr class=""><td>Day 0</td><td>Montreal (YUL)</td><td>Evening departure on the Air Canada nonstop to Geneva</td></tr><tr class=""><td>Day 1</td><td>Geneva → Courmayeur</td><td>Arrive morning, private car or shuttle+taxi via the Mont Blanc tunnel, check in to <strong>Grand Hotel Courmayeur Mont Blanc</strong> (5-star, Erre Spa: indoor pool, sauna, hammam), relax, low-key dinner in the old town &mdash; keep the big table for later</td></tr><tr class=""><td>Day 2</td><td>Val Ferret balcony loop</td><td>~17 km, +1,100 m/−700 m, ~6 h. Taxi to Arnouva (10 min), climb to Rifugio Bertone (1,989 m), balcony trail along Mont de la Saxe beneath the Grandes Jorasses, pause at Rifugio Bonatti (2,025 m), descend to Arnouva, taxi back to the same hotel &mdash; no packing, no moving</td></tr><tr class=""><td>Day 3</td><td>Grand Col Ferret → Verbier</td><td>~15 km, +900 m/−1,000 m, ~6 h. Taxi back to Arnouva, cross the Col Ferret at 2,537 m (Italy→Switzerland), descend to La Fouly; private transfer up to Verbier (~1h15, ~€280&ndash;380 per car est. &mdash; no public link). Anniversary dinner at <strong>La Table d'Adrien</strong> (Michelin star), overnight <strong>Le Chalet d'Adrien</strong> (5-star Relais &amp; Châteaux, Clarins spa)</td></tr><tr class=""><td>Day 4</td><td>Champex → Trient → Martigny</td><td>~14 km, +800 m/−1,000 m, ~5.5 h (classic). Morning hop to Champex-Lac (taxi ~40 min, or PostBus+train ~2 h &amp; ~CHF 45 pp), walk the Bovine route with Rhône-valley views to Trient; evening PostBus/taxi down to Martigny. Optional harder variant: Fenêtre d'Arpette (2,665 m, +1,400 m, ~7 h) &mdash; only once snow clears. Night at <strong>Hôtel Borsari</strong> (4-star, opened 2025, spa and pool), then the Roman-style <strong>Les Bains Publics</strong> thermal baths in converted wine cellars below the hotel (book ahead)</td></tr><tr class=""><td>Day 5</td><td>Trient → Col de Balme → Argentière</td><td>~15 km, +900 m/−1,000 m, ~6 h. Morning hop back to Trient, climb to Col de Balme (2,191 m) &mdash; the first full Mont Blanc panorama &mdash; descend past Le Tour and Montroc to Argentière. Overnight <strong>Les Grands Montets Hotel &amp; Spa</strong> (4-star: indoor pool, sauna, hammam, heated outdoor jacuzzi; some suites have a private sauna). Dinner at La Crèmerie du Glacier (book ahead)</td></tr><tr class=""><td>Day 6</td><td>Aiguilles Rouges finale → Chamonix</td><td>~14&ndash;16 km, +900 m/−1,000 m, ~6&ndash;7 h on foot &mdash; the guided finale done without lifts, since the Flégère gondola closes for the season in mid-September (last day 13 September 2026; verify the 2027 date). From Argentière climb onto the Grand Balcon Sud through the Aiguilles Rouges reserve (ibex, chamois), traverse beneath the massif past the Chéserys lakes, descend to Les Praz and into Chamonix. Check in to <strong>Le Hameau Albert 1er</strong> (5-star Relais &amp; Châteaux, Bachal spa with indoor + outdoor pools); farewell anniversary dinner at its <strong>Albert 1er</strong> restaurant (Michelin star, tasting menus €167&ndash;194, reservations obligatory &mdash; closes for the season ~30 September)</td></tr><tr class=""><td>Day 7</td><td>Anniversary day, Chamonix</td><td>Pick your splurge: Aiguille du Midi cable car (€83 at the office, from €60 online) for the 3,842 m terrace; the Panoramic Mont-Blanc crossing to Punta Helbronner and down Skyway to Courmayeur (€125.50 + Skyway €59&ndash;64, both normally running through September &mdash; verify dates) to stand in Italy without retracing the hike; a couples afternoon at QC Terme thermal spa (~€58&ndash;95, online booking mandatory); or a dawn hot-air balloon over the valley (€255&ndash;330 pp, weather only). Lighter evening in town &mdash; second night at the Hameau</td></tr><tr class=""><td>Day 8</td><td>Chamonix → Geneva → Montreal</td><td>Morning shared shuttle to Geneva, afternoon Air Canada nonstop home, arrive Montreal same evening</td></tr></tbody>
+        <tbody><tr class=""><td>Day 0</td><td>Montreal (YUL)</td><td>Evening departure on the Air Canada nonstop to Geneva</td></tr><tr class=""><td>Day 1</td><td>Geneva → Courmayeur</td><td>Arrive morning, private car or shuttle+taxi via the Mont Blanc tunnel, check in to <strong>Grand Hotel Courmayeur Mont Blanc</strong> (5-star, Erre Spa: indoor pool, sauna, hammam), relax, low-key dinner in the old town &mdash; keep the big table for later</td></tr><tr class=""><td>Day 2</td><td>Val Ferret balcony loop</td><td>~17 km, +1,100 m/−700 m, ~6 h. Taxi to Arnouva (10 min), climb to Rifugio Bertone (1,989 m), balcony trail along Mont de la Saxe beneath the Grandes Jorasses, pause at Rifugio Bonatti (2,025 m), descend to Arnouva, taxi back to the same hotel &mdash; no packing, no moving</td></tr><tr class=""><td>Day 3</td><td>Grand Col Ferret → Verbier</td><td>~15 km, +900 m/−1,000 m, ~6 h. Taxi back to Arnouva, cross the Col Ferret at 2,537 m (Italy→Switzerland), descend to La Fouly; private transfer up to Verbier (~1h15, ~<span class="px" data-cur="EUR" data-v="280–380">€280&ndash;380</span> per car est. &mdash; no public link). Anniversary dinner at <strong>La Table d'Adrien</strong> (Michelin star), overnight <strong>Le Chalet d'Adrien</strong> (5-star Relais &amp; Châteaux, Clarins spa)</td></tr><tr class=""><td>Day 4</td><td>Champex → Trient → Martigny</td><td>~14 km, +800 m/−1,000 m, ~5.5 h (classic). Morning hop to Champex-Lac (taxi ~40 min, or PostBus+train ~2 h &amp; ~<span class="px" data-cur="CHF" data-v="45">CHF 45</span> pp), walk the Bovine route with Rhône-valley views to Trient; evening PostBus/taxi down to Martigny. Optional harder variant: Fenêtre d'Arpette (2,665 m, +1,400 m, ~7 h) &mdash; only once snow clears. Night at <strong>Hôtel Borsari</strong> (4-star, opened 2025, spa and pool), then the Roman-style <strong>Les Bains Publics</strong> thermal baths in converted wine cellars below the hotel (book ahead)</td></tr><tr class=""><td>Day 5</td><td>Trient → Col de Balme → Argentière</td><td>~15 km, +900 m/−1,000 m, ~6 h. Morning hop back to Trient, climb to Col de Balme (2,191 m) &mdash; the first full Mont Blanc panorama &mdash; descend past Le Tour and Montroc to Argentière. Overnight <strong>Les Grands Montets Hotel &amp; Spa</strong> (4-star: indoor pool, sauna, hammam, heated outdoor jacuzzi; some suites have a private sauna). Dinner at La Crèmerie du Glacier (book ahead)</td></tr><tr class=""><td>Day 6</td><td>Aiguilles Rouges finale → Chamonix</td><td>~14&ndash;16 km, +900 m/−1,000 m, ~6&ndash;7 h on foot &mdash; the guided finale done without lifts, since the Flégère gondola closes for the season in mid-September (last day 13 September 2026; verify the 2027 date). From Argentière climb onto the Grand Balcon Sud through the Aiguilles Rouges reserve (ibex, chamois), traverse beneath the massif past the Chéserys lakes, descend to Les Praz and into Chamonix. Check in to <strong>Le Hameau Albert 1er</strong> (5-star Relais &amp; Châteaux, Bachal spa with indoor + outdoor pools); farewell anniversary dinner at its <strong>Albert 1er</strong> restaurant (Michelin star, tasting menus <span class="px" data-cur="EUR" data-v="167–194">€167&ndash;194</span>, reservations obligatory &mdash; closes for the season ~30 September)</td></tr><tr class=""><td>Day 7</td><td>Anniversary day, Chamonix</td><td>Pick your splurge: Aiguille du Midi cable car (<span class="px" data-cur="EUR" data-v="83">€83</span> at the office, from <span class="px" data-cur="EUR" data-v="60">€60</span> online) for the 3,842 m terrace; the Panoramic Mont-Blanc crossing to Punta Helbronner and down Skyway to Courmayeur (<span class="px" data-cur="EUR" data-v="125.50">€125.50</span> + Skyway <span class="px" data-cur="EUR" data-v="59–64">€59&ndash;64</span>, both normally running through September &mdash; verify dates) to stand in Italy without retracing the hike; a couples afternoon at QC Terme thermal spa (~<span class="px" data-cur="EUR" data-v="58–95">€58&ndash;95</span>, online booking mandatory); or a dawn hot-air balloon over the valley (<span class="px" data-cur="EUR" data-v="255–330">€255&ndash;330</span> pp, weather only). Lighter evening in town &mdash; second night at the Hameau</td></tr><tr class=""><td>Day 8</td><td>Chamonix → Geneva → Montreal</td><td>Morning shared shuttle to Geneva, afternoon Air Canada nonstop home, arrive Montreal same evening</td></tr></tbody>
       </table>
 
       <h3>Where to Eat</h3>
       <table>
         <thead><tr><th>Restaurant</th><th>Location</th><th>Why go</th></tr></thead>
-        <tbody><tr><td>Albert 1er</td><td>Chamonix</td><td>Michelin-starred, the valley's only starred table &mdash; anniversary farewell dinner, book 4&ndash;8 weeks ahead</td></tr><tr><td>La Table d'Adrien</td><td>Verbier</td><td>Verbier's only Michelin star (new chef since Dec 2025), ~CHF 185 pp &mdash; pairs with the night at Chalet d'Adrien</td></tr><tr><td>Bistrot Royal</td><td>Courmayeur</td><td>Michelin-selected (Plate), six tables with a glass wall onto Mont Blanc &mdash; the romantic Courmayeur table (~€100+ pp)</td></tr><tr><td>Maison Vieille</td><td>Courmayeur</td><td>Rustic mountain refuge-restaurant above town, hearty Italian &mdash; book ahead, take the lift up</td></tr><tr><td>La Crèmerie du Glacier</td><td>Argentière</td><td>Savoyard chalet, signature truffle-chestnut croustades, summer season only &mdash; small, reservations essential</td></tr><tr><td>Le P'tiot Monchu</td><td>Chamonix</td><td>Lively Savoyard classic (the guided 5-star tour's own welcome-night pick), €40&ndash;60 pp</td></tr></tbody>
+        <tbody><tr><td>Albert 1er</td><td>Chamonix</td><td>Michelin-starred, the valley's only starred table &mdash; anniversary farewell dinner, book 4&ndash;8 weeks ahead</td></tr><tr><td>La Table d'Adrien</td><td>Verbier</td><td>Verbier's only Michelin star (new chef since Dec 2025), ~<span class="px" data-cur="CHF" data-v="185">CHF 185</span> pp &mdash; pairs with the night at Chalet d'Adrien</td></tr><tr><td>Bistrot Royal</td><td>Courmayeur</td><td>Michelin-selected (Plate), six tables with a glass wall onto Mont Blanc &mdash; the romantic Courmayeur table (~<span class="px" data-cur="EUR" data-v="100">€100</span>+ pp)</td></tr><tr><td>Maison Vieille</td><td>Courmayeur</td><td>Rustic mountain refuge-restaurant above town, hearty Italian &mdash; book ahead, take the lift up</td></tr><tr><td>La Crèmerie du Glacier</td><td>Argentière</td><td>Savoyard chalet, signature truffle-chestnut croustades, summer season only &mdash; small, reservations essential</td></tr><tr><td>Le P'tiot Monchu</td><td>Chamonix</td><td>Lively Savoyard classic (the guided 5-star tour's own welcome-night pick), <span class="px" data-cur="EUR" data-v="40–60">€40&ndash;60</span> pp</td></tr></tbody>
       </table>
 
       <h3>What to See</h3>
@@ -389,15 +424,15 @@
     </summary>
     <div class="option-body">
       <div class="gallery"><img src="https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/e31bdbc5-f10c-5aab-ae91-9efb58982282/e2e76fe8-b396-56f0-ab11-beb9426cfab0.jpg" alt="Luberon, Provence" loading="lazy"><img src="https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/fe9b8e7e-5ab0-5eed-ae9f-b48a1bc0af9e/de36e892-9d01-5b87-8c36-4b587368b00b.jpg" alt="Luberon, Provence" loading="lazy"></div>
-      <div class="stat-strip"><div class="stat"><strong>~71 km</strong>Total distance</div><div class="stat"><strong>~2,200 m</strong>Total ascent</div><div class="stat"><strong>From €1,150+ (upgraded)</strong>Trek + spa hotels pp</div><div class="stat"><strong>CAD 700–1,300</strong>Round-trip flight pp</div></div>
+      <div class="stat-strip"><div class="stat"><strong>~71 km</strong>Total distance</div><div class="stat"><strong>~2,200 m</strong>Total ascent</div><div class="stat"><strong>From <span class="px" data-cur="EUR" data-v="1150">€1,150</span>+ (upgraded)</strong>Trek + spa hotels pp</div><div class="stat"><strong><span class="px" data-cur="CAD" data-v="700–1300">CAD 700–1,300</span></strong>Round-trip flight pp</div></div>
       <div class="warning-box">⚠️ <strong>Accommodation caveat:</strong> Night 2 (Hôtel-Restaurant du Parc) is a comfortable but basic 3-star inn with no real spa &mdash; it's included to keep the walking stages an even length, but can be skipped by combining Days 2&ndash;3 into a longer single stage direct to Joucas if you'd rather not have a sub-par night.</div>
 
       <h3>Flights &amp; Transfers from Montreal</h3>
       <table class="info-table">
         <tr><th>Gateway airport</th><td>Marseille Provence (MRS), France — or Nice (NCE) as an alternative</td></tr>
         <tr><th>Flight</th><td>Direct seasonal service (Air Transat and others); Marseille is closer to the Luberon (~1h drive) than Nice (~1h45)</td></tr>
-        <tr><th>Estimated price</th><td>CAD 700–1,300 round-trip in summer; one-way fares as low as CAD 320–390 have appeared on Air Transat off-peak</td></tr>
-        <tr><th>Airport transfer</th><td>Marseille Airport → Isle-sur-la-Sorgue: ~1h10 by taxi/private transfer (~€90–120) or rental car</td></tr>
+        <tr><th>Estimated price</th><td><span class="px" data-cur="CAD" data-v="700–1300">CAD 700–1,300</span> round-trip in summer; one-way fares as low as <span class="px" data-cur="CAD" data-v="320–390">CAD 320–390</span> have appeared on Air Transat off-peak</td></tr>
+        <tr><th>Airport transfer</th><td>Marseille Airport → Isle-sur-la-Sorgue: ~1h10 by taxi/private transfer (~<span class="px" data-cur="EUR" data-v="90–120">€90–120</span>) or rental car</td></tr>
       </table>
 
       <h3>End-to-End Itinerary (Montreal to Montreal)</h3>
@@ -425,14 +460,14 @@
     </summary>
     <div class="option-body">
       <div class="gallery"><img src="https://st.perplexity.ai/estatic/0b226c450798410ac541646c86ec31afd840e5beab817a5d84fa821e7db61981ec84c3b4a3f072a7a2e1899c9fb06c6eaac28cfe6e3305a4b256f61b257dc57af980bf5013c33c046be5b90ed74b617d945b23c510945a83f395958e8c7f6242dd5cf081082a8380af63836ea3a4a878" alt="Gorges du Verdon" loading="lazy"><img src="https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/11af479d-85b8-581e-b16c-32373fc0d8f9/892fb292-c513-590b-a8c1-40fbbba458f2.jpg" alt="Gorges du Verdon" loading="lazy"></div>
-      <div class="stat-strip"><div class="stat"><strong>~71 km</strong>Total distance</div><div class="stat"><strong>~4,100 m</strong>Total ascent</div><div class="stat"><strong>From €630–825+</strong>Trek + spa nights pp</div><div class="stat"><strong>CAD 700–1,300</strong>Round-trip flight pp</div></div>
+      <div class="stat-strip"><div class="stat"><strong>~71 km</strong>Total distance</div><div class="stat"><strong>~4,100 m</strong>Total ascent</div><div class="stat"><strong>From <span class="px" data-cur="EUR" data-v="630–825">€630–825</span>+</strong>Trek + spa nights pp</div><div class="stat"><strong><span class="px" data-cur="CAD" data-v="700–1300">CAD 700–1,300</span></strong>Round-trip flight pp</div></div>
       <div class="warning-box">⚠️ <strong>Accommodation caveat:</strong> Nights 1&ndash;3 (Castellane, Rougon, La Palud) are basic 2-3 star family-run guesthouses with no spa &mdash; genuine luxury lodging is thin on the ground directly on the canyon rim. The itinerary now ends with two nights at La Bastide de Moustiers to guarantee real pampering, rather than one rushed night.</div>
 
       <h3>Flights &amp; Transfers from Montreal</h3>
       <table class="info-table">
         <tr><th>Gateway airport</th><td>Marseille Provence (MRS) or Nice (NCE)</td></tr>
         <tr><th>Flight</th><td>Direct seasonal service; Marseille is roughly 2h drive to Castellane</td></tr>
-        <tr><th>Estimated price</th><td>CAD 700–1,300 round-trip in summer, similar range to the Luberon gateway</td></tr>
+        <tr><th>Estimated price</th><td><span class="px" data-cur="CAD" data-v="700–1300">CAD 700–1,300</span> round-trip in summer, similar range to the Luberon gateway</td></tr>
         <tr><th>Airport transfer</th><td>Marseille Airport → Castellane: ~2h by rental car (no train service, a car or private transfer is required)</td></tr>
       </table>
 
@@ -461,14 +496,14 @@
     </summary>
     <div class="option-body">
       <div class="gallery"><img src="https://st.perplexity.ai/estatic/0b226c450798410ac541646c86ec31afd840e5beab817a5d84fa821e7db61981ec84c3b4a3f072a7a2e1899c9fb06c6ecff8ac62410aa7b11fba63b5e8386a2eab418019b9c3be47cac04308e1691ae440b68f38d04dc7e38259bf2ec62ee119870d8fd9f6353e8282c94896d964cc77" alt="French Pyrenees" loading="lazy"><img src="https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/1da1beaf-eddf-54ea-bd04-d049f9d85d41/4a457c1f-f1a3-5e44-b5ac-71081e6a82ae.jpg" alt="French Pyrenees" loading="lazy"></div>
-      <div class="stat-strip"><div class="stat"><strong>~85 km (est.)</strong>Total distance</div><div class="stat"><strong>~5,000+ m (est.)</strong>Total ascent</div><div class="stat"><strong>From €620–760+</strong>Trek + spa nights pp</div><div class="stat"><strong>CAD 1,000–1,400</strong>Round-trip flight pp</div></div>
+      <div class="stat-strip"><div class="stat"><strong>~85 km (est.)</strong>Total distance</div><div class="stat"><strong>~5,000+ m (est.)</strong>Total ascent</div><div class="stat"><strong>From <span class="px" data-cur="EUR" data-v="620–760">€620–760</span>+</strong>Trek + spa nights pp</div><div class="stat"><strong><span class="px" data-cur="CAD" data-v="1000–1400">CAD 1,000–1,400</span></strong>Round-trip flight pp</div></div>
       <div class="warning-box">⚠️ <strong>Accommodation caveat:</strong> Days 3&ndash;5, the central mapped section toward Gavarnie/Néouvielle, pass through small valley-town guesthouses with no spa &mdash; this is unavoidable in remote high mountains. The fix here is basing the trip in Cauterets (a genuine thermal spa town) at both ends of the trek rather than expecting spa comfort mid-route.</div>
 
       <h3>Flights &amp; Transfers from Montreal</h3>
       <table class="info-table">
         <tr><th>Gateway airport</th><td>Toulouse-Blagnac (TLS)</td></tr>
         <tr><th>Flight</th><td>Usually one-stop via Paris, Amsterdam, or Lisbon; no reliable nonstop from Montreal</td></tr>
-        <tr><th>Estimated price</th><td>CAD 1,000–1,400 round-trip in summer; occasional one-way fares near CAD 370–400 appear off-peak</td></tr>
+        <tr><th>Estimated price</th><td><span class="px" data-cur="CAD" data-v="1000–1400">CAD 1,000–1,400</span> round-trip in summer; occasional one-way fares near <span class="px" data-cur="CAD" data-v="370–400">CAD 370–400</span> appear off-peak</td></tr>
         <tr><th>Airport transfer</th><td>Toulouse Airport → Cauterets: ~2h15 by rental car, or train to Lourdes/Pierrefitte-Nestalas plus local bus</td></tr>
       </table>
 
@@ -493,10 +528,10 @@
     <h2 class="section-title">Side-by-Side Comparison &mdash; Six Core Itineraries</h2>
     <table>
       <thead><tr><th>Factor</th><th>Mont Blanc Half-Circuit</th><th>Chamonix Basecamp (DIY Self-Guided)</th><th>Mont Blanc Deluxe (Hotel-to-Hotel)</th><th>Luberon, Provence</th><th>Gorges du Verdon</th><th>French Pyrenees</th></tr></thead>
-      <tbody><tr><td>Region</td><td>French/Italian Alps</td><td>French Alps (Chamonix only)</td><td>French/Italian/Swiss Alps</td><td>Provence (south)</td><td>Provence (south)</td><td>Pyrenees (southwest)</td></tr><tr><td>Terrain</td><td>Alpine, glaciers, high passes</td><td>Alpine valley, day-hike trails</td><td>High passes and valley-to-valley corridors</td><td>Rolling hills, vineyards, lavender</td><td>Limestone canyon, rim trails</td><td>Rugged high mountain</td></tr><tr><td>Difficulty</td><td>Moderate–strenuous</td><td>Easy–moderate</td><td>Moderate–strenuous</td><td>Easy–moderate</td><td>Moderate</td><td>Moderate–strenuous</td></tr><tr><td>Total distance</td><td>~70 km</td><td>~60 km</td><td>~70 km</td><td>~71 km</td><td>~71 km</td><td>~85 km (est.)</td></tr><tr><td>Total elevation gain</td><td>~4,500 m</td><td>~4,000 m (est.)</td><td>~4,600 m (est.)</td><td>~2,200 m</td><td>~4,100 m</td><td>~5,000+ m (est.)</td></tr><tr><td>DIY cost pp (est.)</td><td>~€600–900 (hotels + 2 refuge nights)</td><td>~CAD 1,800–2,300 (hotel only)</td><td>~€1,000–1,500 (mid-Sept, hotels + hops)</td><td>From €1,150+ (hotels)</td><td>From €630–825+ (hotels)</td><td>From €620–760+ (hotels)</td></tr><tr><td>Round-trip flight pp (YUL)</td><td>CAD 900–1,300</td><td>CAD 900–1,300</td><td>CAD 1,100–1,700</td><td>CAD 700–1,300</td><td>CAD 700–1,300</td><td>CAD 1,000–1,400</td></tr><tr><td>Gateway airport</td><td>Geneva (GVA), direct</td><td>Geneva (GVA), direct</td><td>Geneva (GVA), direct</td><td>Marseille (MRS), direct</td><td>Marseille (MRS), direct</td><td>Toulouse (TLS), 1 stop</td></tr><tr><td>Confirmed spa nights</td><td>3 of 6 nights ⚠️ 2 refuge nights</td><td>7 of 7 nights, same spa hotel</td><td>7 of 7 nights — hotel &amp; spa every night</td><td>3 of 6 nights ⚠️ 1 basic night</td><td>2 of 6 nights ⚠️ 3 basic nights</td><td>3 of 6 nights ⚠️ 3 basic nights</td></tr><tr><td>Guide required?</td><td>No</td><td>No (5 of 6 days); optional guide for glacier walking</td><td>No</td><td>No</td><td>No</td><td>No</td></tr><tr><td>Countries crossed</td><td>France + Italy</td><td>France (day trip to Italy)</td><td>France + Italy + Switzerland</td><td>France only</td><td>France only</td><td>France only</td></tr><tr><td>Best season</td><td>June–September</td><td>June–September</td><td>June–September</td><td>April–October</td><td>April–October</td><td>June–September</td></tr></tbody>
+      <tbody><tr><td>Region</td><td>French/Italian Alps</td><td>French Alps (Chamonix only)</td><td>French/Italian/Swiss Alps</td><td>Provence (south)</td><td>Provence (south)</td><td>Pyrenees (southwest)</td></tr><tr><td>Terrain</td><td>Alpine, glaciers, high passes</td><td>Alpine valley, day-hike trails</td><td>High passes and valley-to-valley corridors</td><td>Rolling hills, vineyards, lavender</td><td>Limestone canyon, rim trails</td><td>Rugged high mountain</td></tr><tr><td>Difficulty</td><td>Moderate–strenuous</td><td>Easy–moderate</td><td>Moderate–strenuous</td><td>Easy–moderate</td><td>Moderate</td><td>Moderate–strenuous</td></tr><tr><td>Total distance</td><td>~70 km</td><td>~60 km</td><td>~70 km</td><td>~71 km</td><td>~71 km</td><td>~85 km (est.)</td></tr><tr><td>Total elevation gain</td><td>~4,500 m</td><td>~4,000 m (est.)</td><td>~4,600 m (est.)</td><td>~2,200 m</td><td>~4,100 m</td><td>~5,000+ m (est.)</td></tr><tr><td>DIY cost pp (est.)</td><td>~<span class="px" data-cur="EUR" data-v="600–900">€600–900</span> (hotels + 2 refuge nights)</td><td>~<span class="px" data-cur="CAD" data-v="1800–2300">CAD 1,800–2,300</span> (hotel only)</td><td>~<span class="px" data-cur="EUR" data-v="1000–1500">€1,000–1,500</span> (mid-Sept, hotels + hops)</td><td>From <span class="px" data-cur="EUR" data-v="1150">€1,150</span>+ (hotels)</td><td>From <span class="px" data-cur="EUR" data-v="630–825">€630–825</span>+ (hotels)</td><td>From <span class="px" data-cur="EUR" data-v="620–760">€620–760</span>+ (hotels)</td></tr><tr><td>Round-trip flight pp (YUL)</td><td><span class="px" data-cur="CAD" data-v="900–1300">CAD 900–1,300</span></td><td><span class="px" data-cur="CAD" data-v="900–1300">CAD 900–1,300</span></td><td><span class="px" data-cur="CAD" data-v="1100–1700">CAD 1,100–1,700</span></td><td><span class="px" data-cur="CAD" data-v="700–1300">CAD 700–1,300</span></td><td><span class="px" data-cur="CAD" data-v="700–1300">CAD 700–1,300</span></td><td><span class="px" data-cur="CAD" data-v="1000–1400">CAD 1,000–1,400</span></td></tr><tr><td>Gateway airport</td><td>Geneva (GVA), direct</td><td>Geneva (GVA), direct</td><td>Geneva (GVA), direct</td><td>Marseille (MRS), direct</td><td>Marseille (MRS), direct</td><td>Toulouse (TLS), 1 stop</td></tr><tr><td>Confirmed spa nights</td><td>3 of 6 nights ⚠️ 2 refuge nights</td><td>7 of 7 nights, same spa hotel</td><td>7 of 7 nights — hotel &amp; spa every night</td><td>3 of 6 nights ⚠️ 1 basic night</td><td>2 of 6 nights ⚠️ 3 basic nights</td><td>3 of 6 nights ⚠️ 3 basic nights</td></tr><tr><td>Guide required?</td><td>No</td><td>No (5 of 6 days); optional guide for glacier walking</td><td>No</td><td>No</td><td>No</td><td>No</td></tr><tr><td>Countries crossed</td><td>France + Italy</td><td>France (day trip to Italy)</td><td>France + Italy + Switzerland</td><td>France only</td><td>France only</td><td>France only</td></tr><tr><td>Best season</td><td>June–September</td><td>June–September</td><td>June–September</td><td>April–October</td><td>April–October</td><td>June–September</td></tr></tbody>
     </table>
     <div class="note">
-      For the real three-country TMB corridor with a deluxe hotel every single night, the new <strong>Mont Blanc Deluxe (Hotel-to-Hotel)</strong> is now the strongest match &mdash; the full Grand Col Ferret &rarr; Champex &rarr; Col de Balme route, DIY-priced at ~€1,000&ndash;1,500 pp against &euro;4,350 pp for the guided version of the same corridor (Summit Guides). If minimal logistics and zero moving days matter most, the <strong>Chamonix Basecamp (DIY)</strong> remains the easiest luxury &mdash; one 5-star residence all week, no transfers, about a third of the price of the guided 57hours tour it mirrors. To actually sleep inside the high mountains, the <strong>Mont Blanc Half-Circuit</strong> is still the only itinerary that does real refuge nights &mdash; 2 of them, flagged &#9888; above. The <strong>Luberon</strong> (revised) stays the strongest fully-French, moving-itinerary pick with genuine 5-star spa properties at Le Phébus and Capelongue.
+      For the real three-country TMB corridor with a deluxe hotel every single night, the new <strong>Mont Blanc Deluxe (Hotel-to-Hotel)</strong> is now the strongest match &mdash; the full Grand Col Ferret &rarr; Champex &rarr; Col de Balme route, DIY-priced at ~<span class="px" data-cur="EUR" data-v="1000–1500">€1,000&ndash;1,500</span> pp against <span class="px" data-cur="EUR" data-v="4350">&euro;4,350</span> pp for the guided version of the same corridor (Summit Guides). If minimal logistics and zero moving days matter most, the <strong>Chamonix Basecamp (DIY)</strong> remains the easiest luxury &mdash; one 5-star residence all week, no transfers, about a third of the price of the guided 57hours tour it mirrors. To actually sleep inside the high mountains, the <strong>Mont Blanc Half-Circuit</strong> is still the only itinerary that does real refuge nights &mdash; 2 of them, flagged &#9888; above. The <strong>Luberon</strong> (revised) stays the strongest fully-French, moving-itinerary pick with genuine 5-star spa properties at Le Phébus and Capelongue.
     </div>
   </section>
 
@@ -514,14 +549,14 @@
     </summary>
     <div class="option-body">
       <div class="gallery"><img src="https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/ae312363-6a14-50a0-bf89-2661fc0e186f/94e480d4-3302-52c0-9596-0b086cd90a70.jpg" alt="Alsace Wine Route" loading="lazy"><img src="https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/bc0bb63c-1ac3-5db1-8e6f-f67f02e8f4b1/20b23538-30c2-5c60-bc5b-e6dd39dbf4bc.jpg" alt="Alsace Wine Route" loading="lazy"></div>
-      <div class="stat-strip"><div class="stat"><strong>~90 km</strong>Total distance</div><div class="stat"><strong>~2,500 m (est.)</strong>Total ascent</div><div class="stat"><strong>From €1,020–1,090+</strong>Trek + spa hotels pp</div><div class="stat"><strong>CAD 900–1,250</strong>Round-trip flight pp</div></div>
+      <div class="stat-strip"><div class="stat"><strong>~90 km</strong>Total distance</div><div class="stat"><strong>~2,500 m (est.)</strong>Total ascent</div><div class="stat"><strong>From <span class="px" data-cur="EUR" data-v="1020–1090">€1,020–1,090</span>+</strong>Trek + spa hotels pp</div><div class="stat"><strong><span class="px" data-cur="CAD" data-v="900–1250">CAD 900–1,250</span></strong>Round-trip flight pp</div></div>
       <div class="warning-box">⚠️ <strong>Vetting status:</strong> This is a new candidate region not yet fully vetted against every stage &mdash; spa confirmation is strong for the Ribeauville/Riquewihr/Kaysersberg end of the route, but the very first night in Barr has not been individually checked for a spa property.</div>
 
       <h3>Flights &amp; Transfers from Montreal</h3>
       <table class="info-table">
         <tr><th>Gateway airport</th><td>Strasbourg (SXB)</td></tr>
         <tr><th>Flight</th><td>No direct flight from Montreal; typically one stop (Porter, French Bee, Air Canada, or Lufthansa via a European hub)</td></tr>
-        <tr><th>Estimated price</th><td>CAD 900–1,250 round-trip in summer; one-way fares as low as CAD 400–450 have appeared off-peak</td></tr>
+        <tr><th>Estimated price</th><td><span class="px" data-cur="CAD" data-v="900–1250">CAD 900–1,250</span> round-trip in summer; one-way fares as low as <span class="px" data-cur="CAD" data-v="400–450">CAD 400–450</span> have appeared off-peak</td></tr>
         <tr><th>Airport transfer</th><td>Strasbourg Airport → Barr (trek start): ~40 min by train/taxi; Strasbourg has direct rail links to most Alsace wine villages</td></tr>
       </table>
 
@@ -550,14 +585,14 @@
     </summary>
     <div class="option-body">
       <div class="gallery"><img src="https://st.perplexity.ai/estatic/0b226c450798410ac541646c86ec31afd840e5beab817a5d84fa821e7db61981ec84c3b4a3f072a7a2e1899c9fb06c6eef6c3f24c4b05b3fed2fc8108c834579f390701cd2cf64fff43cea8fcdc47ff616916ac54a9e1be505a15c26e8901c776a5520fc5f5d216b9c42ab48e538b6fe" alt="Dordogne / Périgord" loading="lazy"><img src="https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/f89090ad-d20c-5ba6-b16d-d5a2b6e6b6ce/a7ce67fb-11a0-58c3-abfb-7a539397c64f.jpg" alt="Dordogne / Périgord" loading="lazy"></div>
-      <div class="stat-strip"><div class="stat"><strong>~80 km (est.)</strong>Total distance</div><div class="stat"><strong>~1,800 m (est.)</strong>Total ascent</div><div class="stat"><strong>From €955–2,255+</strong>Trek + spa hotels pp</div><div class="stat"><strong>CAD 700–1,000</strong>Round-trip flight pp</div></div>
+      <div class="stat-strip"><div class="stat"><strong>~80 km (est.)</strong>Total distance</div><div class="stat"><strong>~1,800 m (est.)</strong>Total ascent</div><div class="stat"><strong>From <span class="px" data-cur="EUR" data-v="955–2255">€955–2,255</span>+</strong>Trek + spa hotels pp</div><div class="stat"><strong><span class="px" data-cur="CAD" data-v="700–1000">CAD 700–1,000</span></strong>Round-trip flight pp</div></div>
       <div class="warning-box">⚠️ <strong>Vetting status:</strong> This is a new candidate region &mdash; the Sarlat-based nights are strongly spa-confirmed, but the Domme and Beynac overnight options have not been individually vetted for spa access, so the itinerary above routes back to Sarlat's spa hotels for the pampering nights.</div>
 
       <h3>Flights &amp; Transfers from Montreal</h3>
       <table class="info-table">
         <tr><th>Gateway airport</th><td>Bordeaux (BOD)</td></tr>
         <tr><th>Flight</th><td>Direct, Air Transat, several weekly flights</td></tr>
-        <tr><th>Estimated price</th><td>CAD 700–1,000 round-trip in summer; one-way fares as low as CAD 330–530 have appeared off-peak</td></tr>
+        <tr><th>Estimated price</th><td><span class="px" data-cur="CAD" data-v="700–1000">CAD 700–1,000</span> round-trip in summer; one-way fares as low as <span class="px" data-cur="CAD" data-v="330–530">CAD 330–530</span> have appeared off-peak</td></tr>
         <tr><th>Airport transfer</th><td>Bordeaux Airport → Sarlat: ~1h45 by rental car (no direct train; regional train + bus also possible)</td></tr>
       </table>
 
@@ -586,14 +621,14 @@
     </summary>
     <div class="option-body">
       <div class="gallery"><img src="https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/6a3e9f5e-f206-5370-a758-aad143f30f81/08d8b919-6928-5a4c-a8e5-b836db34e5a3.jpg" alt="Brittany Pink Granite Coast" loading="lazy"><img src="https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/193c3564-9f06-5b3b-b9dd-ade98a1bd76d/0c429348-18ab-5a2f-bf99-8da3e9b23680.jpg" alt="Brittany Pink Granite Coast" loading="lazy"></div>
-      <div class="stat-strip"><div class="stat"><strong>~45–60 km</strong>Total distance</div><div class="stat"><strong>~900 m (est.)</strong>Total ascent</div><div class="stat"><strong>From £535–921+</strong>Trek + spa hotels pp</div><div class="stat"><strong>CAD 900–1,300</strong>Round-trip flight pp</div></div>
+      <div class="stat-strip"><div class="stat"><strong>~45–60 km</strong>Total distance</div><div class="stat"><strong>~900 m (est.)</strong>Total ascent</div><div class="stat"><strong>From <span class="px" data-cur="GBP" data-v="535–921">£535–921</span>+</strong>Trek + spa hotels pp</div><div class="stat"><strong><span class="px" data-cur="CAD" data-v="900–1300">CAD 900–1,300</span></strong>Round-trip flight pp</div></div>
       <div class="warning-box">⚠️ <strong>Vetting status:</strong> This is the newest and least-vetted of the three additional regions, and the shortest trip (5&ndash;6 days). Rustic inns are common along parts of the coast, so sticking to Perros-Guirec as your base (where the confirmed spa hotels are) is the safest way to guarantee pampering every night.</div>
 
       <h3>Flights &amp; Transfers from Montreal</h3>
       <table class="info-table">
         <tr><th>Gateway airport</th><td>Rennes (RNS) or Saint-Malo (via Paris/Dinard)</td></tr>
         <tr><th>Flight</th><td>No direct flight from Montreal; typically one stop via Paris</td></tr>
-        <tr><th>Estimated price</th><td>CAD 900–1,300 round-trip in summer, based on typical YUL–Paris–Rennes routing</td></tr>
+        <tr><th>Estimated price</th><td><span class="px" data-cur="CAD" data-v="900–1300">CAD 900–1,300</span> round-trip in summer, based on typical YUL–Paris–Rennes routing</td></tr>
         <tr><th>Airport transfer</th><td>Rennes Airport → Perros-Guirec: ~2h by train + local transfer, or ~2h15 by rental car</td></tr>
       </table>
 
@@ -618,7 +653,7 @@
     <h2 class="section-title">Side-by-Side Comparison &mdash; New Additions</h2>
     <table>
       <thead><tr><th>Factor</th><th>Alsace Wine Route</th><th>Dordogne / Périgord</th><th>Brittany Pink Granite Coast</th></tr></thead>
-      <tbody><tr><td>Region</td><td>Alsace (Grand Est)</td><td>Dordogne (southwest)</td><td>Brittany (northwest coast)</td></tr><tr><td>Terrain</td><td>Vineyards, medieval villages, foothills</td><td>Rolling bastide countryside, river valley</td><td>Coastal cliffs, granite boulders, beaches</td></tr><tr><td>Difficulty</td><td>Easy–moderate</td><td>Easy–moderate</td><td>Easy</td></tr><tr><td>Total distance</td><td>~90 km</td><td>~80 km (est.)</td><td>~45–60 km</td></tr><tr><td>Trip length</td><td>7 days</td><td>7 days</td><td>5–6 days</td></tr><tr><td>Trek package price pp</td><td>From €1,020–1,090+</td><td>From €955–2,255+</td><td>From £535–921+</td></tr><tr><td>Round-trip flight pp (YUL)</td><td>CAD 900–1,250</td><td>CAD 700–1,000</td><td>CAD 900–1,300</td></tr><tr><td>Gateway airport</td><td>Strasbourg (SXB), 1 stop</td><td>Bordeaux (BOD), direct</td><td>Rennes (RNS), 1 stop</td></tr><tr><td>Confirmed spa properties</td><td>Le Chambard (Kaysersberg), Riquewihr-area Logis spas</td><td>Plaza Madeleine &amp; Les Glycines (Sarlat)</td><td>L'Agapa, Grand Hôtel des Bains (Perros-Guirec)</td></tr><tr><td>Vetting status</td><td>Partially vetted ⚠️</td><td>Partially vetted ⚠️</td><td>Partially vetted ⚠️</td></tr></tbody>
+      <tbody><tr><td>Region</td><td>Alsace (Grand Est)</td><td>Dordogne (southwest)</td><td>Brittany (northwest coast)</td></tr><tr><td>Terrain</td><td>Vineyards, medieval villages, foothills</td><td>Rolling bastide countryside, river valley</td><td>Coastal cliffs, granite boulders, beaches</td></tr><tr><td>Difficulty</td><td>Easy–moderate</td><td>Easy–moderate</td><td>Easy</td></tr><tr><td>Total distance</td><td>~90 km</td><td>~80 km (est.)</td><td>~45–60 km</td></tr><tr><td>Trip length</td><td>7 days</td><td>7 days</td><td>5–6 days</td></tr><tr><td>Trek package price pp</td><td>From <span class="px" data-cur="EUR" data-v="1020–1090">€1,020–1,090</span>+</td><td>From <span class="px" data-cur="EUR" data-v="955–2255">€955–2,255</span>+</td><td>From <span class="px" data-cur="GBP" data-v="535–921">£535–921</span>+</td></tr><tr><td>Round-trip flight pp (YUL)</td><td><span class="px" data-cur="CAD" data-v="900–1250">CAD 900–1,250</span></td><td><span class="px" data-cur="CAD" data-v="700–1000">CAD 700–1,000</span></td><td><span class="px" data-cur="CAD" data-v="900–1300">CAD 900–1,300</span></td></tr><tr><td>Gateway airport</td><td>Strasbourg (SXB), 1 stop</td><td>Bordeaux (BOD), direct</td><td>Rennes (RNS), 1 stop</td></tr><tr><td>Confirmed spa properties</td><td>Le Chambard (Kaysersberg), Riquewihr-area Logis spas</td><td>Plaza Madeleine &amp; Les Glycines (Sarlat)</td><td>L'Agapa, Grand Hôtel des Bains (Perros-Guirec)</td></tr><tr><td>Vetting status</td><td>Partially vetted ⚠️</td><td>Partially vetted ⚠️</td><td>Partially vetted ⚠️</td></tr></tbody>
     </table>
     <div class="note">
       Of the three, <strong>Dordogne</strong> is the easiest to execute well: direct flights from Montreal to Bordeaux, and two confirmed real spa hotels in Sarlat (Plaza Madeleine, Les Glycines) that can anchor every night if you loop back to town. <strong>Alsace</strong> is the most culturally rich (medieval villages, wine, castles) with strong spa options concentrated around Kaysersberg/Riquewihr. <strong>Brittany</strong> is the shortest and most different in character (coastal, not inland), anchored by the standout L'Agapa 5-star spa hotel in Perros-Guirec, but the trip is more compact at 5&ndash;6 days.
@@ -696,6 +731,70 @@
       document.getElementById('siteContent').style.display = 'block';
     }
   } catch (e) {}
+</script>
+
+<script>
+  (function () {
+    var DEFAULTS = { EUR: 1.62, USD: 1.38, GBP: 1.86, CHF: 1.75 };
+    var rates = {};
+    function load() {
+      var s = null;
+      try { s = JSON.parse(localStorage.getItem('fxRates')); } catch (e) {}
+      rates = {};
+      for (var k in DEFAULTS) {
+        var v = s && s[k] ? parseFloat(s[k]) : DEFAULTS[k];
+        rates[k] = (isFinite(v) && v > 0) ? v : DEFAULTS[k];
+      }
+    }
+    function money(n) {
+      return 'C$' + Math.round(n).toLocaleString('en-US');
+    }
+    function renderAll() {
+      var els = document.querySelectorAll('span.px');
+      for (var i = 0; i < els.length; i++) {
+        var sp = els[i];
+        var r = rates[sp.dataset.cur] !== undefined ? rates[sp.dataset.cur] : 1;
+        var parts = String(sp.dataset.v).split('–');
+        var a = parseFloat(parts[0]) * r;
+        var txt = money(a);
+        if (parts.length > 1) {
+          var b = parseFloat(parts[1]) * r;
+          if (Math.round(a) !== Math.round(b)) txt += '–' + money(b).replace('C$', '');
+        }
+        sp.textContent = txt;
+      }
+    }
+    function syncInputs() {
+      var keys = ['EUR', 'USD', 'CHF', 'GBP'];
+      for (var i = 0; i < keys.length; i++) {
+        var el = document.getElementById('fx' + keys[i]);
+        if (el) el.value = rates[keys[i]];
+      }
+    }
+    function save() {
+      try { localStorage.setItem('fxRates', JSON.stringify(rates)); } catch (e) {}
+    }
+    load();
+    syncInputs();
+    renderAll();
+    var keys = ['EUR', 'USD', 'CHF', 'GBP'];
+    for (var i = 0; i < keys.length; i++) {
+      (function (k) {
+        var el = document.getElementById('fx' + k);
+        if (!el) return;
+        el.addEventListener('input', function () {
+          var v = parseFloat(el.value);
+          if (isFinite(v) && v > 0) { rates[k] = v; save(); renderAll(); }
+        });
+      })(keys[i]);
+    }
+    var rs = document.getElementById('fxReset');
+    if (rs) rs.addEventListener('click', function () {
+      rates = {};
+      for (var k in DEFAULTS) rates[k] = DEFAULTS[k];
+      save(); syncInputs(); renderAll();
+    });
+  })();
 </script>
 
 </body>

@@ -4,88 +4,244 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Luxury Self-Guided Treks in France &mdash; Complete Plan from Montreal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Great+Vibes&display=swap" rel="stylesheet">
+
 <style>
   :root {
-    --accent: #7a4b2a; --accent-light: #b98554; --bg: #faf7f2; --card-bg: #ffffff;
-    --text: #2c2620; --muted: #6b6258; --border: #e4dccf; --warn: #b3261e; --new: #2f6b4f;
+    --ink: #3B3F43;            /* graphite text */
+    --muted: #767B81;          /* silver-grey secondary text */
+    --card: #ffffff;
+    --bg: #FAF9F7;             /* warm porcelain */
+    --rose-deep: #8F5149;      /* dusty rose — strong text/accents */
+    --rose: #A86B62;
+    --rose-soft: #EBDCD6;
+    --blush: #F7EEEA;
+    --gold-deep: #7E6129;      /* champagne gold for small caps */
+    --gold: #B89B60;
+    --champagne: #F3EAD8;
+    --platinum: #DEE1E4;       /* platinum greys */
+    --platinum-deep: #AEB4B9;
+    --line: #E7E2DA;           /* hairline borders */
+    --warn: #B3554C;
+    --warn-bg: #FBF1EE;
+    --new: #55795E;            /* emerald for "new" markers */
+    --serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+    --script: 'Great Vibes', 'Segoe Script', cursive;
+    --sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   }
   * { box-sizing: border-box; }
-  body { margin: 0; font-family: 'Georgia','Times New Roman',serif; background: var(--bg); color: var(--text); line-height: 1.6; }
-  header { background: linear-gradient(135deg,#3e2f23,#6b4a30); color:#fff; padding: 3rem 1.5rem 2rem; text-align:center; }
-  header h1 { margin:0 0 0.5rem; font-size:2.1rem; }
-  header p { margin:0; font-family:'Helvetica Neue',Arial,sans-serif; color:#e8ddd0; font-size:1.02rem; }
-  .container { max-width: 1080px; margin:0 auto; padding: 2rem 1.5rem 4rem; }
-  .intro { background: var(--card-bg); border:1px solid var(--border); border-left:5px solid var(--accent); padding:1.2rem 1.5rem; border-radius:6px; margin-bottom:1.5rem; font-family:'Helvetica Neue',Arial,sans-serif; font-size:0.98rem; color: var(--muted); }
-  .section-divider { display:flex; align-items:center; gap:0.8rem; margin: 2.2rem 0 1.2rem; font-family:'Helvetica Neue',Arial,sans-serif; }
-  .section-divider h2 { color: var(--new); font-size:1.3rem; margin:0; white-space:nowrap; }
-  .section-divider .line { flex:1; height:1px; background: var(--border); }
-  .section-divider p { margin: 0.3rem 0 1rem; color: var(--muted); font-size:0.92rem; font-family:'Helvetica Neue',Arial,sans-serif; }
-  .nav-pills { display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom:1rem; font-family:'Helvetica Neue',Arial,sans-serif; }
-  .pill { background:#efe3d3; color:var(--accent); text-decoration:none; padding:0.5rem 1rem; border-radius:20px; font-size:0.88rem; font-weight:600; transition: background 0.15s; }
-  .pill:hover { background: var(--accent); color:#fff; }
-  .pill-new { background:#e2f0e8; color: var(--new); }
-  .pill-new:hover { background: var(--new); color:#fff; }
-  details.option { background: var(--card-bg); border:1px solid var(--border); border-radius:10px; margin-bottom:1.2rem; box-shadow:0 2px 8px rgba(0,0,0,0.04); overflow:hidden; }
-  details.option summary { cursor:pointer; list-style:none; padding:1.3rem 1.6rem; display:flex; align-items:center; gap:1rem; flex-wrap:wrap; font-family:'Helvetica Neue',Arial,sans-serif; }
-  details.option summary::-webkit-details-marker { display:none; }
-  .option-title { font-family:'Georgia',serif; font-size:1.35rem; color:var(--accent); font-weight:700; }
-  .option-tag { color:var(--muted); font-size:0.9rem; flex:1; }
-  .chevron { color:var(--accent); transition: transform 0.2s; margin-left:auto; }
+  body {
+    margin: 0; font-family: Georgia, 'Times New Roman', serif;
+    background: var(--bg); color: var(--ink); line-height: 1.62;
+    background-image: radial-gradient(1100px 520px at 50% -140px, rgba(224, 205, 185, .28), rgba(250, 249, 247, 0) 70%);
+  }
+  ::selection { background: rgba(168, 107, 98, .22); }
+  a { color: inherit; }
+  header {
+    position: relative; text-align: center; overflow: hidden;
+    padding: 3rem 1.5rem 2.4rem;
+    background: linear-gradient(162deg, #FFFFFF 0%, #F0F1F2 34%, #E1E4E7 72%, #CFD4D8 100%);
+    color: var(--ink);
+    border-bottom: 1px solid #D8CFC2;
+  }
+  header::before {                      /* platinum sheen sweep */
+    content: ""; position: absolute; top: -120%; left: -30%; width: 40%; height: 320%;
+    background: linear-gradient(100deg, transparent, rgba(255,255,255,.55), transparent);
+    transform: rotate(12deg); pointer-events: none;
+  }
+  header::after {                       /* engraved double rule */
+    content: ""; display: block; width: min(440px, 82%); margin: 1.15rem auto 0;
+    border-top: 1px solid rgba(184, 155, 96, .65);
+    border-bottom: 1px solid rgba(184, 155, 96, .3); height: 0;
+  }
+  header .eyebrow {
+    font-family: var(--script); font-size: 2.1rem; line-height: 1.15;
+    color: var(--rose-deep); margin: 0 0 .15rem; font-weight: 400;
+  }
+  header h1 {
+    margin: .25rem 0 .5rem; font-family: var(--serif); font-weight: 600;
+    font-size: 2.45rem; letter-spacing: .04em; color: #31363B;
+  }
+  header .tagline {
+    margin: 0; color: #7E735F; font-size: 1rem;
+    font-family: Georgia, serif; font-style: italic; letter-spacing: .04em;
+  }
+  .container { max-width: 1080px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+  .intro {
+    background: linear-gradient(180deg, #FFFDFA, #FBF6EC);
+    border: 1px solid var(--line); border-left: 4px solid var(--gold);
+    border-radius: 6px; padding: 1.25rem 1.5rem; margin-bottom: 1.6rem;
+    font-family: var(--sans); font-size: .97rem; color: #6A6A66;
+  }
+  .intro strong { color: var(--rose-deep); font-weight: 600; }
+  .section-divider {
+    display: flex; align-items: center; gap: .9rem;
+    margin: 2.4rem 0 1.2rem; font-family: var(--sans);
+  }
+  .section-divider h2 {
+    font-family: var(--serif); font-weight: 600; font-size: 1.5rem;
+    letter-spacing: .04em; color: var(--ink); margin: 0; white-space: nowrap;
+  }
+  .section-divider h2::after { content: ' \2726'; color: var(--rose); font-size: .62em; vertical-align: .35em; letter-spacing: 0; }
+  .section-divider .line {
+    flex: 1; height: 1px;
+    background: linear-gradient(90deg, var(--platinum-deep), var(--gold), var(--platinum-deep));
+    opacity: .8;
+  }
+  .section-divider p { margin: .35rem 0 1rem; color: var(--muted); font-size: .92rem; font-family: var(--sans); }
+  .nav-pills { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1rem; font-family: var(--sans); }
+  .pill {
+    background: #F3EEE7; color: #6E4F46; text-decoration: none;
+    padding: .5rem 1.05rem; border-radius: 999px; font-size: .85rem; font-weight: 600;
+    border: 1px solid transparent; transition: all .15s ease;
+  }
+  .pill:hover { background: var(--rose-deep); border-color: var(--rose-deep); color: #fff; }
+  .pill-new { background: #EDF1E9; color: var(--new); }
+  .pill-new:hover { background: var(--new); border-color: var(--new); color: #fff; }
+  details.option {
+    background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+    margin-bottom: 1.25rem;
+    box-shadow: 0 8px 26px rgba(70, 62, 54, .07); overflow: hidden;
+    transition: box-shadow .2s ease;
+  }
+  details.option[open] { box-shadow: 0 12px 34px rgba(70, 62, 54, .11); }
+  details.option summary {
+    cursor: pointer; list-style: none; padding: 1.4rem 1.6rem;
+    display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
+    font-family: var(--sans); transition: background .15s ease;
+  }
+  details.option summary:hover { background: #FDFBF8; }
+  details.option summary::-webkit-details-marker { display: none; }
+  .option-title {
+    font-family: var(--serif); font-size: 1.5rem; color: #43474B;
+    font-weight: 600; letter-spacing: .02em;
+  }
+  .option-title::before { content: '\2766'; color: var(--rose); font-size: .8em; margin-right: .55rem; vertical-align: .08em; }
+  .option-tag { color: var(--muted); font-size: .9rem; flex: 1; font-family: var(--sans); }
+  .chevron { color: var(--rose-deep); transition: transform .2s; margin-left: auto; font-size: .9rem; }
   details[open] .chevron { transform: rotate(180deg); }
-  .option-body { padding: 0 1.6rem 1.8rem; }
-  .gallery { display:flex; gap:0.6rem; overflow-x:auto; margin-bottom:1rem; border-radius:8px; }
-  .gallery img { height:220px; width:auto; border-radius:8px; object-fit:cover; flex-shrink:0; }
-  h3 { font-size:1.02rem; color:var(--accent-light); margin-top:1.5rem; margin-bottom:0.6rem; font-family:'Helvetica Neue',Arial,sans-serif; text-transform:uppercase; letter-spacing:0.5px; font-weight:600; }
-  .stat-strip { display:flex; gap:0.6rem; flex-wrap:wrap; margin:0.6rem 0 1rem; font-family:'Helvetica Neue',Arial,sans-serif; }
-  .stat { background:#f7f1e6; border:1px solid var(--border); border-radius:8px; padding:0.6rem 1rem; font-size:0.83rem; min-width:130px; }
-  .stat strong { display:block; color:var(--accent); font-size:1.02rem; margin-bottom:0.15rem; }
-  table { width:100%; border-collapse:collapse; margin:0.4rem 0 0.8rem; font-family:'Helvetica Neue',Arial,sans-serif; font-size:0.88rem; }
-  th, td { text-align:left; padding:0.5rem 0.65rem; border-bottom:1px solid var(--border); vertical-align:top; }
-  th { background:#f2ebe1; color:var(--accent); font-weight:600; white-space:nowrap; }
+  .option-body { padding: .2rem 1.6rem 1.9rem; }
+  .gallery {
+    display: flex; gap: .7rem; overflow-x: auto; margin-bottom: 1.1rem;
+    border-radius: 10px;
+  }
+  .gallery img {
+    height: 220px; width: auto; border-radius: 10px; object-fit: cover;
+    flex-shrink: 0; border: 1px solid #F0EAE1;
+  }
+  h3 {
+    font-size: .8rem; color: var(--gold-deep); margin-top: 1.6rem; margin-bottom: .6rem;
+    font-family: var(--sans); text-transform: uppercase; letter-spacing: .16em; font-weight: 600;
+  }
+  .stat-strip {
+    display: flex; gap: .6rem; flex-wrap: wrap; margin: .3rem 0 1rem; font-family: var(--sans);
+  }
+  .stat {
+    background: linear-gradient(180deg, #F9F7F3, #F3EFE9); border: 1px solid var(--line);
+    border-radius: 9px; padding: .6rem 1rem; font-size: .82rem; color: var(--muted); min-width: 130px;
+  }
+  .stat strong {
+    display: block; color: var(--rose-deep); font-size: 1.05rem; margin-bottom: .12rem;
+    font-family: var(--serif); font-weight: 600; letter-spacing: .01em;
+  }
+  table { width: 100%; border-collapse: collapse; margin: .4rem 0 .8rem; font-family: var(--sans); font-size: .88rem; }
+  th, td { text-align: left; padding: .5rem .65rem; border-bottom: 1px solid #ECE6DC; vertical-align: top; }
+  th { background: linear-gradient(180deg, #F8F4EE, #F2ECE2); color: #6B4F24; font-weight: 600; white-space: nowrap; }
   .info-table th { width: 180px; }
-  ul { margin:0.4rem 0; padding-left:1.3rem; font-family:'Helvetica Neue',Arial,sans-serif; font-size:0.92rem; }
-  li { margin-bottom:0.3rem; }
-  .comparison-section, .checklist-section { background:#fff; border:1px solid var(--border); border-radius:10px; padding:1.8rem 2rem; margin-bottom:1.5rem; overflow-x:auto; }
-  .comparison-section table th, .comparison-section table td { text-align:center; }
-  .comparison-section table td:first-child, .comparison-section table th:first-child { text-align:left; }
-  .note { background:#f7f1e6; border-left:4px solid var(--accent-light); padding:0.8rem 1rem; border-radius:4px; font-size:0.93rem; color:var(--muted); margin-top:1rem; font-family:'Helvetica Neue',Arial,sans-serif; }
-  h2.section-title { color:var(--accent); font-size:1.4rem; margin-bottom:1rem; }
-  .checklist-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; font-family:'Helvetica Neue',Arial,sans-serif; font-size:0.9rem; }
-  .checklist-grid h4 { color:var(--accent); margin-bottom:0.4rem; }
-  footer { text-align:center; padding:2rem 1.5rem; color:var(--muted); font-family:'Helvetica Neue',Arial,sans-serif; font-size:0.85rem; }
-  @media (max-width:700px){ .checklist-grid{grid-template-columns:1fr;} }
+  ul { margin: .4rem 0; padding-left: 1.3rem; font-family: var(--sans); font-size: .92rem; }
+  li { margin-bottom: .3rem; }
+  li::marker { color: var(--rose); }
+  .comparison-section, .checklist-section {
+    background: #fff; border: 1px solid var(--line); border-radius: 14px;
+    padding: 1.8rem 2rem; margin-bottom: 1.5rem; overflow-x: auto;
+    box-shadow: 0 6px 22px rgba(70, 62, 54, .05);
+  }
+  .comparison-section table th, .comparison-section table td { text-align: center; }
+  .comparison-section table td:first-child, .comparison-section table th:first-child { text-align: left; }
+  .note {
+    background: var(--champagne); border: 1px solid #EADDC2; border-left: 4px solid var(--gold-deep);
+    padding: .8rem 1rem; border-radius: 6px; font-size: .93rem; color: #6E6A60;
+    margin-top: 1rem; font-family: var(--sans); line-height: 1.6;
+  }
+  .note strong { color: #5D4A22; }
+  h2.section-title {
+    font-family: var(--serif); font-weight: 600; font-size: 1.7rem; letter-spacing: .03em;
+    color: #3B3F43; margin-bottom: 1rem;
+  }
+  h2.section-title::before { content: '\2726'; color: var(--rose); font-size: .62em; margin-right: .6rem; vertical-align: .18em; }
+  .checklist-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; font-family: var(--sans); font-size: .9rem; }
+  .checklist-grid h4 { color: var(--rose-deep); margin-bottom: .4rem; font-family: var(--serif); font-size: 1.1rem; font-weight: 600; }
+  footer {
+    text-align: center; padding: 1.8rem 1.5rem 2.4rem; color: var(--muted);
+    font-family: var(--sans); font-size: .85rem; line-height: 1.8;
+  }
+  .warning-box {
+    background: var(--warn-bg); border: 1px solid #EFD6CF; border-left: 4px solid var(--warn);
+    border-radius: 7px; padding: .8rem 1rem; margin: .8rem 0 1rem;
+    font-family: var(--sans); font-size: .9rem; color: #8A4338;
+  }
+  .warning-box strong { color: #8A4338; }
+  tr.warnrow td { background: #FCF4F1; }
+  tr.warnrow td:nth-child(2) { color: var(--warn); font-weight: 600; }
 
-  .warning-box { background:#fdecea; border:1px solid #f3c1bb; border-left:4px solid var(--warn); border-radius:6px; padding:0.8rem 1rem; margin:0.8rem 0 1rem; font-family:'Helvetica Neue',Arial,sans-serif; font-size:0.9rem; color:#7a1f18; }
-  tr.warnrow td { background:#fdf3f2; }
-  tr.warnrow td:nth-child(2) { color:var(--warn); font-weight:600; }
-
-  /* Login gate */
+  /* Login gate — platinum & blush */
   #loginGate {
-    position: fixed; inset: 0; background: linear-gradient(135deg,#3e2f23,#6b4a30);
-    display:flex; align-items:center; justify-content:center; z-index: 9999; font-family:'Helvetica Neue',Arial,sans-serif;
+    position: fixed; inset: 0; z-index: 9999;
+    font-family: var(--sans);
+    background:
+      radial-gradient(130% 90% at 50% -10%, #FFFDFA 0%, #F4EEE9 44%, #E5DCD5 78%, #DBD2CB 100%);
+    display: flex; align-items: center; justify-content: center;
   }
   .login-box {
-    background:#fff; padding:2.5rem 2.2rem; border-radius:12px; width:100%; max-width:340px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.3); text-align:center;
+    background: #fff; padding: 2.7rem 2.4rem 2.3rem; border-radius: 18px;
+    width: 100%; max-width: 350px; text-align: center;
+    box-shadow: 0 26px 70px rgba(84, 70, 58, .25), 0 0 0 1px rgba(255, 255, 255, .8) inset;
   }
-  .login-box h2 { margin:0 0 0.3rem; color:#7a4b2a; font-family:'Georgia',serif; }
-  .login-box p { color:#6b6258; font-size:0.85rem; margin:0 0 1.4rem; }
+  .login-box .gate-eyebrow {
+    font-family: var(--script); font-size: 1.6rem; color: var(--rose-deep);
+    margin: 0 0 .15rem; line-height: 1.2; font-weight: 400;
+  }
+  .login-box h2 {
+    margin: 0 0 .3rem; color: #3B3F43; font-family: var(--serif);
+    font-weight: 600; font-size: 1.65rem; letter-spacing: .02em;
+  }
+  .login-box p { color: var(--muted); font-size: .86rem; margin: 0 0 1.5rem; }
   .login-box input {
-    width:100%; padding:0.7rem 0.9rem; margin-bottom:0.8rem; border:1px solid #e4dccf; border-radius:6px; font-size:0.95rem;
+    width: 100%; padding: .72rem .95rem; margin-bottom: .8rem;
+    border: 1px solid #DDD4C8; border-radius: 9px; font-size: .95rem; color: var(--ink);
+    background: #FEFDFC; font-family: var(--sans);
+  }
+  .login-box input:focus {
+    outline: none; border-color: var(--rose); box-shadow: 0 0 0 3px rgba(168, 107, 98, .18);
   }
   .login-box button {
-    width:100%; padding:0.75rem; background:#7a4b2a; color:#fff; border:none; border-radius:6px;
-    font-size:0.95rem; font-weight:600; cursor:pointer; transition: background 0.15s;
+    width: 100%; padding: .8rem; border: none; border-radius: 9px;
+    font-size: .97rem; font-weight: 600; cursor: pointer; color: #fff;
+    font-family: var(--sans); letter-spacing: .04em;
+    background: linear-gradient(135deg, #BB8B82, #9E675E);
+    box-shadow: 0 8px 18px rgba(158, 103, 94, .35);
+    transition: all .15s ease;
   }
-  .login-box button:hover { background:#5f3a20; }
-  .login-error { color:#b3261e; font-size:0.82rem; margin-top:0.6rem; min-height:1.1em; }
-  #siteContent { display:none; }
+  .login-box button:hover { background: linear-gradient(135deg, #A87B73, #8C5A51); box-shadow: 0 10px 22px rgba(158, 103, 94, .45); }
+  .login-error { color: var(--warn); font-size: .82rem; margin-top: .6rem; min-height: 1.1em; }
+  #siteContent { display: none; }
+
+  @media (max-width: 700px) {
+    .checklist-grid { grid-template-columns: 1fr; }
+    header h1 { font-size: 1.9rem; }
+    header .eyebrow { font-size: 1.7rem; }
+    .option-title { font-size: 1.25rem; }
+    h2.section-title { font-size: 1.45rem; }
+  }
 </style>
 </head>
 <body>
 
 <div id="loginGate">
   <div class="login-box">
+    <p class="gate-eyebrow">Twenty years, still adventuring together</p>
     <h2>Private Trip Plan</h2>
     <p>Enter your credentials to view the itinerary</p>
     <input type="text" id="loginUser" placeholder="Username" autocomplete="username">
@@ -98,14 +254,15 @@
 <div id="siteContent">
 
 <header>
+  <p class="eyebrow">Twenty years — and still our favourite climb</p>
   <h1>Luxury Self-Guided Treks in France</h1>
-  <p>Complete end-to-end plan &middot; Montreal to Montreal &middot; 5&ndash;8 days &middot; natural pace</p>
+  <p class="tagline">Complete end-to-end plan &middot; Montreal to Montreal &middot; 5&ndash;8 days &middot; natural pace</p>
 </header>
 
 <div class="container">
 
   <div class="intro">
-    Nine options total: the six core itineraries (the original five picks plus the new hotel-to-hotel <strong>Mont Blanc Deluxe</strong> upgrade) and three newly researched regions. Every accommodation has been checked for private rooms, real pampering, and spa access &mdash; nights that fall short are flagged with ⚠️. Click any option below to expand its full plan.
+    Nine options total: the six core itineraries (the original five picks plus the new hotel-to-hotel <strong>Mont Blanc Deluxe</strong> upgrade) and three newly researched regions. Every accommodation has been checked for private rooms, real pampering, and spa access &mdash; nights that fall short are flagged with ⚠️. Click any option below to expand its full plan. All prices are do-it-yourself estimates &mdash; flights, hotels, transfers and lift tickets &mdash; with guided tours shown only as clearly-labelled benchmarks for comparison.
   </div>
 
   <div class="nav-pills"><a href="#montblanc" class="pill">Mont Blanc Half-Circuit</a><a href="#basecamp" class="pill">Chamonix Basecamp (DIY Self-Guided)</a><a href="#mbdeluxe" class="pill">Mont Blanc Deluxe (Hotel-to-Hotel)</a><a href="#luberon" class="pill">Luberon, Provence</a><a href="#verdon" class="pill">Gorges du Verdon</a><a href="#pyrenees" class="pill">French Pyrenees</a></div>
@@ -118,8 +275,8 @@
     </summary>
     <div class="option-body">
       <div class="gallery"><img src="https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/6367472c-8d8c-5746-a7fd-0f64048e7b9d/975d885a-439f-5b69-a55b-c116adbe9126.jpg" alt="Mont Blanc Half-Circuit" loading="lazy"><img src="https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/d5ee2e84-c3b2-5ef8-b38d-43bfc20168c3/d7ff18e3-348f-5ccf-aebe-af5204199232.jpg" alt="Mont Blanc Half-Circuit" loading="lazy"></div>
-      <div class="stat-strip"><div class="stat"><strong>~70 km</strong>Total distance</div><div class="stat"><strong>~4,500 m</strong>Total ascent</div><div class="stat"><strong>From £1,495 (~€1,750)</strong>Trek package pp</div><div class="stat"><strong>CAD 900–1,300</strong>Round-trip flight pp</div></div>
-      <div class="warning-box">⚠️ <strong>Accommodation caveat:</strong> Nights 3&ndash;4 are unavoidable mountain-refuge stays (Croix du Bonhomme, Les Mottets): shared dorms or basic private rooms, no spa, communal bathrooms. This is the trade-off for hiking the high mountain stage &mdash; every commercial TMB operator uses the same refuges.</div>
+      <div class="stat-strip"><div class="stat"><strong>~70 km</strong>Total distance</div><div class="stat"><strong>~4,500 m</strong>Total ascent</div><div class="stat"><strong>~€600–900 est.</strong>DIY hotels + refuges, 7 nights pp</div><div class="stat"><strong>CAD 900–1,300</strong>Round-trip flight pp</div></div>
+      <div class="warning-box">⚠️ <strong>Accommodation caveat:</strong> Nights 3&ndash;4 are unavoidable mountain-refuge stays (Croix du Bonhomme, Les Mottets): shared dorms or basic private rooms, no spa, communal bathrooms. This is the trade-off for hiking the high mountain stage &mdash; every commercial TMB operator uses the same refuges. Note for a mid-to-late September trip: most refuges close around 20 September, so this option really only fits July through early September &mdash; the Mont Blanc Deluxe option above has no refuge dependency at all.</div>
 
       <h3>Flights &amp; Transfers from Montreal</h3>
       <table class="info-table">
@@ -191,19 +348,19 @@
     </summary>
     <div class="option-body">
       <div class="gallery"><img src="https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/6367472c-8d8c-5746-a7fd-0f64048e7b9d/975d885a-439f-5b69-a55b-c116adbe9126.jpg" alt="Mont Blanc Deluxe (Hotel-to-Hotel)" loading="lazy"><img src="https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/d5ee2e84-c3b2-5ef8-b38d-43bfc20168c3/d7ff18e3-348f-5ccf-aebe-af5204199232.jpg" alt="Mont Blanc Deluxe (Hotel-to-Hotel)" loading="lazy"></div>
-      <div class="stat-strip"><div class="stat"><strong>~70 km</strong>5 walking days</div><div class="stat"><strong>~4,600 m (est.)</strong>Total ascent</div><div class="stat"><strong>~€1,200–1,700 pp est.</strong>7 nights hotels + hops, double occ.</div><div class="stat"><strong>CAD 1,100–1,700</strong>Round-trip flight pp</div></div>
-      <div class="warning-box">⚠️ <strong>What makes this different:</strong> every night is a deluxe hotel with pool/spa &mdash; no refuge stays at all. The trade-off is that two walking days end in a different valley than the next trailhead, so Days 3&ndash;5 need short road hops (taxi or PostBus, ~€40&ndash;140 per leg est.) between hotel bases. Routes and timings are marked ~: they mirror the guided "deluxe" TMB corridor stage-for-stage but should be re-checked against current maps/trail conditions before you go. The Fenêtre d'Arpette high variant (Day 4) rarely clears of snow before mid-July &mdash; take the classic Bovine route unless the hut/hotel advises otherwise.</div>
+      <div class="stat-strip"><div class="stat"><strong>~70 km</strong>5 walking days</div><div class="stat"><strong>~4,600 m (est.)</strong>Total ascent</div><div class="stat"><strong>~€1,000–1,500 pp est.</strong>7 nights hotels + hops, mid-Sept rates</div><div class="stat"><strong>CAD 1,100–1,700</strong>Round-trip flight pp</div></div>
+      <div class="warning-box">⚠️ <strong>What makes this different:</strong> every night is a deluxe hotel with pool/spa &mdash; no refuge stays at all. The trade-off is that two walking days end in a different valley than the next trailhead, so Days 3&ndash;5 need short road hops (taxi or PostBus, ~€40&ndash;140 per leg est.) between hotel bases. Routes and timings are marked ~: they mirror the guided "deluxe" TMB corridor stage-for-stage but should be re-checked against current maps/trail conditions before you go. For your mid-September window: the passes are normally snow-free and September is one of the driest months of the season, but overnight frost above ~2,400 m is routine and daylight ends ~19:30 &mdash; start early, carry full layers, and check conditions daily. Snow can dust the high cols after a storm, at which point the Fenêtre d'Arpette variant (Day 4) turns serious &mdash; the classic Bovine route is the safe default. Summer-only lifts begin closing in the second half of September (the Flégère gondola's last day was 13 September 2026), so the Day 6 finale below is planned on foot &mdash; verify closure dates before relying on any lift.</div>
       <div class="note">
-        <strong>Why this option:</strong> the anniversary trip where you still hike the real TMB mountain corridor &mdash; Grand Col Ferret, Champex, Col de Balme &mdash; but sleep in a 4&ndash;5-star spa hotel every single night and cross all three countries. It is the DIY version of the <strong>Summit Guides "TMB Deluxe hotel-to-hotel"</strong> tour your wife found (~€4,350 pp guided, same corridor and hotel towns, group departures, luggage trucked for you). Doing it self-guided with the same hotel beds lands roughly €2,000&ndash;2,700 pp cheaper &mdash; the main things you give up are the guides, the scheduled group transfers, and someone else doing the booking.
+        <strong>Why this option:</strong> the anniversary trip where you still hike the real TMB mountain corridor &mdash; Grand Col Ferret, Champex, Col de Balme &mdash; but sleep in a 4&ndash;5-star spa hotel every single night and cross all three countries. It is the DIY version of the <strong>Summit Guides "TMB Deluxe hotel-to-hotel"</strong> tour your wife found (~€4,350 pp guided, same corridor and hotel towns, group departures, luggage trucked for you). Doing it self-guided with the same hotel beds lands roughly €2,900&ndash;3,400 pp cheaper at September shoulder rates &mdash; the main things you give up are the guides, the scheduled group transfers, and someone else doing the booking.
         <br><br>
-        <strong>Anniversary planner notes:</strong> book hotels 6&ndash;12 months out for late July (Verbier runs festival rates mid-July); reserve the two starred tables (Albert 1er, La Table d'Adrien) 4&ndash;8 weeks ahead; Skyway and QC Terme need online time-slot bookings 1&ndash;2 weeks out in summer; book a hot-air balloon only on weather-permitting days. Insurance must cover trekking above 2,500 m with helicopter-evacuation and cross-border rescue (FR/IT/CH) &mdash; most credit-card cover excludes it. Start walks early and be off the passes by ~14:00&ndash;15:00: July afternoons bring routine thunderstorms on Col Ferret and Col de Balme.
+        <strong>Anniversary planner notes (14&ndash;21 September window):</strong> book flights January&ndash;March and hotels by March&ndash;May &mdash; the September shoulder books more easily than July and rates drop 20&ndash;30%, but TMB weeks are selling out earlier every year; reserve the two starred tables (Albert 1er, La Table d'Adrien) 3&ndash;6 weeks ahead &mdash; both close for the season around 30 September; Skyway and QC Terme slots are easy in September but still book online a few days ahead; hot-air balloon only on weather-permitting days. Insurance must cover trekking above 2,500 m with helicopter-evacuation and cross-border rescue (FR/IT/CH) &mdash; most credit-card cover excludes it. After mid-September the trails empty out and the weather windows turn stable-but-cold: start early, carry full layers, and check pass conditions daily.
       </div>
 
       <h3>Flights &amp; Transfers from Montreal</h3>
       <table class="info-table">
         <tr><th>Gateway airport</th><td>Geneva (GVA), Switzerland</td></tr>
         <tr><th>Flight</th><td>Air Canada, nonstop, ~7h35m (seasonal summer service &mdash; the only nonstop YUL&ndash;GVA)</td></tr>
-        <tr><th>Estimated price</th><td>CAD 1,100&ndash;1,700 round-trip economy in July (average July fares run ~C$1,700; June departures as low as ~C$1,000&ndash;1,100)</td></tr>
+        <tr><th>Estimated price</th><td>CAD 1,100&ndash;1,700 round-trip economy in peak summer; a mid-September departure typically lands in the lower half of that range (July averages ~C$1,700; June and late-season fares from ~C$1,000)</td></tr>
         <tr><th>Airport transfer (in)</th><td>Geneva Airport → Courmayeur: ~2h15 door-to-door. No shared shuttle serves Courmayeur direct &mdash; take the shared GVA&rarr;Chamonix van (€46&ndash;60 pp) then a taxi through the Mont Blanc tunnel (~40 min, toll ~€56, ~€150&ndash;200 per car est.), or one private car GVA&rarr;Courmayeur (~€330&ndash;400 est.)</td></tr>
         <tr><th>Airport transfer (out)</th><td>Chamonix → Geneva Airport: ~1h15&ndash;2h shared shuttle (SAT bus €30 pp one-way/€50 return; Mountain Drop-offs ~€46&ndash;60 pp), timed for the afternoon AC flight</td></tr>
       </table>
@@ -211,7 +368,7 @@
       <h3>End-to-End Itinerary (Montreal to Montreal)</h3>
       <table>
         <thead><tr><th>Day</th><th>Stage</th><th>Details</th></tr></thead>
-        <tbody><tr class=""><td>Day 0</td><td>Montreal (YUL)</td><td>Evening departure on the Air Canada nonstop to Geneva</td></tr><tr class=""><td>Day 1</td><td>Geneva → Courmayeur</td><td>Arrive morning, private car or shuttle+taxi via the Mont Blanc tunnel, check in to <strong>Grand Hotel Courmayeur Mont Blanc</strong> (5-star, Erre Spa: indoor pool, sauna, hammam), relax, low-key dinner in the old town &mdash; keep the big table for later</td></tr><tr class=""><td>Day 2</td><td>Val Ferret balcony loop</td><td>~17 km, +1,100 m/−700 m, ~6 h. Taxi to Arnouva (10 min), climb to Rifugio Bertone (1,989 m), balcony trail along Mont de la Saxe beneath the Grandes Jorasses, pause at Rifugio Bonatti (2,025 m), descend to Arnouva, taxi back to the same hotel &mdash; no packing, no moving</td></tr><tr class=""><td>Day 3</td><td>Grand Col Ferret → Verbier</td><td>~15 km, +900 m/−1,000 m, ~6 h. Taxi back to Arnouva, cross the Col Ferret at 2,537 m (Italy→Switzerland), descend to La Fouly; private transfer up to Verbier (~1h15, ~€280&ndash;380 per car est. &mdash; no public link). Anniversary dinner at <strong>La Table d'Adrien</strong> (Michelin star), overnight <strong>Le Chalet d'Adrien</strong> (5-star Relais &amp; Châteaux, Clarins spa)</td></tr><tr class=""><td>Day 4</td><td>Champex → Trient → Martigny</td><td>~14 km, +800 m/−1,000 m, ~5.5 h (classic). Morning hop to Champex-Lac (taxi ~40 min, or PostBus+train ~2 h &amp; ~CHF 45 pp), walk the Bovine route with Rhône-valley views to Trient; evening PostBus/taxi down to Martigny. Optional harder variant: Fenêtre d'Arpette (2,665 m, +1,400 m, ~7 h) &mdash; only once snow clears. Night at <strong>Hôtel Borsari</strong> (4-star, opened 2025, spa and pool), then the Roman-style <strong>Les Bains Publics</strong> thermal baths in converted wine cellars below the hotel (book ahead)</td></tr><tr class=""><td>Day 5</td><td>Trient → Col de Balme → Argentière</td><td>~15 km, +900 m/−1,000 m, ~6 h. Morning hop back to Trient, climb to Col de Balme (2,191 m) &mdash; the first full Mont Blanc panorama &mdash; descend past Le Tour and Montroc to Argentière. Overnight <strong>Les Grands Montets Hotel &amp; Spa</strong> (4-star: indoor pool, sauna, hammam, heated outdoor jacuzzi; some suites have a private sauna). Dinner at La Crèmerie du Glacier (book ahead)</td></tr><tr class=""><td>Day 6</td><td>Aiguilles Rouges finale → Chamonix</td><td>~10&ndash;12 km, ~4&ndash;5 h. The guided tour walks this as its big finish; the easy DIY version rides the Flégère gondola up from Les Praz (€25 return) and traverses the Grand Balcon Sud balcony through the Aiguilles Rouges reserve (ibex, chamois) with the massif across the valley, then down to Chamonix. Check in to <strong>Le Hameau Albert 1er</strong> (5-star Relais &amp; Châteaux, Bachal spa with indoor + outdoor pools); farewell anniversary dinner at its <strong>Albert 1er</strong> restaurant (Michelin star, tasting menus €167&ndash;194, reservations obligatory)</td></tr><tr class=""><td>Day 7</td><td>Anniversary day, Chamonix</td><td>Pick your splurge: Aiguille du Midi cable car (€83 at the office, from €60 online) for the 3,842 m terrace; the Panoramic Mont-Blanc crossing to Punta Helbronner and down Skyway to Courmayeur (€125.50 + Skyway €59&ndash;64) to stand in Italy without retracing the hike; a couples afternoon at QC Terme thermal spa (~€58&ndash;95, online booking mandatory); or a dawn hot-air balloon over the valley (€255&ndash;330 pp, weather only). Lighter evening in town &mdash; second night at the Hameau</td></tr><tr class=""><td>Day 8</td><td>Chamonix → Geneva → Montreal</td><td>Morning shared shuttle to Geneva, afternoon Air Canada nonstop home, arrive Montreal same evening</td></tr></tbody>
+        <tbody><tr class=""><td>Day 0</td><td>Montreal (YUL)</td><td>Evening departure on the Air Canada nonstop to Geneva</td></tr><tr class=""><td>Day 1</td><td>Geneva → Courmayeur</td><td>Arrive morning, private car or shuttle+taxi via the Mont Blanc tunnel, check in to <strong>Grand Hotel Courmayeur Mont Blanc</strong> (5-star, Erre Spa: indoor pool, sauna, hammam), relax, low-key dinner in the old town &mdash; keep the big table for later</td></tr><tr class=""><td>Day 2</td><td>Val Ferret balcony loop</td><td>~17 km, +1,100 m/−700 m, ~6 h. Taxi to Arnouva (10 min), climb to Rifugio Bertone (1,989 m), balcony trail along Mont de la Saxe beneath the Grandes Jorasses, pause at Rifugio Bonatti (2,025 m), descend to Arnouva, taxi back to the same hotel &mdash; no packing, no moving</td></tr><tr class=""><td>Day 3</td><td>Grand Col Ferret → Verbier</td><td>~15 km, +900 m/−1,000 m, ~6 h. Taxi back to Arnouva, cross the Col Ferret at 2,537 m (Italy→Switzerland), descend to La Fouly; private transfer up to Verbier (~1h15, ~€280&ndash;380 per car est. &mdash; no public link). Anniversary dinner at <strong>La Table d'Adrien</strong> (Michelin star), overnight <strong>Le Chalet d'Adrien</strong> (5-star Relais &amp; Châteaux, Clarins spa)</td></tr><tr class=""><td>Day 4</td><td>Champex → Trient → Martigny</td><td>~14 km, +800 m/−1,000 m, ~5.5 h (classic). Morning hop to Champex-Lac (taxi ~40 min, or PostBus+train ~2 h &amp; ~CHF 45 pp), walk the Bovine route with Rhône-valley views to Trient; evening PostBus/taxi down to Martigny. Optional harder variant: Fenêtre d'Arpette (2,665 m, +1,400 m, ~7 h) &mdash; only once snow clears. Night at <strong>Hôtel Borsari</strong> (4-star, opened 2025, spa and pool), then the Roman-style <strong>Les Bains Publics</strong> thermal baths in converted wine cellars below the hotel (book ahead)</td></tr><tr class=""><td>Day 5</td><td>Trient → Col de Balme → Argentière</td><td>~15 km, +900 m/−1,000 m, ~6 h. Morning hop back to Trient, climb to Col de Balme (2,191 m) &mdash; the first full Mont Blanc panorama &mdash; descend past Le Tour and Montroc to Argentière. Overnight <strong>Les Grands Montets Hotel &amp; Spa</strong> (4-star: indoor pool, sauna, hammam, heated outdoor jacuzzi; some suites have a private sauna). Dinner at La Crèmerie du Glacier (book ahead)</td></tr><tr class=""><td>Day 6</td><td>Aiguilles Rouges finale → Chamonix</td><td>~14&ndash;16 km, +900 m/−1,000 m, ~6&ndash;7 h on foot &mdash; the guided finale done without lifts, since the Flégère gondola closes for the season in mid-September (last day 13 September 2026; verify the 2027 date). From Argentière climb onto the Grand Balcon Sud through the Aiguilles Rouges reserve (ibex, chamois), traverse beneath the massif past the Chéserys lakes, descend to Les Praz and into Chamonix. Check in to <strong>Le Hameau Albert 1er</strong> (5-star Relais &amp; Châteaux, Bachal spa with indoor + outdoor pools); farewell anniversary dinner at its <strong>Albert 1er</strong> restaurant (Michelin star, tasting menus €167&ndash;194, reservations obligatory &mdash; closes for the season ~30 September)</td></tr><tr class=""><td>Day 7</td><td>Anniversary day, Chamonix</td><td>Pick your splurge: Aiguille du Midi cable car (€83 at the office, from €60 online) for the 3,842 m terrace; the Panoramic Mont-Blanc crossing to Punta Helbronner and down Skyway to Courmayeur (€125.50 + Skyway €59&ndash;64, both normally running through September &mdash; verify dates) to stand in Italy without retracing the hike; a couples afternoon at QC Terme thermal spa (~€58&ndash;95, online booking mandatory); or a dawn hot-air balloon over the valley (€255&ndash;330 pp, weather only). Lighter evening in town &mdash; second night at the Hameau</td></tr><tr class=""><td>Day 8</td><td>Chamonix → Geneva → Montreal</td><td>Morning shared shuttle to Geneva, afternoon Air Canada nonstop home, arrive Montreal same evening</td></tr></tbody>
       </table>
 
       <h3>Where to Eat</h3>
@@ -336,15 +493,15 @@
     <h2 class="section-title">Side-by-Side Comparison &mdash; Six Core Itineraries</h2>
     <table>
       <thead><tr><th>Factor</th><th>Mont Blanc Half-Circuit</th><th>Chamonix Basecamp (DIY Self-Guided)</th><th>Mont Blanc Deluxe (Hotel-to-Hotel)</th><th>Luberon, Provence</th><th>Gorges du Verdon</th><th>French Pyrenees</th></tr></thead>
-      <tbody><tr><td>Region</td><td>French/Italian Alps</td><td>French Alps (Chamonix only)</td><td>French/Italian/Swiss Alps</td><td>Provence (south)</td><td>Provence (south)</td><td>Pyrenees (southwest)</td></tr><tr><td>Terrain</td><td>Alpine, glaciers, high passes</td><td>Alpine valley, day-hike trails</td><td>High passes and valley-to-valley corridors</td><td>Rolling hills, vineyards, lavender</td><td>Limestone canyon, rim trails</td><td>Rugged high mountain</td></tr><tr><td>Difficulty</td><td>Moderate–strenuous</td><td>Easy–moderate</td><td>Moderate–strenuous</td><td>Easy–moderate</td><td>Moderate</td><td>Moderate–strenuous</td></tr><tr><td>Total distance</td><td>~70 km</td><td>~60 km</td><td>~70 km</td><td>~71 km</td><td>~71 km</td><td>~85 km (est.)</td></tr><tr><td>Total elevation gain</td><td>~4,500 m</td><td>~4,000 m (est.)</td><td>~4,600 m (est.)</td><td>~2,200 m</td><td>~4,100 m</td><td>~5,000+ m (est.)</td></tr><tr><td>Package/hotel price pp</td><td>From £1,495 (~€1,750)</td><td>~CAD 1,800–2,300 (hotel only)</td><td>~€1,200–1,700 est. (DIY, hotels + hops)</td><td>From €1,150+</td><td>From €630–825+</td><td>From €620–760+</td></tr><tr><td>Round-trip flight pp (YUL)</td><td>CAD 900–1,300</td><td>CAD 900–1,300</td><td>CAD 1,100–1,700</td><td>CAD 700–1,300</td><td>CAD 700–1,300</td><td>CAD 1,000–1,400</td></tr><tr><td>Gateway airport</td><td>Geneva (GVA), direct</td><td>Geneva (GVA), direct</td><td>Geneva (GVA), direct</td><td>Marseille (MRS), direct</td><td>Marseille (MRS), direct</td><td>Toulouse (TLS), 1 stop</td></tr><tr><td>Confirmed spa nights</td><td>3 of 6 nights ⚠️ 2 refuge nights</td><td>7 of 7 nights, same spa hotel</td><td>7 of 7 nights — hotel &amp; spa every night</td><td>3 of 6 nights ⚠️ 1 basic night</td><td>2 of 6 nights ⚠️ 3 basic nights</td><td>3 of 6 nights ⚠️ 3 basic nights</td></tr><tr><td>Guide required?</td><td>No</td><td>No (5 of 6 days); optional guide for glacier walking</td><td>No</td><td>No</td><td>No</td><td>No</td></tr><tr><td>Countries crossed</td><td>France + Italy</td><td>France (day trip to Italy)</td><td>France + Italy + Switzerland</td><td>France only</td><td>France only</td><td>France only</td></tr><tr><td>Best season</td><td>June–September</td><td>June–September</td><td>June–September</td><td>April–October</td><td>April–October</td><td>June–September</td></tr></tbody>
+      <tbody><tr><td>Region</td><td>French/Italian Alps</td><td>French Alps (Chamonix only)</td><td>French/Italian/Swiss Alps</td><td>Provence (south)</td><td>Provence (south)</td><td>Pyrenees (southwest)</td></tr><tr><td>Terrain</td><td>Alpine, glaciers, high passes</td><td>Alpine valley, day-hike trails</td><td>High passes and valley-to-valley corridors</td><td>Rolling hills, vineyards, lavender</td><td>Limestone canyon, rim trails</td><td>Rugged high mountain</td></tr><tr><td>Difficulty</td><td>Moderate–strenuous</td><td>Easy–moderate</td><td>Moderate–strenuous</td><td>Easy–moderate</td><td>Moderate</td><td>Moderate–strenuous</td></tr><tr><td>Total distance</td><td>~70 km</td><td>~60 km</td><td>~70 km</td><td>~71 km</td><td>~71 km</td><td>~85 km (est.)</td></tr><tr><td>Total elevation gain</td><td>~4,500 m</td><td>~4,000 m (est.)</td><td>~4,600 m (est.)</td><td>~2,200 m</td><td>~4,100 m</td><td>~5,000+ m (est.)</td></tr><tr><td>DIY cost pp (est.)</td><td>~€600–900 (hotels + 2 refuge nights)</td><td>~CAD 1,800–2,300 (hotel only)</td><td>~€1,000–1,500 (mid-Sept, hotels + hops)</td><td>From €1,150+ (hotels)</td><td>From €630–825+ (hotels)</td><td>From €620–760+ (hotels)</td></tr><tr><td>Round-trip flight pp (YUL)</td><td>CAD 900–1,300</td><td>CAD 900–1,300</td><td>CAD 1,100–1,700</td><td>CAD 700–1,300</td><td>CAD 700–1,300</td><td>CAD 1,000–1,400</td></tr><tr><td>Gateway airport</td><td>Geneva (GVA), direct</td><td>Geneva (GVA), direct</td><td>Geneva (GVA), direct</td><td>Marseille (MRS), direct</td><td>Marseille (MRS), direct</td><td>Toulouse (TLS), 1 stop</td></tr><tr><td>Confirmed spa nights</td><td>3 of 6 nights ⚠️ 2 refuge nights</td><td>7 of 7 nights, same spa hotel</td><td>7 of 7 nights — hotel &amp; spa every night</td><td>3 of 6 nights ⚠️ 1 basic night</td><td>2 of 6 nights ⚠️ 3 basic nights</td><td>3 of 6 nights ⚠️ 3 basic nights</td></tr><tr><td>Guide required?</td><td>No</td><td>No (5 of 6 days); optional guide for glacier walking</td><td>No</td><td>No</td><td>No</td><td>No</td></tr><tr><td>Countries crossed</td><td>France + Italy</td><td>France (day trip to Italy)</td><td>France + Italy + Switzerland</td><td>France only</td><td>France only</td><td>France only</td></tr><tr><td>Best season</td><td>June–September</td><td>June–September</td><td>June–September</td><td>April–October</td><td>April–October</td><td>June–September</td></tr></tbody>
     </table>
     <div class="note">
-      For the real three-country TMB corridor with a deluxe hotel every single night, the new <strong>Mont Blanc Deluxe (Hotel-to-Hotel)</strong> is now the strongest match &mdash; the full Grand Col Ferret &rarr; Champex &rarr; Col de Balme route at roughly half the price of the guided version of the same corridor (Summit Guides, &euro;4,350 pp). If minimal logistics and zero moving days matter most, the <strong>Chamonix Basecamp (DIY)</strong> remains the easiest luxury &mdash; one 5-star residence all week, no transfers, about a third of the price of the guided 57hours tour it mirrors. To actually sleep inside the high mountains, the <strong>Mont Blanc Half-Circuit</strong> is still the only itinerary that does real refuge nights &mdash; 2 of them, flagged &#9888; above. The <strong>Luberon</strong> (revised) stays the strongest fully-French, moving-itinerary pick with genuine 5-star spa properties at Le Phébus and Capelongue.
+      For the real three-country TMB corridor with a deluxe hotel every single night, the new <strong>Mont Blanc Deluxe (Hotel-to-Hotel)</strong> is now the strongest match &mdash; the full Grand Col Ferret &rarr; Champex &rarr; Col de Balme route, DIY-priced at ~€1,000&ndash;1,500 pp against &euro;4,350 pp for the guided version of the same corridor (Summit Guides). If minimal logistics and zero moving days matter most, the <strong>Chamonix Basecamp (DIY)</strong> remains the easiest luxury &mdash; one 5-star residence all week, no transfers, about a third of the price of the guided 57hours tour it mirrors. To actually sleep inside the high mountains, the <strong>Mont Blanc Half-Circuit</strong> is still the only itinerary that does real refuge nights &mdash; 2 of them, flagged &#9888; above. The <strong>Luberon</strong> (revised) stays the strongest fully-French, moving-itinerary pick with genuine 5-star spa properties at Le Phébus and Capelongue.
     </div>
   </section>
 
   <div class="section-divider"><h2>New Region Additions</h2><div class="line"></div></div>
-  <p style="font-family:'Helvetica Neue',Arial,sans-serif; color:#6b6258; font-size:0.92rem; margin-top:-0.5rem; margin-bottom:1.2rem;">
+  <p style="font-family:'Helvetica Neue',Arial,sans-serif; color:#767B81; font-size:0.92rem; margin-top:-0.5rem; margin-bottom:1.2rem;">
     Three genuinely different regions researched fresh, beyond the six core itineraries. Each has confirmed real spa properties at its base town, but is less exhaustively vetted stage-by-stage.
   </p>
   <div class="nav-pills"><a href="#alsace" class="pill pill-new">Alsace Wine Route</a><a href="#dordogne" class="pill pill-new">Dordogne / Périgord</a><a href="#brittany" class="pill pill-new">Brittany Pink Granite Coast</a></div>

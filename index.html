@@ -1,1 +1,263 @@
-PLACEHOLDER
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luxury Self-Guided Treks in France &mdash; Complete Plan from Montreal</title>
+<style>
+  :root {
+    --accent: #7a4b2a; --accent-light: #b98554; --bg: #faf7f2; --card-bg: #ffffff;
+    --text: #2c2620; --muted: #6b6258; --border: #e4dccf;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: 'Georgia','Times New Roman',serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+  header { background: linear-gradient(135deg,#3e2f23,#6b4a30); color:#fff; padding: 3rem 1.5rem 2rem; text-align:center; }
+  header h1 { margin:0 0 0.5rem; font-size:2.1rem; }
+  header p { margin:0; font-family:'Helvetica Neue',Arial,sans-serif; color:#e8ddd0; font-size:1.02rem; }
+  .container { max-width: 1080px; margin:0 auto; padding: 2rem 1.5rem 4rem; }
+  .intro { background: var(--card-bg); border:1px solid var(--border); border-left:5px solid var(--accent); padding:1.2rem 1.5rem; border-radius:6px; margin-bottom:1.5rem; font-family:'Helvetica Neue',Arial,sans-serif; font-size:0.98rem; color: var(--muted); }
+  .nav-pills { display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom:2rem; font-family:'Helvetica Neue',Arial,sans-serif; }
+  .pill { background:#efe3d3; color:var(--accent); text-decoration:none; padding:0.5rem 1rem; border-radius:20px; font-size:0.88rem; font-weight:600; transition: background 0.15s; }
+  .pill:hover { background: var(--accent); color:#fff; }
+  details.option { background: var(--card-bg); border:1px solid var(--border); border-radius:10px; margin-bottom:1.2rem; box-shadow:0 2px 8px rgba(0,0,0,0.04); overflow:hidden; }
+  details.option summary { cursor:pointer; list-style:none; padding:1.3rem 1.6rem; display:flex; align-items:center; gap:1rem; flex-wrap:wrap; font-family:'Helvetica Neue',Arial,sans-serif; }
+  details.option summary::-webkit-details-marker { display:none; }
+  .option-title { font-family:'Georgia',serif; font-size:1.35rem; color:var(--accent); font-weight:700; }
+  .option-tag { color:var(--muted); font-size:0.9rem; flex:1; }
+  .chevron { color:var(--accent); transition: transform 0.2s; margin-left:auto; }
+  details[open] .chevron { transform: rotate(180deg); }
+  .option-body { padding: 0 1.6rem 1.8rem; }
+  .gallery { display:flex; gap:0.6rem; overflow-x:auto; margin-bottom:1rem; border-radius:8px; }
+  .gallery img { height:220px; width:auto; border-radius:8px; object-fit:cover; flex-shrink:0; }
+  h3 { font-size:1.02rem; color:var(--accent-light); margin-top:1.5rem; margin-bottom:0.6rem; font-family:'Helvetica Neue',Arial,sans-serif; text-transform:uppercase; letter-spacing:0.5px; font-weight:600; }
+  .stat-strip { display:flex; gap:0.6rem; flex-wrap:wrap; margin:0.6rem 0 1rem; font-family:'Helvetica Neue',Arial,sans-serif; }
+  .stat { background:#f7f1e6; border:1px solid var(--border); border-radius:8px; padding:0.6rem 1rem; font-size:0.83rem; min-width:130px; }
+  .stat strong { display:block; color:var(--accent); font-size:1.02rem; margin-bottom:0.15rem; }
+  table { width:100%; border-collapse:collapse; margin:0.4rem 0 0.8rem; font-family:'Helvetica Neue',Arial,sans-serif; font-size:0.88rem; }
+  th, td { text-align:left; padding:0.5rem 0.65rem; border-bottom:1px solid var(--border); vertical-align:top; }
+  th { background:#f2ebe1; color:var(--accent); font-weight:600; white-space:nowrap; }
+  .info-table th { width: 180px; }
+  ul { margin:0.4rem 0; padding-left:1.3rem; font-family:'Helvetica Neue',Arial,sans-serif; font-size:0.92rem; }
+  li { margin-bottom:0.3rem; }
+  .comparison-section, .checklist-section { background:#fff; border:1px solid var(--border); border-radius:10px; padding:1.8rem 2rem; margin-bottom:1.5rem; overflow-x:auto; }
+  .comparison-section table th, .comparison-section table td { text-align:center; }
+  .comparison-section table td:first-child, .comparison-section table th:first-child { text-align:left; }
+  .note { background:#f7f1e6; border-left:4px solid var(--accent-light); padding:0.8rem 1rem; border-radius:4px; font-size:0.93rem; color:var(--muted); margin-top:1rem; font-family:'Helvetica Neue',Arial,sans-serif; }
+  h2.section-title { color:var(--accent); font-size:1.4rem; margin-bottom:1rem; }
+  .checklist-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; font-family:'Helvetica Neue',Arial,sans-serif; font-size:0.9rem; }
+  .checklist-grid h4 { color:var(--accent); margin-bottom:0.4rem; }
+  footer { text-align:center; padding:2rem 1.5rem; color:var(--muted); font-family:'Helvetica Neue',Arial,sans-serif; font-size:0.85rem; }
+  @media (max-width:700px){ .checklist-grid{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Luxury Self-Guided Treks in France</h1>
+  <p>Complete end-to-end plan &middot; Montreal to Montreal &middot; 6&ndash;7 days &middot; natural pace</p>
+</header>
+
+<div class="container">
+
+  <div class="intro">
+    Four regional options, each built out end-to-end: flights and airport transfers from Montreal, day-by-day itinerary, luxury hotel matches, where to eat, and what to see. Click any option below to expand its full plan.
+  </div>
+
+  <div class="nav-pills"><a href="#montblanc" class="pill">Mont Blanc Half-Circuit</a><a href="#luberon" class="pill">Luberon, Provence</a><a href="#verdon" class="pill">Gorges du Verdon</a><a href="#pyrenees" class="pill">French Pyrenees</a></div>
+
+  <details class="option" id="montblanc">
+    <summary>
+      <span class="option-title">Mont Blanc Half-Circuit</span>
+      <span class="option-tag">France &amp; Italy &middot; Alpine highlights, Chamonix to Courmayeur</span>
+      <span class="chevron">&#9662;</span>
+    </summary>
+    <div class="option-body">
+      <div class="gallery"><img src="https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/6367472c-8d8c-5746-a7fd-0f64048e7b9d/975d885a-439f-5b69-a55b-c116adbe9126.jpg" alt="Mont Blanc Half-Circuit" loading="lazy"><img src="https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/d5ee2e84-c3b2-5ef8-b38d-43bfc20168c3/d7ff18e3-348f-5ccf-aebe-af5204199232.jpg" alt="Mont Blanc Half-Circuit" loading="lazy"></div>
+      <div class="stat-strip"><div class="stat"><strong>~70 km</strong>Total distance</div><div class="stat"><strong>~4,500 m</strong>Total ascent</div><div class="stat"><strong>From £1,495 (~€1,750)</strong>Trek package pp</div><div class="stat"><strong>CAD 900–1,300</strong>Round-trip flight pp</div></div>
+
+      <h3>Flights &amp; Transfers from Montreal</h3>
+      <table class="info-table">
+        <tr><th>Gateway airport</th><td>Geneva (GVA), Switzerland</td></tr>
+        <tr><th>Flight</th><td>Air Canada, nonstop, ~7h35m</td></tr>
+        <tr><th>Estimated price</th><td>CAD 900–1,300 round-trip economy in summer (fares as low as CAD 600–800 have appeared off-peak on Air Transat/Swiss connections)</td></tr>
+        <tr><th>Airport transfer</th><td>Geneva Airport → Chamonix/Les Houches: ~1h15 by shared shuttle bus or Mont Blanc Express train via Saint-Gervais, roughly €45–60 per person one-way</td></tr>
+      </table>
+
+      <h3>End-to-End Itinerary (Montreal to Montreal)</h3>
+      <table>
+        <thead><tr><th>Day</th><th>Stage</th><th>Details</th></tr></thead>
+        <tbody><tr><td>Day 0</td><td>Montreal (YUL)</td><td>Evening departure on overnight direct flight to Geneva</td></tr><tr><td>Day 1</td><td>Geneva → Les Houches</td><td>Arrive Geneva morning, shuttle to Chamonix Valley, check in, rest, welcome dinner</td></tr><tr><td>Day 2</td><td>Les Houches → Les Contamines-Montjoie</td><td>~16 km via Col de Voza / Col de Tricot, overnight Chalet-Hôtel La Chemenaz</td></tr><tr><td>Day 3</td><td>Les Contamines → Croix du Bonhomme</td><td>~14 km, overnight refuge/lodge near Croix du Bonhomme</td></tr><tr><td>Day 4</td><td>Croix du Bonhomme → Les Mottets</td><td>~10 km via Les Chapieux, overnight Refuge des Mottets</td></tr><tr><td>Day 5</td><td>Col de la Seigne → Courmayeur</td><td>~15 km crossing into Italy, overnight Grand Hotel Courmayeur or Auberge de la Maison</td></tr><tr><td>Day 6</td><td>Courmayeur</td><td>Rest day or Skyway Monte Bianco cable car excursion, short transfer back toward Chamonix</td></tr><tr><td>Day 7</td><td>Chamonix</td><td>Free day: Aiguille du Midi cable car, Mer de Glace, town exploring, farewell dinner at Albert 1er</td></tr><tr><td>Day 8</td><td>Chamonix → Geneva → Montreal</td><td>Morning transfer to Geneva, evening direct flight home, arrive Montreal same night</td></tr></tbody>
+      </table>
+
+      <h3>Where to Eat</h3>
+      <table>
+        <thead><tr><th>Restaurant</th><th>Location</th><th>Why go</th></tr></thead>
+        <tbody><tr><td>Albert 1er</td><td>Chamonix</td><td>Michelin-starred, the valley's only starred table, refined alpine tasting menus</td></tr><tr><td>La Maison Carrier</td><td>Chamonix</td><td>Savoyard fine dining, cozy chalet atmosphere, sister restaurant to Albert 1er</td></tr><tr><td>Restaurant Courmayeur (Michelin Guide selections)</td><td>Courmayeur</td><td>Multiple Michelin-listed trattorias and fine-dining spots in the old town</td></tr><tr><td>Cadran Solaire</td><td>Chamonix</td><td>Traditional Savoyard cuisine in a 17th-century farmhouse</td></tr></tbody>
+      </table>
+
+      <h3>What to See</h3>
+      <ul><li>Aiguille du Midi cable car (3,842m, highest lift in Europe, views into Italy)</li><li>Mer de Glace glacier and ice grotto via the Montenvers train</li><li>Skyway Monte Bianco cable car from Courmayeur</li><li>Lake Geneva old town and Jet d'Eau, if extending your Geneva stay</li><li>Chamonix town center, Église Saint-Michel, and the Arve river walk</li></ul>
+    </div>
+  </details>
+
+  <details class="option" id="luberon">
+    <summary>
+      <span class="option-title">Luberon, Provence</span>
+      <span class="option-tag">France only &middot; Hilltop villages, lavender, and vineyards</span>
+      <span class="chevron">&#9662;</span>
+    </summary>
+    <div class="option-body">
+      <div class="gallery"><img src="https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/e31bdbc5-f10c-5aab-ae91-9efb58982282/e2e76fe8-b396-56f0-ab11-beb9426cfab0.jpg" alt="Luberon, Provence" loading="lazy"><img src="https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/fe9b8e7e-5ab0-5eed-ae9f-b48a1bc0af9e/de36e892-9d01-5b87-8c36-4b587368b00b.jpg" alt="Luberon, Provence" loading="lazy"></div>
+      <div class="stat-strip"><div class="stat"><strong>~71 km</strong>Total distance</div><div class="stat"><strong>~2,200 m</strong>Total ascent</div><div class="stat"><strong>From €1,150</strong>Trek package pp</div><div class="stat"><strong>CAD 700–1,300</strong>Round-trip flight pp</div></div>
+
+      <h3>Flights &amp; Transfers from Montreal</h3>
+      <table class="info-table">
+        <tr><th>Gateway airport</th><td>Marseille Provence (MRS), France — or Nice (NCE) as an alternative</td></tr>
+        <tr><th>Flight</th><td>Direct seasonal service (Air Transat and others); Marseille is closer to the Luberon (~1h drive) than Nice (~1h45)</td></tr>
+        <tr><th>Estimated price</th><td>CAD 700–1,300 round-trip in summer; one-way fares as low as CAD 320–390 have appeared on Air Transat off-peak</td></tr>
+        <tr><th>Airport transfer</th><td>Marseille Airport → Isle-sur-la-Sorgue: ~1h10 by taxi/private transfer (~€90–120) or rental car</td></tr>
+      </table>
+
+      <h3>End-to-End Itinerary (Montreal to Montreal)</h3>
+      <table>
+        <thead><tr><th>Day</th><th>Stage</th><th>Details</th></tr></thead>
+        <tbody><tr><td>Day 0</td><td>Montreal (YUL)</td><td>Evening or overnight direct flight to Marseille</td></tr><tr><td>Day 1</td><td>Marseille → Isle-sur-la-Sorgue</td><td>Arrive, private transfer or rental car, check in to Maison sur la Sorgue (5-star), stroll the canals</td></tr><tr><td>Day 2</td><td>Isle-sur-la-Sorgue → Fontaine-de-Vaucluse</td><td>~16 km, visit the spring source, overnight Hôtel-Restaurant du Parc</td></tr><tr><td>Day 3</td><td>Fontaine-de-Vaucluse → Gordes</td><td>~15 km, overnight Mas des Romarins</td></tr><tr><td>Day 4</td><td>Gordes → Bonnieux/Lacoste</td><td>~14 km past the Abbaye de Sénanque lavender fields, overnight Hôtel Cesar or upgraded option</td></tr><tr><td>Day 5</td><td>Bonnieux → Buoux → Saignon</td><td>~14 km, overnight Auberge du Presbytère</td></tr><tr><td>Day 6</td><td>Saignon → Apt</td><td>~12 km, overnight Hôtel Sainte Anne</td></tr><tr><td>Day 7</td><td>Apt → Marseille → Montreal</td><td>Transfer to Marseille, evening direct flight home</td></tr></tbody>
+      </table>
+
+      <h3>Where to Eat</h3>
+      <table>
+        <thead><tr><th>Restaurant</th><th>Location</th><th>Why go</th></tr></thead>
+        <tbody><tr><td>La Bastide de Capelongue</td><td>Bonnieux</td><td>Michelin-starred, panoramic Luberon views, refined Provençal cuisine</td></tr><tr><td>Le Vivier</td><td>Isle-sur-la-Sorgue</td><td>Michelin-starred, modern seasonal tasting menus</td></tr><tr><td>Les Bories</td><td>Gordes</td><td>Michelin-starred, elegant dining inside a 5-star hotel</td></tr><tr><td>La Table de la Bastide (Airelles Gordes)</td><td>Gordes</td><td>Chef Jean-François Piège, terrace dining over olive groves</td></tr><tr><td>Le Champ des Lunes (Domaine de Fontenille)</td><td>near Lauris</td><td>Michelin-starred, product-driven modern cuisine</td></tr></tbody>
+      </table>
+
+      <h3>What to See</h3>
+      <ul><li>Abbaye de Sénanque lavender fields (best late June–July)</li><li>Gordes hilltop village, one of France's most beautiful villages</li><li>Roussillon ochre cliffs and the Sentier des Ocres trail</li><li>Fontaine-de-Vaucluse natural spring, one of the world's most powerful</li><li>Isle-sur-la-Sorgue Sunday antiques market</li></ul>
+    </div>
+  </details>
+
+  <details class="option" id="verdon">
+    <summary>
+      <span class="option-title">Gorges du Verdon</span>
+      <span class="option-tag">France only &middot; “Europe's Grand Canyon,” turquoise river and rim villages</span>
+      <span class="chevron">&#9662;</span>
+    </summary>
+    <div class="option-body">
+      <div class="gallery"><img src="https://st.perplexity.ai/estatic/0b226c450798410ac541646c86ec31afd840e5beab817a5d84fa821e7db61981ec84c3b4a3f072a7a2e1899c9fb06c6eaac28cfe6e3305a4b256f61b257dc57af980bf5013c33c046be5b90ed74b617d945b23c510945a83f395958e8c7f6242dd5cf081082a8380af63836ea3a4a878" alt="Gorges du Verdon" loading="lazy"><img src="https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/11af479d-85b8-581e-b16c-32373fc0d8f9/892fb292-c513-590b-a8c1-40fbbba458f2.jpg" alt="Gorges du Verdon" loading="lazy"></div>
+      <div class="stat-strip"><div class="stat"><strong>~71 km</strong>Total distance</div><div class="stat"><strong>~4,100 m</strong>Total ascent</div><div class="stat"><strong>From €630–825</strong>Trek package pp</div><div class="stat"><strong>CAD 700–1,300</strong>Round-trip flight pp</div></div>
+
+      <h3>Flights &amp; Transfers from Montreal</h3>
+      <table class="info-table">
+        <tr><th>Gateway airport</th><td>Marseille Provence (MRS) or Nice (NCE)</td></tr>
+        <tr><th>Flight</th><td>Direct seasonal service; Marseille is roughly 2h drive to Castellane</td></tr>
+        <tr><th>Estimated price</th><td>CAD 700–1,300 round-trip in summer, similar range to the Luberon gateway</td></tr>
+        <tr><th>Airport transfer</th><td>Marseille Airport → Castellane: ~2h by rental car (no train service, a car or private transfer is required)</td></tr>
+      </table>
+
+      <h3>End-to-End Itinerary (Montreal to Montreal)</h3>
+      <table>
+        <thead><tr><th>Day</th><th>Stage</th><th>Details</th></tr></thead>
+        <tbody><tr><td>Day 0</td><td>Montreal (YUL)</td><td>Evening or overnight direct flight to Marseille</td></tr><tr><td>Day 1</td><td>Marseille → Castellane</td><td>Arrive, rental car pickup, drive ~2h, check in, explore the village</td></tr><tr><td>Day 2</td><td>Castellane → Rougon</td><td>~15 km, rim views, overnight near Rougon</td></tr><tr><td>Day 3</td><td>La Palud-sur-Verdon</td><td>~12 km, canyon rim exploration, overnight La Palud</td></tr><tr><td>Day 4</td><td>Sentier Martel descent</td><td>~15 km, the signature full-day canyon-floor hike</td></tr><tr><td>Day 5</td><td>Point Sublime loop</td><td>~11 km, overnight Moustiers-Sainte-Marie for a change of scene</td></tr><tr><td>Day 6</td><td>Return to Castellane / Marseille</td><td>~12 km short walk, drive back to Marseille, evening flight home</td></tr></tbody>
+      </table>
+
+      <h3>Where to Eat</h3>
+      <table>
+        <thead><tr><th>Restaurant</th><th>Location</th><th>Why go</th></tr></thead>
+        <tbody><tr><td>La Bastide de Moustiers</td><td>Moustiers-Sainte-Marie</td><td>Gastronomic country inn originally opened by Alain Ducasse</td></tr><tr><td>La Ferme Sainte-Cécile</td><td>Moustiers-Sainte-Marie</td><td>Michelin-listed, modern cuisine with Gorges views</td></tr><tr><td>La Cantine</td><td>Moustiers-Sainte-Marie</td><td>Highly rated local favorite, 4.7/5 across 1,100+ reviews</td></tr><tr><td>La Bonne Auberge</td><td>Moustiers-Sainte-Marie</td><td>Warm, authentic setting at the foot of the Gorges</td></tr></tbody>
+      </table>
+
+      <h3>What to See</h3>
+      <ul><li>Sentier Martel, the classic canyon-floor trail</li><li>Lac de Sainte-Croix turquoise lake, kayaking and paddleboarding</li><li>Moustiers-Sainte-Marie, a Most Beautiful Village of France famous for faience pottery</li><li>Point Sublime and the Route des Crêtes scenic driving road</li><li>Palud-sur-Verdon canyon-rim viewpoints</li></ul>
+    </div>
+  </details>
+
+  <details class="option" id="pyrenees">
+    <summary>
+      <span class="option-title">French Pyrenees</span>
+      <span class="option-tag">France only &middot; One self-contained GR10 week, wild high mountains</span>
+      <span class="chevron">&#9662;</span>
+    </summary>
+    <div class="option-body">
+      <div class="gallery"><img src="https://st.perplexity.ai/estatic/0b226c450798410ac541646c86ec31afd840e5beab817a5d84fa821e7db61981ec84c3b4a3f072a7a2e1899c9fb06c6ecff8ac62410aa7b11fba63b5e8386a2eab418019b9c3be47cac04308e1691ae440b68f38d04dc7e38259bf2ec62ee119870d8fd9f6353e8282c94896d964cc77" alt="French Pyrenees" loading="lazy"><img src="https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/1da1beaf-eddf-54ea-bd04-d049f9d85d41/4a457c1f-f1a3-5e44-b5ac-71081e6a82ae.jpg" alt="French Pyrenees" loading="lazy"></div>
+      <div class="stat-strip"><div class="stat"><strong>~85 km (est.)</strong>Total distance</div><div class="stat"><strong>~5,000+ m (est.)</strong>Total ascent</div><div class="stat"><strong>From €620–760</strong>Trek package pp</div><div class="stat"><strong>CAD 1,000–1,400</strong>Round-trip flight pp</div></div>
+
+      <h3>Flights &amp; Transfers from Montreal</h3>
+      <table class="info-table">
+        <tr><th>Gateway airport</th><td>Toulouse-Blagnac (TLS)</td></tr>
+        <tr><th>Flight</th><td>Usually one-stop via Paris, Amsterdam, or Lisbon; no reliable nonstop from Montreal</td></tr>
+        <tr><th>Estimated price</th><td>CAD 1,000–1,400 round-trip in summer; occasional one-way fares near CAD 370–400 appear off-peak</td></tr>
+        <tr><th>Airport transfer</th><td>Toulouse Airport → Cauterets: ~2h15 by rental car, or train to Lourdes/Pierrefitte-Nestalas plus local bus</td></tr>
+      </table>
+
+      <h3>End-to-End Itinerary (Montreal to Montreal)</h3>
+      <table>
+        <thead><tr><th>Day</th><th>Stage</th><th>Details</th></tr></thead>
+        <tbody><tr><td>Day 0</td><td>Montreal (YUL)</td><td>Overnight flight, one connection, to Toulouse</td></tr><tr><td>Day 1</td><td>Toulouse → Cauterets</td><td>Arrive, rental car or train+bus, check in, acclimatize</td></tr><tr><td>Day 2</td><td>Cauterets → Pont d'Espagne → Lac de Gaube</td><td>Warm-up day, moderate distance, spectacular glacial lake</td></tr><tr><td>Day 3–5</td><td>Central section toward Gavarnie/Néouvielle</td><td>Multi-day mapped section, valley-town overnights where possible</td></tr><tr><td>Day 6</td><td>Cirque de Gavarnie</td><td>Full-day highlight hike to France's largest natural amphitheater and waterfall</td></tr><tr><td>Day 7</td><td>Return to Toulouse → Montreal</td><td>Transfer to Toulouse, connecting flight home</td></tr></tbody>
+      </table>
+
+      <h3>Where to Eat</h3>
+      <table>
+        <thead><tr><th>Restaurant</th><th>Location</th><th>Why go</th></tr></thead>
+        <tbody><tr><td>A La Bonne Franquette</td><td>Cauterets</td><td>Top-rated local dinner spot for hearty Pyrenean fare</td></tr><tr><td>Local Basque pintxos bars</td><td>Saint-Jean-Pied-de-Port (if choosing the western section)</td><td>Basque-Country tapas culture along the citadel walls</td></tr></tbody>
+      </table>
+
+      <h3>What to See</h3>
+      <ul><li>Cirque de Gavarnie, a UNESCO-listed natural amphitheater with Europe's tallest waterfall</li><li>Pont d'Espagne and Lac de Gaube, glacial lake views</li><li>Saint-Jean-Pied-de-Port medieval citadel (if hiking the western Basque section)</li><li>Cauterets thermal spa town, historic Belle Époque architecture</li></ul>
+    </div>
+  </details>
+
+  <section class="comparison-section">
+    <h2 class="section-title">Side-by-Side Comparison</h2>
+    <table>
+      <thead><tr><th>Factor</th><th>Mont Blanc Half-Circuit</th><th>Luberon, Provence</th><th>Gorges du Verdon</th><th>French Pyrenees</th></tr></thead>
+      <tbody><tr><td>Region</td><td>French/Italian Alps</td><td>Provence (south)</td><td>Provence (south)</td><td>Pyrenees (southwest)</td></tr><tr><td>Terrain</td><td>Alpine, glaciers, high passes</td><td>Rolling hills, vineyards, lavender</td><td>Limestone canyon, rim trails</td><td>Rugged high mountain</td></tr><tr><td>Difficulty</td><td>Moderate–strenuous</td><td>Easy–moderate</td><td>Moderate</td><td>Moderate–strenuous</td></tr><tr><td>Total distance</td><td>~70 km</td><td>~71 km</td><td>~71 km</td><td>~85 km (est.)</td></tr><tr><td>Total elevation gain</td><td>~4,500 m</td><td>~2,200 m</td><td>~4,100 m</td><td>~5,000+ m (est.)</td></tr><tr><td>Trek package price pp</td><td>From £1,495 (~€1,750)</td><td>From €1,150</td><td>From €630–825</td><td>From €620–760</td></tr><tr><td>Round-trip flight pp (YUL)</td><td>CAD 900–1,300</td><td>CAD 700–1,300</td><td>CAD 700–1,300</td><td>CAD 1,000–1,400</td></tr><tr><td>Gateway airport</td><td>Geneva (GVA), direct</td><td>Marseille (MRS), direct</td><td>Marseille (MRS), direct</td><td>Toulouse (TLS), 1 stop</td></tr><tr><td>Luxury hotel density</td><td>Good in valley towns</td><td>Very high, established tier</td><td>Limited (2–3 star typical)</td><td>Limited, valley towns only</td></tr><tr><td>Self-guided + luggage package</td><td>Yes</td><td>Yes, mature market</td><td>Yes</td><td>Yes, by section</td></tr><tr><td>Countries crossed</td><td>France + Italy</td><td>France only</td><td>France only</td><td>France only</td></tr><tr><td>Best season</td><td>June–September</td><td>April–October</td><td>April–October</td><td>June–September</td></tr></tbody>
+    </table>
+    <div class="note">
+      If staying fully within France and maximizing luxury comfort is the priority, the <strong>Luberon</strong> is the strongest match: a bookable luxury tier, gentle terrain, the cheapest and most reliable direct flight (Marseille), and a mature self-guided-plus-luggage market. The <strong>Mont Blanc half-circuit</strong> is the only option leaving France, and the priciest, but delivers the most dramatic high-alpine scenery and the easiest gateway flight (direct to Geneva). <strong>Verdon</strong> and <strong>Pyrenees</strong> are the most budget-friendly on trek cost but have thinner luxury lodging and, for the Pyrenees, no reliable direct flight from Montreal.
+    </div>
+  </section>
+
+  <section class="checklist-section">
+    <h2 class="section-title">Complete Trip Checklist</h2>
+    <div class="checklist-grid">
+      <div>
+        <h4>Documents &amp; Money</h4>
+        <ul>
+          <li>Canadian passport valid 6+ months past return date; no visa needed for stays under 90 days (Schengen)</li>
+          <li>Travel insurance with medical evacuation coverage &mdash; essential for the Mont Blanc and Pyrenees options given remote terrain</li>
+          <li>Currency: Euro for France and Italy; Swiss Francs if overnighting on the Swiss side of a Mont Blanc variant</li>
+          <li>Notify your bank/credit card of European travel dates</li>
+        </ul>
+        <h4>Connectivity</h4>
+        <ul>
+          <li>EU-wide eSIM (e.g. Airalo, Holafly) is simpler than roaming add-ons across 3 countries on the Mont Blanc route</li>
+          <li>Offline maps downloaded in advance (Komoot, Maps.me) as mountain refuge wifi is unreliable</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Packing Essentials</h4>
+        <ul>
+          <li>Broken-in hiking boots (not new) &mdash; the single biggest factor in trip comfort</li>
+          <li>Layered clothing: alpine routes swing from single digits °C at dawn to 25°C+ midday</li>
+          <li>Rain shell and trekking poles, especially for Mont Blanc and Pyrenees options</li>
+          <li>Power adapter: Type E/F for France (also covers most of Italy); Type J needed only if overnighting in Switzerland</li>
+          <li>Sun protection (altitude intensifies UV) and a lightweight sleeping bag liner for any refuge nights</li>
+        </ul>
+        <h4>Booking Timeline</h4>
+        <ul>
+          <li>Flights: book 5&ndash;7 months ahead for the best summer economy fares from Montreal</li>
+          <li>Luxury/private hotel rooms: 9&ndash;12 months ahead, especially July&ndash;August</li>
+          <li>Restaurant reservations (Michelin-starred tables): 4&ndash;8 weeks ahead minimum</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note">
+      A short physical prep note: even the gentler Luberon route involves 5&ndash;8 hour walking days on consecutive days. Two to three months of regular walking/hiking with a loaded daypack beforehand will make a meaningful difference, especially for the Mont Blanc and Pyrenees options with their higher daily elevation gain.
+    </div>
+  </section>
+
+</div>
+<footer>
+  Prepared as a planning reference &middot; verify current pricing, availability, flight schedules, and trail conditions with each operator/airline before booking &middot; prices are approximate estimates and subject to change by season, fuel surcharges, and demand
+</footer>
+</body>
+</html>

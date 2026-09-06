@@ -48,9 +48,44 @@
   .checklist-grid h4 { color:var(--accent); margin-bottom:0.4rem; }
   footer { text-align:center; padding:2rem 1.5rem; color:var(--muted); font-family:'Helvetica Neue',Arial,sans-serif; font-size:0.85rem; }
   @media (max-width:700px){ .checklist-grid{grid-template-columns:1fr;} }
+
+  /* Login gate */
+  #loginGate {
+    position: fixed; inset: 0; background: linear-gradient(135deg,#3e2f23,#6b4a30);
+    display:flex; align-items:center; justify-content:center; z-index: 9999; font-family:'Helvetica Neue',Arial,sans-serif;
+  }
+  .login-box {
+    background:#fff; padding:2.5rem 2.2rem; border-radius:12px; width:100%; max-width:340px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3); text-align:center;
+  }
+  .login-box h2 { margin:0 0 0.3rem; color:#7a4b2a; font-family:'Georgia',serif; }
+  .login-box p { color:#6b6258; font-size:0.85rem; margin:0 0 1.4rem; }
+  .login-box input {
+    width:100%; padding:0.7rem 0.9rem; margin-bottom:0.8rem; border:1px solid #e4dccf; border-radius:6px; font-size:0.95rem;
+  }
+  .login-box button {
+    width:100%; padding:0.75rem; background:#7a4b2a; color:#fff; border:none; border-radius:6px;
+    font-size:0.95rem; font-weight:600; cursor:pointer; transition: background 0.15s;
+  }
+  .login-box button:hover { background:#5f3a20; }
+  .login-error { color:#b3261e; font-size:0.82rem; margin-top:0.6rem; min-height:1.1em; }
+  #siteContent { display:none; }
 </style>
 </head>
 <body>
+
+<div id="loginGate">
+  <div class="login-box">
+    <h2>Private Trip Plan</h2>
+    <p>Enter your credentials to view the itinerary</p>
+    <input type="text" id="loginUser" placeholder="Username" autocomplete="username">
+    <input type="password" id="loginPass" placeholder="Password" autocomplete="current-password">
+    <button onclick="checkLogin()">Enter</button>
+    <div class="login-error" id="loginError"></div>
+  </div>
+</div>
+
+<div id="siteContent">
 
 <header>
   <h1>Luxury Self-Guided Treks in France</h1>
@@ -259,5 +294,35 @@
 <footer>
   Prepared as a planning reference &middot; verify current pricing, availability, flight schedules, and trail conditions with each operator/airline before booking &middot; prices are approximate estimates and subject to change by season, fuel surcharges, and demand
 </footer>
+
+</div>
+
+<script>
+  function checkLogin() {
+    var u = document.getElementById('loginUser').value.trim();
+    var p = document.getElementById('loginPass').value;
+    var err = document.getElementById('loginError');
+    if (u === 'love' && p === 'birds20') {
+      document.getElementById('loginGate').style.display = 'none';
+      document.getElementById('siteContent').style.display = 'block';
+      try { sessionStorage.setItem('trekAuth', '1'); } catch (e) {}
+    } else {
+      err.textContent = 'Incorrect username or password.';
+    }
+  }
+  document.getElementById('loginPass').addEventListener('keydown', function(e){
+    if (e.key === 'Enter') checkLogin();
+  });
+  document.getElementById('loginUser').addEventListener('keydown', function(e){
+    if (e.key === 'Enter') checkLogin();
+  });
+  try {
+    if (sessionStorage.getItem('trekAuth') === '1') {
+      document.getElementById('loginGate').style.display = 'none';
+      document.getElementById('siteContent').style.display = 'block';
+    }
+  } catch (e) {}
+</script>
+
 </body>
 </html>

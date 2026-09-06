@@ -7,7 +7,7 @@
 <style>
   :root {
     --accent: #7a4b2a; --accent-light: #b98554; --bg: #faf7f2; --card-bg: #ffffff;
-    --text: #2c2620; --muted: #6b6258; --border: #e4dccf; --warn: #b3261e;
+    --text: #2c2620; --muted: #6b6258; --border: #e4dccf; --warn: #b3261e; --new: #2f6b4f;
   }
   * { box-sizing: border-box; }
   body { margin: 0; font-family: 'Georgia','Times New Roman',serif; background: var(--bg); color: var(--text); line-height: 1.6; }
@@ -16,9 +16,15 @@
   header p { margin:0; font-family:'Helvetica Neue',Arial,sans-serif; color:#e8ddd0; font-size:1.02rem; }
   .container { max-width: 1080px; margin:0 auto; padding: 2rem 1.5rem 4rem; }
   .intro { background: var(--card-bg); border:1px solid var(--border); border-left:5px solid var(--accent); padding:1.2rem 1.5rem; border-radius:6px; margin-bottom:1.5rem; font-family:'Helvetica Neue',Arial,sans-serif; font-size:0.98rem; color: var(--muted); }
-  .nav-pills { display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom:2rem; font-family:'Helvetica Neue',Arial,sans-serif; }
+  .section-divider { display:flex; align-items:center; gap:0.8rem; margin: 2.2rem 0 1.2rem; font-family:'Helvetica Neue',Arial,sans-serif; }
+  .section-divider h2 { color: var(--new); font-size:1.3rem; margin:0; white-space:nowrap; }
+  .section-divider .line { flex:1; height:1px; background: var(--border); }
+  .section-divider p { margin: 0.3rem 0 1rem; color: var(--muted); font-size:0.92rem; font-family:'Helvetica Neue',Arial,sans-serif; }
+  .nav-pills { display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom:1rem; font-family:'Helvetica Neue',Arial,sans-serif; }
   .pill { background:#efe3d3; color:var(--accent); text-decoration:none; padding:0.5rem 1rem; border-radius:20px; font-size:0.88rem; font-weight:600; transition: background 0.15s; }
   .pill:hover { background: var(--accent); color:#fff; }
+  .pill-new { background:#e2f0e8; color: var(--new); }
+  .pill-new:hover { background: var(--new); color:#fff; }
   details.option { background: var(--card-bg); border:1px solid var(--border); border-radius:10px; margin-bottom:1.2rem; box-shadow:0 2px 8px rgba(0,0,0,0.04); overflow:hidden; }
   details.option summary { cursor:pointer; list-style:none; padding:1.3rem 1.6rem; display:flex; align-items:center; gap:1rem; flex-wrap:wrap; font-family:'Helvetica Neue',Arial,sans-serif; }
   details.option summary::-webkit-details-marker { display:none; }
@@ -93,13 +99,13 @@
 
 <header>
   <h1>Luxury Self-Guided Treks in France</h1>
-  <p>Complete end-to-end plan &middot; Montreal to Montreal &middot; 6&ndash;7 days &middot; natural pace</p>
+  <p>Complete end-to-end plan &middot; Montreal to Montreal &middot; 5&ndash;7 days &middot; natural pace</p>
 </header>
 
 <div class="container">
 
   <div class="intro">
-    Four regional options, each built out end-to-end: flights and airport transfers from Montreal, day-by-day itinerary, luxury hotel matches, where to eat, and what to see. Every accommodation has been checked for private rooms, real pampering, and spa access &mdash; nights that fall short are flagged with ⚠️. Click any option below to expand its full plan.
+    Seven regional options total: four original picks (fully vetted for spa/pampering) plus three newly researched regions. Every accommodation has been checked for private rooms, real pampering, and spa access &mdash; nights that fall short are flagged with ⚠️. Click any option below to expand its full plan.
   </div>
 
   <div class="nav-pills"><a href="#montblanc" class="pill">Mont Blanc Half-Circuit</a><a href="#luberon" class="pill">Luberon, Provence</a><a href="#verdon" class="pill">Gorges du Verdon</a><a href="#pyrenees" class="pill">French Pyrenees</a></div>
@@ -249,13 +255,138 @@
   </details>
 
   <section class="comparison-section">
-    <h2 class="section-title">Side-by-Side Comparison</h2>
+    <h2 class="section-title">Side-by-Side Comparison &mdash; Original Four</h2>
     <table>
       <thead><tr><th>Factor</th><th>Mont Blanc Half-Circuit</th><th>Luberon, Provence</th><th>Gorges du Verdon</th><th>French Pyrenees</th></tr></thead>
       <tbody><tr><td>Region</td><td>French/Italian Alps</td><td>Provence (south)</td><td>Provence (south)</td><td>Pyrenees (southwest)</td></tr><tr><td>Terrain</td><td>Alpine, glaciers, high passes</td><td>Rolling hills, vineyards, lavender</td><td>Limestone canyon, rim trails</td><td>Rugged high mountain</td></tr><tr><td>Difficulty</td><td>Moderate–strenuous</td><td>Easy–moderate</td><td>Moderate</td><td>Moderate–strenuous</td></tr><tr><td>Total distance</td><td>~70 km</td><td>~71 km</td><td>~71 km</td><td>~85 km (est.)</td></tr><tr><td>Total elevation gain</td><td>~4,500 m</td><td>~2,200 m</td><td>~4,100 m</td><td>~5,000+ m (est.)</td></tr><tr><td>Trek package price pp</td><td>From £1,495 (~€1,750)</td><td>From €1,150+</td><td>From €630–825+</td><td>From €620–760+</td></tr><tr><td>Round-trip flight pp (YUL)</td><td>CAD 900–1,300</td><td>CAD 700–1,300</td><td>CAD 700–1,300</td><td>CAD 1,000–1,400</td></tr><tr><td>Gateway airport</td><td>Geneva (GVA), direct</td><td>Marseille (MRS), direct</td><td>Marseille (MRS), direct</td><td>Toulouse (TLS), 1 stop</td></tr><tr><td>Confirmed spa nights</td><td>3 of 6 nights ⚠️ 2 refuge nights</td><td>3 of 6 nights ⚠️ 1 basic night</td><td>2 of 6 nights ⚠️ 3 basic nights</td><td>3 of 6 nights ⚠️ 3 basic nights</td></tr><tr><td>Countries crossed</td><td>France + Italy</td><td>France only</td><td>France only</td><td>France only</td></tr><tr><td>Best season</td><td>June–September</td><td>April–October</td><td>April–October</td><td>June–September</td></tr></tbody>
     </table>
     <div class="note">
-      If staying fully within France and maximizing luxury comfort is the priority, the <strong>Luberon</strong> (revised) is the strongest match: Le Phébus &amp; Spa and Domaine de Capelongue are genuine 5-star spa properties, reachable via the cheapest and most reliable direct flight (Marseille). The <strong>Mont Blanc half-circuit</strong> delivers the most dramatic scenery but has 2 unavoidable refuge nights. <strong>Verdon</strong> and <strong>Pyrenees</strong> both concentrate their real pampering into 2&ndash;3 nights at one standout property (La Bastide de Moustiers; Garden &amp; City Cauterets) rather than spreading thin across every stop.
+      If staying fully within France and maximizing luxury comfort is the priority, the <strong>Luberon</strong> (revised) is the strongest match: Le Phébus &amp; Spa and Domaine de Capelongue are genuine 5-star spa properties, reachable via the cheapest and most reliable direct flight (Marseille). The <strong>Mont Blanc half-circuit</strong> delivers the most dramatic scenery but has 2 unavoidable refuge nights. <strong>Verdon</strong> and <strong>Pyrenees</strong> both concentrate their real pampering into 2&ndash;3 nights at one standout property rather than spreading thin across every stop.
+    </div>
+  </section>
+
+  <div class="section-divider"><h2>New Region Additions</h2><div class="line"></div></div>
+  <p style="font-family:'Helvetica Neue',Arial,sans-serif; color:#6b6258; font-size:0.92rem; margin-top:-0.5rem; margin-bottom:1.2rem;">
+    Three genuinely different regions researched fresh, beyond the original four. Each has confirmed real spa properties at its base town, but is less exhaustively vetted stage-by-stage than the original four options.
+  </p>
+  <div class="nav-pills"><a href="#alsace" class="pill pill-new">Alsace Wine Route</a><a href="#dordogne" class="pill pill-new">Dordogne / Périgord</a><a href="#brittany" class="pill pill-new">Brittany Pink Granite Coast</a></div>
+
+  <details class="option" id="alsace">
+    <summary>
+      <span class="option-title">Alsace Wine Route</span>
+      <span class="option-tag">France only &middot; Medieval wine villages, vineyards, and castles between Barr and Kaysersberg</span>
+      <span class="chevron">&#9662;</span>
+    </summary>
+    <div class="option-body">
+      <div class="gallery"><img src="https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/ae312363-6a14-50a0-bf89-2661fc0e186f/94e480d4-3302-52c0-9596-0b086cd90a70.jpg" alt="Alsace Wine Route" loading="lazy"><img src="https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/bc0bb63c-1ac3-5db1-8e6f-f67f02e8f4b1/20b23538-30c2-5c60-bc5b-e6dd39dbf4bc.jpg" alt="Alsace Wine Route" loading="lazy"></div>
+      <div class="stat-strip"><div class="stat"><strong>~90 km</strong>Total distance</div><div class="stat"><strong>~2,500 m (est.)</strong>Total ascent</div><div class="stat"><strong>From €1,020–1,090+</strong>Trek + spa hotels pp</div><div class="stat"><strong>CAD 900–1,250</strong>Round-trip flight pp</div></div>
+      <div class="warning-box">⚠️ <strong>Vetting status:</strong> This is a new candidate region not yet fully vetted against every stage &mdash; spa confirmation is strong for the Ribeauville/Riquewihr/Kaysersberg end of the route, but the very first night in Barr has not been individually checked for a spa property.</div>
+
+      <h3>Flights &amp; Transfers from Montreal</h3>
+      <table class="info-table">
+        <tr><th>Gateway airport</th><td>Strasbourg (SXB)</td></tr>
+        <tr><th>Flight</th><td>No direct flight from Montreal; typically one stop (Porter, French Bee, Air Canada, or Lufthansa via a European hub)</td></tr>
+        <tr><th>Estimated price</th><td>CAD 900–1,250 round-trip in summer; one-way fares as low as CAD 400–450 have appeared off-peak</td></tr>
+        <tr><th>Airport transfer</th><td>Strasbourg Airport → Barr (trek start): ~40 min by train/taxi; Strasbourg has direct rail links to most Alsace wine villages</td></tr>
+      </table>
+
+      <h3>End-to-End Itinerary (Montreal to Montreal)</h3>
+      <table>
+        <thead><tr><th>Day</th><th>Stage</th><th>Details</th></tr></thead>
+        <tbody><tr class=""><td>Day 0</td><td>Montreal (YUL)</td><td>Overnight flight, one connection, to Strasbourg</td></tr><tr class=""><td>Day 1</td><td>Strasbourg → Barr</td><td>Arrive, train/taxi to Barr, check in, explore the medieval village</td></tr><tr class=""><td>Day 2</td><td>Barr → Ribeauvillé</td><td>~14 km through vineyards, overnight in Ribeauvillé &mdash; several spa-equipped Logis hotels available (sauna/hammam/jacuzzi)</td></tr><tr class=""><td>Day 3</td><td>Ribeauvillé → Riquewihr</td><td>~10 km, overnight <strong>Relais &amp; Châteaux Le Chambard, Kaysersberg</strong> (comfortable luxury, spa access) or a Riquewihr spa hotel</td></tr><tr class=""><td>Day 4</td><td>Riquewihr → Kaysersberg</td><td>~12 km through the Haut-Koenigsbourg foothills, overnight Le Chambard, Kaysersberg</td></tr><tr class=""><td>Day 5</td><td>Kaysersberg area rest &amp; spa day</td><td>Optional short loop walk, spa treatments, wine tasting in the village instead of pushing on</td></tr><tr class=""><td>Day 6</td><td>Kaysersberg → Turckheim → Colmar → Strasbourg → Montreal</td><td>Final short walking stage, transfer to Strasbourg, evening flight home</td></tr></tbody>
+      </table>
+
+      <h3>Where to Eat</h3>
+      <table>
+        <thead><tr><th>Restaurant</th><th>Location</th><th>Why go</th></tr></thead>
+        <tbody><tr><td>La Table du Gourmet</td><td>Riquewihr</td><td>Michelin-starred (Jean-Luc Brendel), creative seasonal menus with the best wines of Alsace</td></tr><tr><td>La Table d'Olivier Nasti</td><td>Kaysersberg</td><td>Michelin two-star, one of the region's most celebrated tables</td></tr><tr><td>Le Tire Bouchon</td><td>Riquewihr</td><td>Traditional Alsatian winstub, hearty regional classics</td></tr><tr><td>Aor La Table</td><td>Riquewihr</td><td>Highly rated modern bistro</td></tr></tbody>
+      </table>
+
+      <h3>What to See</h3>
+      <ul><li>Riquewihr, one of France's most beautiful medieval wine villages, car-free old town</li><li>Château du Haut-Kœnigsbourg, a restored medieval castle with panoramic Vosges views</li><li>Colmar's Petite Venise canal district</li><li>Kaysersberg's medieval bridge and Albert Schweitzer's birthplace</li><li>Route des Vins d'Alsace vineyard scenery throughout</li></ul>
+    </div>
+  </details>
+
+  <details class="option" id="dordogne">
+    <summary>
+      <span class="option-title">Dordogne / Périgord</span>
+      <span class="option-tag">France only &middot; Medieval bastide villages, hilltop châteaux, and gourmet cuisine around Sarlat</span>
+      <span class="chevron">&#9662;</span>
+    </summary>
+    <div class="option-body">
+      <div class="gallery"><img src="https://st.perplexity.ai/estatic/0b226c450798410ac541646c86ec31afd840e5beab817a5d84fa821e7db61981ec84c3b4a3f072a7a2e1899c9fb06c6eef6c3f24c4b05b3fed2fc8108c834579f390701cd2cf64fff43cea8fcdc47ff616916ac54a9e1be505a15c26e8901c776a5520fc5f5d216b9c42ab48e538b6fe" alt="Dordogne / Périgord" loading="lazy"><img src="https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/f89090ad-d20c-5ba6-b16d-d5a2b6e6b6ce/a7ce67fb-11a0-58c3-abfb-7a539397c64f.jpg" alt="Dordogne / Périgord" loading="lazy"></div>
+      <div class="stat-strip"><div class="stat"><strong>~80 km (est.)</strong>Total distance</div><div class="stat"><strong>~1,800 m (est.)</strong>Total ascent</div><div class="stat"><strong>From €955–2,255+</strong>Trek + spa hotels pp</div><div class="stat"><strong>CAD 700–1,000</strong>Round-trip flight pp</div></div>
+      <div class="warning-box">⚠️ <strong>Vetting status:</strong> This is a new candidate region &mdash; the Sarlat-based nights are strongly spa-confirmed, but the Domme and Beynac overnight options have not been individually vetted for spa access, so the itinerary above routes back to Sarlat's spa hotels for the pampering nights.</div>
+
+      <h3>Flights &amp; Transfers from Montreal</h3>
+      <table class="info-table">
+        <tr><th>Gateway airport</th><td>Bordeaux (BOD)</td></tr>
+        <tr><th>Flight</th><td>Direct, Air Transat, several weekly flights</td></tr>
+        <tr><th>Estimated price</th><td>CAD 700–1,000 round-trip in summer; one-way fares as low as CAD 330–530 have appeared off-peak</td></tr>
+        <tr><th>Airport transfer</th><td>Bordeaux Airport → Sarlat: ~1h45 by rental car (no direct train; regional train + bus also possible)</td></tr>
+      </table>
+
+      <h3>End-to-End Itinerary (Montreal to Montreal)</h3>
+      <table>
+        <thead><tr><th>Day</th><th>Stage</th><th>Details</th></tr></thead>
+        <tbody><tr class=""><td>Day 0</td><td>Montreal (YUL)</td><td>Evening or overnight direct flight to Bordeaux</td></tr><tr class=""><td>Day 1</td><td>Bordeaux → Sarlat</td><td>Arrive, rental car, drive ~1h45, check in to <strong>Plaza Madeleine Hôtel &amp; Spa</strong> or <strong>Les Glycines</strong> (both 4-star with real spa, heated pool, hammam)</td></tr><tr class=""><td>Day 2</td><td>Sarlat → Domme</td><td>~14 km through bastide countryside, overnight in Domme, a clifftop fortified village</td></tr><tr class=""><td>Day 3</td><td>Domme → La Roque-Gageac → Beynac</td><td>~13 km along the Dordogne river, dramatic château views, overnight near Beynac</td></tr><tr class=""><td>Day 4</td><td>Beynac area rest &amp; spa day</td><td>Return to Sarlat for a second night at Les Glycines or Plaza Madeleine spa</td></tr><tr class=""><td>Day 5</td><td>Sarlat exploration</td><td>Market day (Sarlat's Saturday market is one of France's best), truffle and foie gras tastings</td></tr><tr class=""><td>Day 6</td><td>Sarlat → Bordeaux → Montreal</td><td>Transfer to Bordeaux, evening direct flight home</td></tr></tbody>
+      </table>
+
+      <h3>Where to Eat</h3>
+      <table>
+        <thead><tr><th>Restaurant</th><th>Location</th><th>Why go</th></tr></thead>
+        <tbody><tr><td>Le Grand Bleu</td><td>Sarlat</td><td>Michelin-starred semi-gastronomic table</td></tr><tr><td>Chez Georgette</td><td>Sarlat</td><td>Highly rated local favorite (9.7/10 on ViaMichelin)</td></tr><tr><td>Lo Gorissado</td><td>Saint-André-d'Allas (near Sarlat)</td><td>Top-rated regional cuisine (9.8/10)</td></tr><tr><td>L'Esprit Sarlat</td><td>Sarlat</td><td>Well-regarded modern French bistro</td></tr></tbody>
+      </table>
+
+      <h3>What to See</h3>
+      <ul><li>Sarlat-la-Canéda's medieval old town, one of the best-preserved in France</li><li>Château de Beynac, a dramatic clifftop fortress over the Dordogne river</li><li>La Roque-Gageac, a village built directly into the cliff face</li><li>Domme, a bastide village with panoramic valley views</li><li>Sarlat's Saturday market, a regional institution for truffles, foie gras, and local produce</li></ul>
+    </div>
+  </details>
+
+  <details class="option" id="brittany">
+    <summary>
+      <span class="option-title">Brittany Pink Granite Coast</span>
+      <span class="option-tag">France only &middot; Coastal cliffs, sandy beaches, and fishing villages along the Sentier des Douaniers (GR34)</span>
+      <span class="chevron">&#9662;</span>
+    </summary>
+    <div class="option-body">
+      <div class="gallery"><img src="https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/6a3e9f5e-f206-5370-a758-aad143f30f81/08d8b919-6928-5a4c-a8e5-b836db34e5a3.jpg" alt="Brittany Pink Granite Coast" loading="lazy"><img src="https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/193c3564-9f06-5b3b-b9dd-ade98a1bd76d/0c429348-18ab-5a2f-bf99-8da3e9b23680.jpg" alt="Brittany Pink Granite Coast" loading="lazy"></div>
+      <div class="stat-strip"><div class="stat"><strong>~45–60 km</strong>Total distance</div><div class="stat"><strong>~900 m (est.)</strong>Total ascent</div><div class="stat"><strong>From £535–921+</strong>Trek + spa hotels pp</div><div class="stat"><strong>CAD 900–1,300</strong>Round-trip flight pp</div></div>
+      <div class="warning-box">⚠️ <strong>Vetting status:</strong> This is the newest and least-vetted of the three additional regions, and the shortest trip (5&ndash;6 days). Rustic inns are common along parts of the coast, so sticking to Perros-Guirec as your base (where the confirmed spa hotels are) is the safest way to guarantee pampering every night.</div>
+
+      <h3>Flights &amp; Transfers from Montreal</h3>
+      <table class="info-table">
+        <tr><th>Gateway airport</th><td>Rennes (RNS) or Saint-Malo (via Paris/Dinard)</td></tr>
+        <tr><th>Flight</th><td>No direct flight from Montreal; typically one stop via Paris</td></tr>
+        <tr><th>Estimated price</th><td>CAD 900–1,300 round-trip in summer, based on typical YUL–Paris–Rennes routing</td></tr>
+        <tr><th>Airport transfer</th><td>Rennes Airport → Perros-Guirec: ~2h by train + local transfer, or ~2h15 by rental car</td></tr>
+      </table>
+
+      <h3>End-to-End Itinerary (Montreal to Montreal)</h3>
+      <table>
+        <thead><tr><th>Day</th><th>Stage</th><th>Details</th></tr></thead>
+        <tbody><tr class=""><td>Day 0</td><td>Montreal (YUL)</td><td>Overnight flight via Paris to Rennes</td></tr><tr class=""><td>Day 1</td><td>Rennes → Perros-Guirec</td><td>Arrive, train/rental car, check in to <strong>L'Agapa</strong> (5-star, 400m² spa, sea view, Sept-Îles archipelago) or Grand Hôtel des Bains (marine spa)</td></tr><tr class=""><td>Day 2</td><td>Perros-Guirec → Ploumanac'h loop</td><td>~12 km along the Sentier des Douaniers, pink granite rock formations, return to L'Agapa spa</td></tr><tr class=""><td>Day 3</td><td>Perros-Guirec → Trégastel</td><td>~14 km coastal walk, sea-water pool and thermal center at Trégastel, overnight Perros-Guirec</td></tr><tr class=""><td>Day 4</td><td>Rest &amp; spa day at L'Agapa</td><td>Optional short walk, full spa day, Sept-Îles boat excursion to see puffins and seals</td></tr><tr class=""><td>Day 5</td><td>Perros-Guirec → Rennes → Montreal</td><td>Transfer to Rennes, connecting flight home via Paris</td></tr></tbody>
+      </table>
+
+      <h3>Where to Eat</h3>
+      <table>
+        <thead><tr><th>Restaurant</th><th>Location</th><th>Why go</th></tr></thead>
+        <tbody><tr><td>L'Agapa restaurant</td><td>Perros-Guirec</td><td>Gastronomic dining inside the 5-star hotel, sea views</td></tr><tr><td>Le Manoir du Sphinx</td><td>Perros-Guirec</td><td>Well-regarded seafood restaurant overlooking the coast</td></tr><tr><td>Crêperies throughout Perros-Guirec and Trégastel</td><td>Local</td><td>Classic Breton buckwheat crêpes and cider</td></tr></tbody>
+      </table>
+
+      <h3>What to See</h3>
+      <ul><li>Ploumanac'h lighthouse and the pink granite rock formations</li><li>Sept-Îles archipelago boat trips (puffin and seal colonies)</li><li>Trégastel's Coz Pors beach and sea-water thermal pool</li><li>Sentier des Douaniers (GR34) coastal footpath</li><li>Perros-Guirec town and Trestraou beach</li></ul>
+    </div>
+  </details>
+
+  <section class="comparison-section">
+    <h2 class="section-title">Side-by-Side Comparison &mdash; New Additions</h2>
+    <table>
+      <thead><tr><th>Factor</th><th>Alsace Wine Route</th><th>Dordogne / Périgord</th><th>Brittany Pink Granite Coast</th></tr></thead>
+      <tbody><tr><td>Region</td><td>Alsace (Grand Est)</td><td>Dordogne (southwest)</td><td>Brittany (northwest coast)</td></tr><tr><td>Terrain</td><td>Vineyards, medieval villages, foothills</td><td>Rolling bastide countryside, river valley</td><td>Coastal cliffs, granite boulders, beaches</td></tr><tr><td>Difficulty</td><td>Easy–moderate</td><td>Easy–moderate</td><td>Easy</td></tr><tr><td>Total distance</td><td>~90 km</td><td>~80 km (est.)</td><td>~45–60 km</td></tr><tr><td>Trip length</td><td>7 days</td><td>7 days</td><td>5–6 days</td></tr><tr><td>Trek package price pp</td><td>From €1,020–1,090+</td><td>From €955–2,255+</td><td>From £535–921+</td></tr><tr><td>Round-trip flight pp (YUL)</td><td>CAD 900–1,250</td><td>CAD 700–1,000</td><td>CAD 900–1,300</td></tr><tr><td>Gateway airport</td><td>Strasbourg (SXB), 1 stop</td><td>Bordeaux (BOD), direct</td><td>Rennes (RNS), 1 stop</td></tr><tr><td>Confirmed spa properties</td><td>Le Chambard (Kaysersberg), Riquewihr-area Logis spas</td><td>Plaza Madeleine &amp; Les Glycines (Sarlat)</td><td>L'Agapa, Grand Hôtel des Bains (Perros-Guirec)</td></tr><tr><td>Vetting status</td><td>Partially vetted ⚠️</td><td>Partially vetted ⚠️</td><td>Partially vetted ⚠️</td></tr></tbody>
+    </table>
+    <div class="note">
+      Of the three, <strong>Dordogne</strong> is the easiest to execute well: direct flights from Montreal to Bordeaux, and two confirmed real spa hotels in Sarlat (Plaza Madeleine, Les Glycines) that can anchor every night if you loop back to town. <strong>Alsace</strong> is the most culturally rich (medieval villages, wine, castles) with strong spa options concentrated around Kaysersberg/Riquewihr. <strong>Brittany</strong> is the shortest and most different in character (coastal, not inland), anchored by the standout L'Agapa 5-star spa hotel in Perros-Guirec, but the trip is more compact at 5&ndash;6 days.
     </div>
   </section>
 
@@ -267,34 +398,34 @@
         <ul>
           <li>Canadian passport valid 6+ months past return date; no visa needed for stays under 90 days (Schengen)</li>
           <li>Travel insurance with medical evacuation coverage &mdash; essential for the Mont Blanc and Pyrenees options given remote terrain</li>
-          <li>Currency: Euro for France and Italy; Swiss Francs if overnighting on the Swiss side of a Mont Blanc variant</li>
+          <li>Currency: Euro throughout France, Italy, and (soon) most of the route; Swiss Francs if overnighting on the Swiss side of a Mont Blanc variant</li>
           <li>Notify your bank/credit card of European travel dates</li>
         </ul>
         <h4>Connectivity</h4>
         <ul>
-          <li>EU-wide eSIM (e.g. Airalo, Holafly) is simpler than roaming add-ons across 3 countries on the Mont Blanc route</li>
-          <li>Offline maps downloaded in advance (Komoot, Maps.me) as mountain refuge wifi is unreliable</li>
+          <li>EU-wide eSIM (e.g. Airalo, Holafly) is simpler than roaming add-ons, especially for the Mont Blanc route crossing 3 countries</li>
+          <li>Offline maps downloaded in advance (Komoot, Maps.me) as rural wifi is unreliable</li>
         </ul>
       </div>
       <div>
         <h4>Packing Essentials</h4>
         <ul>
           <li>Broken-in hiking boots (not new) &mdash; the single biggest factor in trip comfort</li>
-          <li>Layered clothing: alpine routes swing from single digits °C at dawn to 25°C+ midday</li>
-          <li>Rain shell and trekking poles, especially for Mont Blanc and Pyrenees options</li>
+          <li>Layered clothing: alpine and mountain routes swing from single digits °C at dawn to 25°C+ midday</li>
+          <li>Rain shell and trekking poles, especially for Mont Blanc, Pyrenees, and Brittany's exposed coastal sections</li>
           <li>Power adapter: Type E/F for France (also covers most of Italy); Type J needed only if overnighting in Switzerland</li>
-          <li>Sun protection (altitude intensifies UV) and a lightweight sleeping bag liner for any refuge nights</li>
+          <li>Sun protection and a lightweight sleeping bag liner for any refuge/basic guesthouse nights</li>
         </ul>
         <h4>Booking Timeline</h4>
         <ul>
           <li>Flights: book 5&ndash;7 months ahead for the best summer economy fares from Montreal</li>
-          <li>Luxury/spa hotel rooms: 9&ndash;12 months ahead, especially July&ndash;August (Le Phébus, Capelongue, and La Bastide de Moustiers sell out fastest)</li>
+          <li>Luxury/spa hotel rooms: 9&ndash;12 months ahead, especially July&ndash;August</li>
           <li>Restaurant reservations (Michelin-starred tables): 4&ndash;8 weeks ahead minimum</li>
         </ul>
       </div>
     </div>
     <div class="note">
-      ⚠️ <strong>Reading the warnings:</strong> rows and itinerary days marked with a warning emoji are accommodations that do not meet the private-room-plus-spa/pampering bar you asked for. They're kept in the itinerary where unavoidable (mountain refuges, remote valley towns) and flagged so you can decide whether to shorten the stage, skip the night, or accept the trade-off for that section of trail.
+      ⚠️ <strong>Reading the warnings:</strong> rows and itinerary days marked with a warning emoji are accommodations that do not meet the private-room-plus-spa/pampering bar you asked for. The three new regions (Alsace, Dordogne, Brittany) carry an additional "vetting status" caveat since they haven't been checked stage-by-stage as thoroughly as the original four.
     </div>
   </section>
 

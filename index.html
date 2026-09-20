@@ -335,6 +335,31 @@
     background: #FBF8F4; border-left: 2px solid var(--rose-soft); border-radius: 2px;
     font-family: var(--sans); font-size: .82rem; color: var(--muted); line-height: 1.5;
   }
+  details.notes-panel {
+    margin: 2rem 0 0; border: 1px solid var(--line); border-radius: 4px;
+    background: linear-gradient(180deg, #FFFFFF, #FCFAF7); overflow: hidden;
+  }
+  details.notes-panel > summary {
+    cursor: pointer; list-style: none; display: flex; align-items: baseline;
+    gap: .9rem; flex-wrap: wrap; padding: 1rem 1.4rem;
+  }
+  details.notes-panel > summary::-webkit-details-marker { display: none; }
+  details.notes-panel > summary:hover { background: #FDFBF8; }
+  details.notes-panel[open] > summary { border-bottom: 1px solid var(--line); }
+  details.notes-panel[open] .chevron { transform: rotate(180deg); }
+  .notes-title { font-family: var(--serif); font-size: 1.35rem; font-weight: 600; color: var(--ink); }
+  .notes-title::before {
+    content: '\2726'; color: var(--rose); font-size: .6em; margin-right: .5rem; vertical-align: .18em;
+  }
+  .notes-sub { color: var(--muted); font-family: var(--sans); font-size: .87rem; flex: 1; }
+  .notes-body { padding: 1.2rem 1.4rem .5rem; }
+  /* Inside the panel the notes read as background, not alarms. */
+  .notes-body > .note,
+  .notes-body > .warning-box {
+    margin: 0 0 1rem; background: #FBF8F4; border-left: 2px solid var(--rose-soft);
+    border-top: none; border-right: none; border-bottom: none;
+  }
+  .notes-body > .warning-box strong { color: var(--rose-deep); }
   details.routemap {
     margin: .55rem 0 0; border: 1px solid var(--line); border-radius: 3px;
     background: #FCFAF7; overflow: hidden;
@@ -480,11 +505,15 @@
       </div>
 
       <div class="day">
-        <div class="day-num">Day 7 &middot; Les Contamines-Montjoie</div>
-        <div class="day-name">The biggest day, saved for last</div>
-        <p class="day-body">About 12 km and +860 m through the Les Contamines-Montjoie nature reserve &mdash; the biggest climbing day of the week, and worth every step. Then back to the Cristal de Jade for one final evening in the spa, and dinner in town.</p>
-        <p class="must-see"><span class="ms-label">Must see</span> the <strong>Contamines-Montjoie reserve</strong> itself &mdash; a national nature reserve since 1979, 5,500 hectares climbing from the valley floor to the Tr&eacute;-la-T&ecirc;te glacier.</p>
-        <p class="getting-there"><span class="gt-label">Getting there</span> ~45&ndash;55 min drive &middot; 40 km &middot; a free car park at Notre-Dame de la Gorge.</p>
+        <div class="day-num">Day 7 &middot; Notre-Dame de la Gorge</div>
+        <div class="day-name">The valley floor, and a baroque surprise</div>
+        <p class="day-body">About 10 km out and back, and only +120 m of it &mdash; flat by Alpine standards. The path follows the Bonnant river the whole way, largely in the shade of the trees, and it ends somewhere genuinely worth arriving at: the <strong>sanctuary of Notre-Dame de la Gorge</strong>, a Savoyard-Piedmontese baroque chapel listed as a monument historique, sitting in its own meadow. Lunch on the terrace at <strong>La Vieille Auberge</strong> across from it, then the same gentle walk home. A good last full day &mdash; no climbing, nothing exposed, just the two of you and a river.</p>
+        <p class="must-see"><span class="ms-label">Must see</span> the <strong>sanctuary of Notre-Dame de la Gorge</strong> itself &mdash; reviewers rate it the single best thing to see in the commune. Worth the extra ten minutes: the Pont Romain and the cliff oratory above the path.</p>
+        <p class="getting-there"><span class="gt-label">Getting there</span> ~45&ndash;55 min drive &middot; 40 km &middot; park at the sanctuary itself. The free village shuttle stops running on 30 August, so this one is a drive &mdash; worth a quick call to confirm.</p>
+        <details class="routemap">
+          <summary>Route map &mdash; Notre-Dame de la Gorge, village to sanctuary</summary>
+          <div class="map-canvas" data-map="ndg" data-start="Les Contamines village" data-end="The sanctuary"><div class="map-loading">Loading map&hellip;</div></div>
+        </details>
       </div>
 
       <div class="day">
@@ -495,19 +524,28 @@
 
     </div>
 
-    <div class="note">
-      <strong>The cost reality check:</strong> this is the self-guided mirror of the <strong>57hours &ldquo;Hidden Mont Blanc&rdquo; 5-star tour</strong> (~<span class="px" data-cur="USD" data-v="4200–5800">US$4,200&ndash;5,800</span> pp guided) &mdash; same residence, same six day-hike routes &mdash; at roughly a third of the price. No guide, no group, no airport-transfer package; every piece below is bookable directly.
-    </div>
+    <details class="notes-panel">
+      <summary>
+        <span class="notes-title">Good to know</span>
+        <span class="notes-sub">What it costs, when to go, and the few things worth watching</span>
+        <span class="chevron">&#9662;</span>
+      </summary>
+      <div class="notes-body">
+      <div class="note">
+        <strong>The cost reality check:</strong> this is the self-guided mirror of the <strong>57hours &ldquo;Hidden Mont Blanc&rdquo; 5-star tour</strong> (~<span class="px" data-cur="USD" data-v="4200–5800">US$4,200&ndash;5,800</span> pp guided) &mdash; same residence, same six day-hike routes &mdash; at roughly a third of the price. No guide, no group, no airport-transfer package; every piece below is bookable directly.
+      </div>
 
-    <div class="warning-box">
-      ⚠️ <strong>Good to know:</strong> five of the six hiking days are on well-marked valley trails that need no guide in summer. They are also, deliberately, wide trails &mdash; every route here was checked for exposed ridges, chains and ladders, and there are none of them below. The few technical moments that exist are all optional or avoidable: the roped summit spur on Day 2, the variants to steer clear of on Day 4, the turn-around point on Day 5. Day 3 is the one exception &mdash; the cable car and the viewing terraces are fully self-guided, but walking out onto the glacier itself is the one thing worth hiring a local guide for.
-    </div>
+      <div class="warning-box">
+        ⚠️ <strong>Good to know:</strong> five of the six hiking days are on well-marked valley trails that need no guide in summer. They are also, deliberately, wide trails &mdash; every route here was checked for exposed ridges, chains and ladders, and there are none of them below. The few technical moments that exist are all optional or avoidable: the roped summit spur on Day 2, the variants to steer clear of on Day 4, the turn-around point on Day 5. Day 3 is the one exception &mdash; the cable car and the viewing terraces are fully self-guided, but walking out onto the glacier itself is the one thing worth hiring a local guide for.
+      </div>
 
-    <div class="warning-box">
-      &#9888;&#65039; <strong>Watch these dates.</strong> Mid-September sits right on the edge of the autumn shutdown. Using the 2026 season as the pattern, the valley&rsquo;s other lifts closed on <strong>13 September</strong> (Br&eacute;vent, Bellevue, Vallorcine), <strong>20 September</strong> (Planpraz, Charamillon) and <strong>27 September</strong> (Tramway du Mont-Blanc and the Panoramic Mont-Blanc crossing), with the Mer de Glace gondola and ice grotto shutting on <strong>28 September</strong>. Only the Aiguille du Midi and the Montenvers train run reliably through late September. This itinerary leans deliberately on the few things that stay open &mdash; but it means our window has only days of margin, and drifting a week later would cost us the glacier cave and the crossing into Italy.
-      <br><br>
-      &#9888;&#65039; <strong>And one to watch for the Courmayeur day.</strong> The Mont Blanc tunnel closed for long autumn maintenance in both 2024 and 2025, from early September into mid-December. A similar closure is <em>possible</em> for 2027 and the decision is not yet published. If it happens, the Italian day is off by car <em>and</em> by bus. Worth checking ATMB&rsquo;s calendar before booking anything non-refundable.
-    </div>
+      <div class="warning-box">
+        &#9888;&#65039; <strong>Watch these dates.</strong> Mid-September sits right on the edge of the autumn shutdown. Using the 2026 season as the pattern, the valley&rsquo;s other lifts closed on <strong>13 September</strong> (Br&eacute;vent, Bellevue, Vallorcine), <strong>20 September</strong> (Planpraz, Charamillon) and <strong>27 September</strong> (Tramway du Mont-Blanc and the Panoramic Mont-Blanc crossing), with the Mer de Glace gondola and ice grotto shutting on <strong>28 September</strong>. Only the Aiguille du Midi and the Montenvers train run reliably through late September. This itinerary leans deliberately on the few things that stay open &mdash; but it means our window has only days of margin, and drifting a week later would cost us the glacier cave and the crossing into Italy.
+        <br><br>
+        &#9888;&#65039; <strong>And one to watch for the Courmayeur day.</strong> The Mont Blanc tunnel closed for long autumn maintenance in both 2024 and 2025, from early September into mid-December. A similar closure is <em>possible</em> for 2027 and the decision is not yet published. If it happens, the Italian day is off by car <em>and</em> by bus. Worth checking ATMB&rsquo;s calendar before booking anything non-refundable.
+      </div>
+      </div>
+    </details>
 
     <h3>Flights &amp; Transfers from Montreal</h3>
     <table class="info-table">
@@ -1059,13 +1097,16 @@
           attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
         var line = L.polyline(coords, { color: '#8F5149', weight: 4, opacity: .92 }).addTo(map);
+        /* Out-and-back days need honest endpoint labels, not Start/Finish. */
+        var lblA = canvas.getAttribute('data-start') || 'Start';
+        var lblB = canvas.getAttribute('data-end') || 'Finish';
         L.circleMarker(coords[0], { radius: 6, color: '#55795E', fillColor: '#55795E', fillOpacity: 1 })
-          .addTo(map).bindPopup('Start');
+          .addTo(map).bindPopup(lblA);
         L.circleMarker(coords[coords.length - 1], { radius: 6, color: '#7E6129', fillColor: '#7E6129', fillOpacity: 1 })
-          .addTo(map).bindPopup('Finish');
+          .addTo(map).bindPopup(lblB);
         map.fitBounds(line.getBounds(), { padding: [24, 24] });
         canvas.setAttribute('data-built', '1');
-        /* The <details> is still laying out when the map is created. */
+        /* The disclosure is still laying out when the map is created. */
         [0, 120, 400].forEach(function (ms) {
           setTimeout(function () { map.invalidateSize(); }, ms);
         });

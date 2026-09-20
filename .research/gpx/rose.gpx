@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" version="1.1" creator="EditGPX">
+  <trk>
+    <name>2013-08-14T10:33:11Z</name>
+    <trkseg>
+      <trkpt lat="45.786578078667354" lon="6.693835103000091">
+        <ele>1872</ele>
+      </trkpt>
+      <trkpt lat="45.786099256021835" lon="6.692375981296222">
+        <ele>1863</ele>
+      </trkpt>
+      <trkpt lat="45.78511167132647" lon="6.6913030976904055">
+        <ele>1877</ele>
+      </trkpt>
+      <trkpt lat="45.7843560075854" lon="6.690262400592768">
+        <ele>1892</ele>
+      </trkpt>
+      <trkpt lat="45.783798605489146" lon="6.689548932994907">
+        <ele>1904</ele>
+      </trkpt>
+      <trkpt lat="45.78369011718494" lon="6.688964211429741">
+        <ele>1903</ele>
+      </trkpt>
+      <trkpt lat="45.78330105394398" lon="6.687923514332104">
+        <ele>1919</ele>
+      </trkpt>
+      <trkpt lat="45.78324119781982" lon="6.6873602504390535">
+        <ele>1914</ele>
+      </trkpt>
+      <trkpt lat="45.78300177268033" lon="6.686796986546002">
+        <ele>1915</ele>
+      </trkpt>
+      <trkpt lat="45.78262018673904" lon="6.685563170399331">
+        <ele>1919</ele>
+      </trkpt>
+      <trkpt lat="45.782459321294944" lon="6.6854022378584705">
+        <ele>1937</ele>
+      </trkpt>
+      <trkpt lat="45.782369535728556" lon="6.685439788784649">
+        <ele>1937</ele>
+      </trkpt>
+      <trkpt lat="45.78252666037456" lon="6.68642684170204">
+        <ele>1921</ele>
+      </trkpt>
+      <trkpt lat="45.78254723618811" lon="6.686731272425167">
+        <ele>1927</ele>
+      </trkpt>
+      <trkpt lat="45.78244809810688" lon="6.6868747706074245">
+        <ele>1935</ele>
+      </trkpt>
+      <trkpt lat="45.78250795508239" lon="6.687440716709447">
+        <ele>1929</ele>
+      </trkpt>
+      <trkpt lat="45.782455580232366" lon="6.686882817234491">
+        <ele>1935</ele>
+      </trkpt>
+      <trkpt lat="45.78252104878754" lon="6.686759435619812">
+        <ele>1927</ele>
+      </trkpt>
+      <trkpt lat="45.78252666037443" lon="6.686464392628203">
+        <ele>1922</ele>
+      </trkpt>
+      <trkpt lat="45.78245558023257" lon="6.685842120136812">
+        <ele>1930</ele>
+      </trkpt>
+      <trkpt lat="45.782352700919176" lon="6.685442470993657">
+        <ele>1938</ele>
+      </trkpt>
+      <trkpt lat="45.78254162460341" lon="6.685064279522616">
+        <ele>1924</ele>
+      </trkpt>
+      <trkpt lat="45.78240694639877" lon="6.6844795579574425">
+        <ele>1938</ele>
+      </trkpt>
+      <trkpt lat="45.782358312522845" lon="6.683707081761261">
+        <ele>1939</ele>
+      </trkpt>
+      <trkpt lat="45.78220866956159" lon="6.68229087540156">
+        <ele>1938</ele>
+      </trkpt>
+      <trkpt lat="45.7819093824336" lon="6.681046330418892">
+        <ele>1939</ele>
+      </trkpt>
+      <trkpt lat="45.78211888359195" lon="6.679630124059192">
+        <ele>1942</ele>
+      </trkpt>
+      <trkpt lat="45.782238598185614" lon="6.6783855790764335">
+        <ele>1951</ele>
+      </trkpt>
+      <trkpt lat="45.78226852679416" lon="6.677784764257183">
+        <ele>1960</ele>
+      </trkpt>
+      <trkpt lat="45.78295688035176" lon="6.6768406266841405">
+        <ele>1956</ele>
+      </trkpt>
+      <trkpt lat="45.783136449448" lon="6.6760252351436895">
+        <ele>1965</ele>
+      </trkpt>
+      <trkpt lat="45.78361529754146" lon="6.67501672455421">
+        <ele>1971</ele>
+      </trkpt>
+      <trkpt lat="45.7842587431915" lon="6.674995266882144">
+        <ele>1979</ele>
+      </trkpt>
+      <trkpt lat="45.78395946706858" lon="6.67467340180035">
+        <ele>1981</ele>
+      </trkpt>
+      <trkpt lat="45.7837948645164" lon="6.674222790685939">
+        <ele>1984</ele>
+      </trkpt>
+      <trkpt lat="45.784094141522786" lon="6.673836552587888">
+        <ele>1985</ele>
+      </trkpt>
+      <trkpt lat="45.78406421389421" lon="6.673879467932056">
+        <ele>1985</ele>
+      </trkpt>
+      <trkpt lat="45.78406421389421" lon="6.673836552587888">
+        <ele>1985</ele>
+      </trkpt>
+      <trkpt lat="45.784153996730986" lon="6.673922383276313">
+        <ele>1986</ele>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>

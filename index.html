@@ -330,6 +330,42 @@
     .timeline { margin-left: .2rem; }
     .day { padding-left: 1.7rem; }
   }
+  .getting-there {
+    margin: .75rem 0 0; padding: .5rem .85rem;
+    background: #FBF8F4; border-left: 2px solid var(--rose-soft); border-radius: 2px;
+    font-family: var(--sans); font-size: .82rem; color: var(--muted); line-height: 1.5;
+  }
+  details.routemap {
+    margin: .55rem 0 0; border: 1px solid var(--line); border-radius: 3px;
+    background: #FCFAF7; overflow: hidden;
+  }
+  details.routemap > summary {
+    cursor: pointer; list-style: none; padding: .5rem .85rem;
+    font-family: var(--sans); font-size: .78rem; letter-spacing: .03em; color: var(--rose-deep);
+  }
+  details.routemap > summary::-webkit-details-marker { display: none; }
+  details.routemap > summary:hover { background: #FDFBF8; }
+  details.routemap > summary::before { content: '\25C8'; margin-right: .5rem; font-size: .85em; color: var(--rose); }
+  details.routemap[open] > summary { border-bottom: 1px solid var(--line); }
+  .map-canvas { height: 290px; background: #EFEDE9; }
+  .leaflet-control-attribution { font-size: 9px !important; opacity: .55; }
+  .map-loading {
+    padding: 2.5rem; text-align: center; color: var(--muted);
+    font-family: var(--sans); font-size: .82rem;
+  }
+  .must-see {
+    margin: .75rem 0 0; padding: .5rem .85rem;
+    background: #FBF6F4; border-left: 2px solid var(--rose-soft); border-radius: 2px;
+    font-family: var(--sans); font-size: .82rem; color: var(--muted); line-height: 1.5;
+  }
+  .ms-label {
+    display: inline-block; margin-right: .5rem; font-size: .67rem; font-weight: 700;
+    letter-spacing: .14em; text-transform: uppercase; color: var(--rose-deep);
+  }
+  .gt-label {
+    display: inline-block; margin-right: .5rem; font-size: .67rem; font-weight: 700;
+    letter-spacing: .14em; text-transform: uppercase; color: var(--gold-deep);
+  }
 </style>
 </head>
 <body>
@@ -399,36 +435,56 @@
         <div class="day-num">Day 2 &middot; Cordon, Haute-Savoie</div>
         <div class="day-name">The first walk</div>
         <p class="day-body">About 11 km and +809 m on a well-marked valley trail above Cordon, with the Mont Blanc massif across the valley the whole way round. Two honest notes from the trail reports: the first hour is genuinely steep as you climb past the Cordon ski slopes, and the path turns slick under the trees after rain. And where the trail forks for the summit of the <strong>T&ecirc;te du Planay</strong>, the last stretch needs a short roped scramble &mdash; it is <strong>entirely optional</strong>, and you skip it simply by staying on the main wide trail. Take the bypass, bring poles, and the whole loop is a long, steep walk on good ground. No guide, no transfer, no packing &mdash; and the same room and the same spa waiting at the end.</p>
+        <p class="must-see"><span class="ms-label">Must see</span> the whole Mont Blanc massif laid out across the valley on the walk round &mdash; and, if you take the optional spur, the panorama from the <strong>T&ecirc;te du Planay</strong> itself.</p>
+        <p class="getting-there"><span class="gt-label">Getting there</span> ~40 min drive &middot; 35 km &middot; the one day with no realistic bus option, so this is where the car earns its keep.</p>
       </div>
 
       <div class="day">
         <div class="day-num">Day 3 &middot; Montenvers &amp; the Aiguille du Midi</div>
         <div class="day-name">The glacier, and the high terrace</div>
-        <p class="day-body">About 5.4 km and +660 m. The Montenvers rack railway climbs to the Mer de Glace &mdash; the longest glacier in France &mdash; and you walk back along the Balcon Nord. Then the Aiguille du Midi cable car lifts you to 3,842 m, the highest lift in Europe, with Italy laid out below you. One honest note: the train and the cable car are entirely self-guided, but if you want to step out onto the glacier itself, book a local mountain guide for a half-day (about &euro;150&ndash;200 each). It is the only part of the week that is genuinely better with a professional.</p>
+        <p class="day-body">About 5.4 km and +660 m. The Montenvers rack railway climbs to the Mer de Glace &mdash; the longest glacier in France &mdash; and you walk back along the <strong>Grand Balcon Nord</strong>, which finishes at Plan de l&rsquo;Aiguille &mdash; where the Aiguille du Midi cable car, the highest in Europe at 3,842 m, carries you down with Italy laid out below you. One booking note: <strong>the Aiguille du Midi slot is free to reserve but compulsory</strong>, and slots are only released a few days ahead, so set a reminder. Then the honest one: the train and the cable car are entirely self-guided, but if you want to step out onto the glacier itself, book a local mountain guide for a half-day (about &euro;150&ndash;200 each). It is the only part of the week that is genuinely better with a professional.</p>
+        <p class="must-see"><span class="ms-label">Must see</span> the <strong>Mer de Glace</strong>, the longest glacier in France, and the 3,842 m terrace at the <strong>Aiguille du Midi</strong> with Italy laid out below you.</p>
+        <p class="getting-there"><span class="gt-label">Getting there</span> both start at your door &mdash; the Aiguille du Midi lift is a minute&rsquo;s walk from the residence, the Montenvers station about ten.</p>
+        <details class="routemap">
+          <summary>Route map &mdash; Grand Balcon Nord, Montenvers to Plan de l&rsquo;Aiguille</summary>
+          <div class="map-canvas" data-map="balcon_nord"><div class="map-loading">Loading map&hellip;</div></div>
+        </details>
       </div>
 
       <div class="day">
         <div class="day-num">Day 4 &middot; Val Veny, Italy</div>
         <div class="day-name">Into Italy, just for the day</div>
         <p class="day-body">You wake in the same room you have had all week. No packing, no moving &mdash; one of the quiet luxuries of basecamp life. By late morning the two of you are through the Mont Blanc tunnel and in Italy, walking the classic Val Veny loop beneath the Grandes Jorasses &mdash; wide alpine trails and service roads out past Lake Combal to the Maison Vieille refuge, with no ropes, no scrambles and nothing exposed, just roughly 800 m of steady climbing. Then the Skyway Monte Bianco cable car carries you up the Italian side of the massif you have been sleeping under. Three routes around here to steer clear of, all signposted and all easy to avoid: the high <strong>Mont Fortin</strong> variant (loose scree and snow patches that linger into summer), <strong>Mont Ch&eacute;tif</strong> (a via ferrata with steel cables and ladders), and the <strong>Gonella</strong> hut approach (a glacier crossing followed by a chained rock climb). Dinner in Courmayeur, and home to Chamonix the same night.</p>
+        <p class="must-see"><span class="ms-label">Must see</span> the <strong>Grandes Jorasses</strong> across the valley all day, Lake Combal beneath them, and the <strong>Skyway</strong> up to Punta Helbronner for the view back at the massif you have been sleeping under.</p>
+        <p class="getting-there"><span class="gt-label">Getting there</span> ~35&ndash;45 min through the Mont Blanc tunnel &middot; return toll ~&euro;70 &middot; parking at La Visaille is &euro;6 on weekdays and &euro;15 at weekends.</p>
       </div>
 
       <div class="day">
         <div class="day-num">Day 5 &middot; Passy Nature Reserve</div>
         <div class="day-name">A gentler day</div>
-        <p class="day-body">About 7.4 km, +751 m up and &minus;744 m back down, on the well-marked trails of the Passy nature reserve &mdash; wide fire tracks and gravel roads, and technically the easiest walking of the week. It is the same trail as the longer Plaine Joux &ndash; Lac Vert &ndash; Lac d&rsquo;Anterne route, so if the legs are willing, the rule is simple: <strong>turn around at the Refuge de Mo&euml;de Anterne</strong>. Past the refuge the path narrows into exposed singletrack. And one name worth remembering: never take a trail marked <strong>&ldquo;via la Chorde&rdquo;</strong> &mdash; that is the cliff-face route, with ladders and chains. Otherwise a quiet day &mdash; and a good one for a long, unhurried afternoon in the spa.</p>
+        <p class="day-body">About 7.4 km, +751 m up and &minus;744 m back down, on the well-marked trails of the Passy nature reserve &mdash; wide fire tracks and gravel roads, and technically the easiest walking of the week. It is the same trail as the longer Plaine Joux &ndash; Lac Vert &ndash; Lac d&rsquo;Anterne route, so if the legs are willing, the rule is simple: <strong>turn around at the Refuge de Mo&euml;de Anterne</strong>. Past it the going roughens toward the Col d&rsquo;Anterne, which is not a walk you want to take by accident. Worth knowing too: the Fiz refuges only run to about 10 September, so by late September the refuge is a turning point rather than a coffee stop. And one name worth remembering: never take a trail marked <strong>&ldquo;via la Chorde&rdquo;</strong> &mdash; that is the cliff-face route, with ladders and chains. Otherwise a quiet day &mdash; and a good one for a long, unhurried afternoon in the spa.</p>
+        <p class="must-see"><span class="ms-label">Must see</span> the <strong>Refuge de Mo&euml;de Anterne</strong> at 1,996 m and the long look back down the Arve valley on the way home.</p>
+        <p class="getting-there"><span class="gt-label">Getting there</span> ~40&ndash;45 min drive &middot; 35 km &middot; a large free car park right at the trailhead &mdash; the bus stops inside it too.</p>
+        <details class="routemap">
+          <summary>Route map &mdash; the published Plaine Joux &ndash; Pormenaz route</summary>
+          <div class="map-canvas" data-map="g141"><div class="map-loading">Loading map&hellip;</div></div>
+        </details>
       </div>
 
       <div class="day">
         <div class="day-num">Day 6 &middot; Lac d&rsquo;&Eacute;mosson, Switzerland</div>
         <div class="day-name">Footprints older than the Alps</div>
-        <p class="day-body">About 11.3 km and +400 m. The Petit Train de Montagne climbs from Ch&acirc;telard into Switzerland, and you walk on to Lac d&rsquo;&Eacute;mosson &mdash; a turquoise reservoir held behind a dam, with 190-million-year-old dinosaur tracks fossilised in the rock underfoot. The recommendation is to ride the funicular back down rather than walk it, which takes the sting out of the descent and keeps the day a gentle one. Three countries this week, and not a guide among them.</p>
+        <p class="day-body">About 11.3 km and +400 m. The <strong>VerticAlp Emosson</strong> chain &mdash; a funicular up from Le Ch&acirc;telard, then a little panoramic train to the dam, then a mini-funicular &mdash; climbs into Switzerland, and you walk on to Lac d&rsquo;&Eacute;mosson &mdash; a turquoise reservoir held behind a 180 m dam. One thing worth knowing before you go looking: the <strong>190-million-year-old dinosaur footprints are not at the dam</strong>. They sit about 4.4 km away at <strong>Vieux &Eacute;mosson</strong>, so they are a leg of their own rather than something you will stumble across on the lakeside. The recommendation is to ride the funicular back down rather than walk it, which takes the sting out of the descent and keeps the day a gentle one. Three countries this week, and not a guide among them.</p>
+        <p class="must-see"><span class="ms-label">Must see</span> the <strong>&Eacute;mosson dam</strong> and the impossible turquoise of the reservoir behind it &mdash; and, with the extra leg, the dinosaur footprints at Vieux &Eacute;mosson.</p>
+        <p class="getting-there"><span class="gt-label">Getting there</span> ~25&ndash;30 min drive &middot; 19 km over the Col des Montets &middot; or the Mont-Blanc Express train, which drops you at the funicular base in about 1h20.</p>
       </div>
 
       <div class="day">
         <div class="day-num">Day 7 &middot; Les Contamines-Montjoie</div>
         <div class="day-name">The biggest day, saved for last</div>
         <p class="day-body">About 12 km and +860 m through the Les Contamines-Montjoie nature reserve &mdash; the biggest climbing day of the week, and worth every step. Then back to the Cristal de Jade for one final evening in the spa, and dinner in town.</p>
+        <p class="must-see"><span class="ms-label">Must see</span> the <strong>Contamines-Montjoie reserve</strong> itself &mdash; a national nature reserve since 1979, 5,500 hectares climbing from the valley floor to the Tr&eacute;-la-T&ecirc;te glacier.</p>
+        <p class="getting-there"><span class="gt-label">Getting there</span> ~45&ndash;55 min drive &middot; 40 km &middot; a free car park at Notre-Dame de la Gorge.</p>
       </div>
 
       <div class="day">
@@ -447,6 +503,12 @@
       ⚠️ <strong>Good to know:</strong> five of the six hiking days are on well-marked valley trails that need no guide in summer. They are also, deliberately, wide trails &mdash; every route here was checked for exposed ridges, chains and ladders, and there are none of them below. The few technical moments that exist are all optional or avoidable: the roped summit spur on Day 2, the variants to steer clear of on Day 4, the turn-around point on Day 5. Day 3 is the one exception &mdash; the cable car and the viewing terraces are fully self-guided, but walking out onto the glacier itself is the one thing worth hiring a local guide for.
     </div>
 
+    <div class="warning-box">
+      &#9888;&#65039; <strong>Watch these dates.</strong> Mid-September sits right on the edge of the autumn shutdown. Using the 2026 season as the pattern, the valley&rsquo;s other lifts closed on <strong>13 September</strong> (Br&eacute;vent, Bellevue, Vallorcine), <strong>20 September</strong> (Planpraz, Charamillon) and <strong>27 September</strong> (Tramway du Mont-Blanc and the Panoramic Mont-Blanc crossing), with the Mer de Glace gondola and ice grotto shutting on <strong>28 September</strong>. Only the Aiguille du Midi and the Montenvers train run reliably through late September. This itinerary leans deliberately on the few things that stay open &mdash; but it means our window has only days of margin, and drifting a week later would cost us the glacier cave and the crossing into Italy.
+      <br><br>
+      &#9888;&#65039; <strong>And one to watch for the Courmayeur day.</strong> The Mont Blanc tunnel closed for long autumn maintenance in both 2024 and 2025, from early September into mid-December. A similar closure is <em>possible</em> for 2027 and the decision is not yet published. If it happens, the Italian day is off by car <em>and</em> by bus. Worth checking ATMB&rsquo;s calendar before booking anything non-refundable.
+    </div>
+
     <h3>Flights &amp; Transfers from Montreal</h3>
     <table class="info-table">
       <tr><th>Gateway airport</th><td>Geneva (GVA), Switzerland</td></tr>
@@ -458,11 +520,11 @@
     <h3>Where to Eat</h3>
     <table>
       <thead><tr><th>Restaurant</th><th>Location</th><th>Why go</th></tr></thead>
-      <tbody><tr><td>Albert 1er</td><td>Chamonix</td><td>Michelin-starred, the valley's only starred table &mdash; the anniversary dinner</td></tr><tr><td>La Maison Carrier</td><td>Chamonix</td><td>Savoyard fine dining, cozy chalet atmosphere</td></tr><tr><td>Cadran Solaire</td><td>Chamonix</td><td>Traditional Savoyard cuisine in a 17th-century farmhouse</td></tr><tr><td>Le Cap Horn</td><td>Chamonix</td><td>Popular grill and seafood spot in the town center</td></tr></tbody>
+      <tbody><tr><td>Auberge du Bois Prin</td><td>Chamonix</td><td>Up on the Moussoux slopes with the best Mont Blanc view in the valley &mdash; the most romantic table here. Closed Mon &amp; Tue</td></tr><tr><td>Albert 1er</td><td>Chamonix</td><td>Michelin-starred &mdash; the anniversary dinner. Dinner only, closed Wed &amp; Thu, book 3&ndash;6 weeks ahead</td></tr><tr><td>La Maison Carrier</td><td>Chamonix</td><td>Upscale Savoyard country cooking in a reconstructed farmhouse, and better value than its sister table. Closed Mon &amp; Tue</td></tr><tr><td>Le Cap Horn</td><td>Chamonix</td><td>Seafood and grill in a chalet on the Arve &mdash; its listed season ends 30 September, so go early in the week</td></tr></tbody>
     </table>
 
     <h3>What to See</h3>
-    <ul><li>Aiguille du Midi cable car and its high-altitude terrace views</li><li>Mer de Glace glacier via the historic Montenvers rack railway</li><li>Skyway Monte Bianco cable car and the Val Veny loop past Lake Combal, Italy</li><li>Lac d'&Eacute;mosson and its 190-million-year-old dinosaur footprints, Switzerland</li><li>Les Contamines-Montjoie nature reserve</li></ul>
+    <ul><li>Aiguille du Midi cable car and its high-altitude terrace views</li><li>Mer de Glace glacier via the historic Montenvers rack railway</li><li>Skyway Monte Bianco cable car and the Val Veny loop past Lake Combal, Italy</li><li>Lac d'&Eacute;mosson and its dam &mdash; and the dinosaur footprints a short way on at Vieux &Eacute;mosson</li><li>Les Contamines-Montjoie nature reserve</li></ul>
   </section>
 
   <details class="chapter-archive" id="howItStarted">
@@ -508,7 +570,7 @@
       <h3>Where to Eat</h3>
       <table>
         <thead><tr><th>Restaurant</th><th>Location</th><th>Why go</th></tr></thead>
-        <tbody><tr><td>Albert 1er</td><td>Chamonix</td><td>Michelin-starred, the valley's only starred table, refined alpine tasting menus</td></tr><tr><td>La Maison Carrier</td><td>Chamonix</td><td>Savoyard fine dining, cozy chalet atmosphere, sister restaurant to Albert 1er</td></tr><tr><td>Restaurant Courmayeur (Michelin Guide selections)</td><td>Courmayeur</td><td>Multiple Michelin-listed trattorias and fine-dining spots in the old town</td></tr><tr><td>Cadran Solaire</td><td>Chamonix</td><td>Traditional Savoyard cuisine in a 17th-century farmhouse</td></tr></tbody>
+        <tbody><tr><td>Albert 1er</td><td>Chamonix</td><td>Michelin-starred, refined alpine tasting menus. Dinner only, closed Wed &amp; Thu</td></tr><tr><td>La Maison Carrier</td><td>Chamonix</td><td>Savoyard fine dining, cozy chalet atmosphere, sister restaurant to Albert 1er</td></tr><tr><td>Restaurant Courmayeur (Michelin Guide selections)</td><td>Courmayeur</td><td>Multiple Michelin-listed trattorias and fine-dining spots in the old town</td></tr></tbody>
       </table>
 
       <h3>What to See</h3>
@@ -530,7 +592,7 @@
       <div class="note">
         <strong>Why this option:</strong> the anniversary trip where you still hike the real TMB mountain corridor &mdash; Grand Col Ferret, Champex, Col de Balme &mdash; but sleep in a 4&ndash;5-star spa hotel every single night and cross all three countries. It is the DIY version of the <strong>Summit Guides "TMB Deluxe hotel-to-hotel"</strong> tour your wife found (~<span class="px" data-cur="EUR" data-v="4350">€4,350</span> pp guided, same corridor and hotel towns, group departures, luggage trucked for you). Doing it self-guided with the same hotel beds lands roughly <span class="px" data-cur="EUR" data-v="2900–3400">€2,900&ndash;3,400</span> pp cheaper at September shoulder rates &mdash; the main things you give up are the guides, the scheduled group transfers, and someone else doing the booking.
         <br><br>
-        <strong>Anniversary planner notes (14&ndash;21 September window):</strong> book flights January&ndash;March and hotels by March&ndash;May &mdash; the September shoulder books more easily than July and rates drop 20&ndash;30%, but TMB weeks are selling out earlier every year; reserve the two starred tables (Albert 1er, La Table d'Adrien) 3&ndash;6 weeks ahead &mdash; both close for the season around 30 September; Skyway and QC Terme slots are easy in September but still book online a few days ahead; hot-air balloon only on weather-permitting days. Insurance must cover trekking above 2,500 m with helicopter-evacuation and cross-border rescue (FR/IT/CH) &mdash; most credit-card cover excludes it. After mid-September the trails empty out and the weather windows turn stable-but-cold: start early, carry full layers, and check pass conditions daily.
+        <strong>Anniversary planner notes (14&ndash;21 September window):</strong> book flights January&ndash;March and hotels by March&ndash;May &mdash; the September shoulder books more easily than July and rates drop 20&ndash;30%, but TMB weeks are selling out earlier every year; reserve the two starred tables (Albert 1er, La Table d'Adrien) 3&ndash;6 weeks ahead &mdash; Albert 1er is dinner-only and closed Wednesdays and Thursdays, and shuts for November rather than September, so the anniversary week is safe; Skyway and QC Terme slots are easy in September but still book online a few days ahead; hot-air balloon only on weather-permitting days. Insurance must cover trekking above 2,500 m with helicopter-evacuation and cross-border rescue (FR/IT/CH) &mdash; most credit-card cover excludes it. After mid-September the trails empty out and the weather windows turn stable-but-cold: start early, carry full layers, and check pass conditions daily.
       </div>
 
       <h3>Flights &amp; Transfers from Montreal</h3>
@@ -846,7 +908,7 @@
 
 </div>
 <footer>
-  Prepared as a planning reference &middot; verify current pricing, availability, flight schedules, and trail conditions with each operator/airline before booking &middot; prices are approximate estimates and subject to change by season, fuel surcharges, and demand
+  Route data: Asters / CEN 74 &middot; Office de Tourisme des Contamines-Montjoie / APIDAE &middot; &copy; OpenStreetMap contributors &middot; &copy; IGN<br>Prepared as a planning reference &middot; verify current pricing, availability, flight schedules, and trail conditions with each operator/airline before booking &middot; prices are approximate estimates and subject to change by season, fuel surcharges, and demand
 </footer>
 
 </div>
@@ -954,5 +1016,62 @@
   })();
 </script>
 
+<script>
+/* Route maps: Leaflet is fetched only when a map is first opened, and each
+   day's track is loaded on demand, so a reader who opens none pays nothing. */
+(function () {
+  var CSS = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+  var JS  = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+  var queue = null;
+
+  function loadLeaflet(cb) {
+    if (window.L) return cb();
+    if (queue) { queue.push(cb); return; }
+    queue = [cb];
+    var l = document.createElement('link');
+    l.rel = 'stylesheet'; l.href = CSS;
+    document.head.appendChild(l);
+    var s = document.createElement('script');
+    s.src = JS;
+    s.onload = function () { var q = queue; queue = null; q.forEach(function (f) { f(); }); };
+    document.head.appendChild(s);
+  }
+
+  function build(canvas) {
+    var id = canvas.getAttribute('data-map');
+    fetch('maps/' + id + '.json')
+      .then(function (r) { return r.json(); })
+      .then(function (coords) {
+        canvas.innerHTML = '';
+        var map = L.map(canvas, { scrollWheelZoom: false });
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          maxZoom: 17,
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+        var line = L.polyline(coords, { color: '#8F5149', weight: 4, opacity: .92 }).addTo(map);
+        L.circleMarker(coords[0], { radius: 6, color: '#55795E', fillColor: '#55795E', fillOpacity: 1 })
+          .addTo(map).bindPopup('Start');
+        L.circleMarker(coords[coords.length - 1], { radius: 6, color: '#7E6129', fillColor: '#7E6129', fillOpacity: 1 })
+          .addTo(map).bindPopup('Finish');
+        map.fitBounds(line.getBounds(), { padding: [24, 24] });
+        canvas.setAttribute('data-built', '1');
+        setTimeout(function () { map.invalidateSize(); }, 60);
+      })
+      .catch(function () {
+        canvas.innerHTML = '<div class="map-loading">Could not load this track.</div>';
+      });
+  }
+
+  var all = document.querySelectorAll('details.routemap');
+  for (var i = 0; i < all.length; i++) {
+    all[i].addEventListener('toggle', function () {
+      if (!this.open) return;
+      var canvas = this.querySelector('.map-canvas');
+      if (!canvas || canvas.getAttribute('data-built')) return;
+      loadLeaflet(function () { build(canvas); });
+    });
+  }
+})();
+</script>
 </body>
 </html>

@@ -27,6 +27,19 @@ Published at <https://jvichhi.github.io/france-luxury-treks/> (login required).
 - The collapsible archive's nav pills open their own `<details>` before jumping,
   so in-page links aren't dead while it's closed.
 
+## Route maps
+
+Any hiking day can carry a click-to-open Leaflet map. Tracks live in `maps/` as
+simplified polylines (`[[lat, lon], ...]`, 5 dp, Douglas-Peucker at about 8 m)
+and are fetched only when a map is opened. Leaflet itself is loaded lazily on
+the first open, so a reader who opens no map downloads nothing extra.
+
+Source tracks are kept in `.research/gpx/` — re-run the converter if a route
+changes. Provenance: **Asters / CEN 74** (Geotrek) for Passy, the **Contamines
+tourist office via APIDAE** for the Contamines options, and **OpenStreetMap
+relation 5329763** for the Grand Balcon Nord. Tiles are OpenStreetMap, whose
+licence requires the credit that renders in the map corner — leave it visible.
+
 ## Caveats
 
 Prices are do-it-yourself estimates (flights, hotels, transfers, lift tickets)

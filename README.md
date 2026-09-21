@@ -7,7 +7,7 @@ Published at <https://jvichhi.github.io/france-luxury-treks/> (login required).
 ## What's on the page
 
 - **How it's going** — the trip we chose. Chamonix Basecamp: seven nights at
-  the Résidence Le Cristal de Jade, six self-guided day hikes straight from the
+  the Hôtel Héliopic & Spa, six self-guided day hikes straight from the
   door, no guide, no packing in the mornings. The day-by-day itinerary runs
   Day 0 → Day 8, with the practical bits (flights, restaurants, what to see)
   below it.

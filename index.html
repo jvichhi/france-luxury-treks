@@ -335,31 +335,56 @@
     background: #FBF8F4; border-left: 2px solid var(--rose-soft); border-radius: 2px;
     font-family: var(--sans); font-size: .82rem; color: var(--muted); line-height: 1.5;
   }
-  details.notes-panel {
+  details.panel {
     margin: 2rem 0 0; border: 1px solid var(--line); border-radius: 4px;
     background: linear-gradient(180deg, #FFFFFF, #FCFAF7); overflow: hidden;
   }
-  details.notes-panel > summary {
+  details.panel > summary {
     cursor: pointer; list-style: none; display: flex; align-items: baseline;
     gap: .9rem; flex-wrap: wrap; padding: 1rem 1.4rem;
   }
-  details.notes-panel > summary::-webkit-details-marker { display: none; }
-  details.notes-panel > summary:hover { background: #FDFBF8; }
-  details.notes-panel[open] > summary { border-bottom: 1px solid var(--line); }
-  details.notes-panel[open] .chevron { transform: rotate(180deg); }
-  .notes-title { font-family: var(--serif); font-size: 1.35rem; font-weight: 600; color: var(--ink); }
-  .notes-title::before {
+  details.panel > summary::-webkit-details-marker { display: none; }
+  details.panel > summary:hover { background: #FDFBF8; }
+  details.panel[open] > summary { border-bottom: 1px solid var(--line); }
+  details.panel[open] .chevron { transform: rotate(180deg); }
+  .panel-title { font-family: var(--serif); font-size: 1.35rem; font-weight: 600; color: var(--ink); }
+  .panel-title::before {
     content: '\2726'; color: var(--rose); font-size: .6em; margin-right: .5rem; vertical-align: .18em;
   }
-  .notes-sub { color: var(--muted); font-family: var(--sans); font-size: .87rem; flex: 1; }
-  .notes-body { padding: 1.2rem 1.4rem .5rem; }
+  .panel-sub { color: var(--muted); font-family: var(--sans); font-size: .87rem; flex: 1; }
+  .panel-body { padding: 1.2rem 1.4rem .5rem; }
   /* Inside the panel the notes read as background, not alarms. */
-  .notes-body > .note,
-  .notes-body > .warning-box {
+  .panel-body > .note,
+  .panel-body > .warning-box {
     margin: 0 0 1rem; background: #FBF8F4; border-left: 2px solid var(--rose-soft);
     border-top: none; border-right: none; border-bottom: none;
   }
-  .notes-body > .warning-box strong { color: var(--rose-deep); }
+  .panel-body > .warning-box strong { color: var(--rose-deep); }
+  /* --- planning panels --- */
+  .checkline {
+    display: flex; align-items: flex-start; gap: .6rem; padding: .42rem 0;
+    font-family: var(--sans); font-size: .88rem; cursor: pointer;
+    border-bottom: 1px dashed #EFEAE2;
+  }
+  .checkline:last-child { border-bottom: none; }
+  .checkline input {
+    flex: 0 0 auto; margin: .28rem 0 0; width: 15px; height: 15px;
+    accent-color: var(--rose-deep); cursor: pointer;
+  }
+  .checkline span { flex: 1; }
+  .checkline input:checked + span { color: var(--muted); text-decoration: line-through; }
+  .check-when {
+    display: block; font-size: .72rem; letter-spacing: .1em; text-transform: uppercase;
+    color: var(--gold-deep); font-weight: 700; margin-bottom: .1rem;
+  }
+  .budget-table td:last-child, .budget-table th:last-child { text-align: right; white-space: nowrap; }
+  .budget-table tr.total td {
+    border-top: 2px solid var(--rose-soft); border-bottom: none;
+    font-weight: 700; color: var(--ink); background: #FDFBF8;
+  }
+  .budget-table td:first-child small { display: block; color: var(--muted); font-weight: 400; }
+  .cond-list { font-family: var(--sans); font-size: .88rem; margin: 0; padding-left: 1.2rem; }
+  .cond-list li { margin-bottom: .5rem; }
   details.routemap {
     margin: .55rem 0 0; border: 1px solid var(--line); border-radius: 3px;
     background: #FCFAF7; overflow: hidden;
@@ -524,13 +549,13 @@
 
     </div>
 
-    <details class="notes-panel">
+    <details class="panel">
       <summary>
-        <span class="notes-title">Good to know</span>
-        <span class="notes-sub">What it costs, when to go, and the few things worth watching</span>
+        <span class="panel-title">Good to know</span>
+        <span class="panel-sub">What it costs, when to go, and the few things worth watching</span>
         <span class="chevron">&#9662;</span>
       </summary>
-      <div class="notes-body">
+      <div class="panel-body">
       <div class="note">
         <strong>The cost reality check:</strong> this is the self-guided mirror of the <strong>57hours &ldquo;Hidden Mont Blanc&rdquo; 5-star tour</strong> (~<span class="px" data-cur="USD" data-v="4200–5800">US$4,200&ndash;5,800</span> pp guided) &mdash; same residence, same six day-hike routes &mdash; at roughly a third of the price. No guide, no group, no airport-transfer package; every piece below is bookable directly.
       </div>
@@ -563,6 +588,68 @@
 
     <h3>What to See</h3>
     <ul><li>Aiguille du Midi cable car and its high-altitude terrace views</li><li>Mer de Glace glacier via the historic Montenvers rack railway</li><li>Skyway Monte Bianco cable car and the Val Veny loop past Lake Combal, Italy</li><li>Lac d'&Eacute;mosson and its dam &mdash; and the dinosaur footprints a short way on at Vieux &Eacute;mosson</li><li>Les Contamines-Montjoie nature reserve</li></ul>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-title">What to book, and when</span>
+        <span class="panel-sub">Ticks save on this device, so you can both see what's done</span>
+        <span class="chevron">&#9662;</span>
+      </summary>
+      <div class="panel-body">
+        <label class="checkline"><input type="checkbox" class="bookcheck" data-key="flights"><span><span class="check-when">January &ndash; March 2027</span>Flights &mdash; the Air Canada nonstop is seasonal, and it drops to a smaller aircraft after early September, so seats in our window thin out. Book early rather than late.</span></label>
+        <label class="checkline"><input type="checkbox" class="bookcheck" data-key="insurance"><span><span class="check-when">Before the hotels</span>Travel insurance that explicitly covers trekking above 2,500 m with helicopter evacuation and cross-border rescue across France, Italy and Switzerland. Most credit-card cover excludes this, and it is the one thing that is painful to discover later.</span></label>
+        <label class="checkline"><input type="checkbox" class="bookcheck" data-key="residence"><span><span class="check-when">March &ndash; May 2027</span>The residence &mdash; seven nights. The September shoulder books more easily than July and rates drop 20&ndash;30%, but Alpine weeks sell out earlier every year.</span></label>
+        <label class="checkline"><input type="checkbox" class="bookcheck" data-key="opens"><span><span class="check-when">March &ndash; May 2027</span>Two things to settle by phone: whether parking is included at the residence (<strong>+33 4 50 34 20 06</strong>), and whether the village shuttle still reaches Notre-Dame de la Gorge (<strong>+33 4 50 47 01 58</strong>) &mdash; the published timetable says it stops on 30 August.</span></label>
+        <label class="checkline"><input type="checkbox" class="bookcheck" data-key="car"><span><span class="check-when">June 2027</span>Car hire, collected at Geneva Airport on the Swiss side. Chamonix has one desk and it is about 45% dearer; Geneva fleets thin out in the shoulder season too.</span></label>
+        <label class="checkline"><input type="checkbox" class="bookcheck" data-key="tunnel"><span><span class="check-when">June 2027</span>Check the Mont Blanc tunnel calendar for September. It closed for long autumn maintenance in both 2024 and 2025, and without it the Courmayeur day is off by car <em>and</em> by bus.</span></label>
+        <label class="checkline"><input type="checkbox" class="bookcheck" data-key="tables"><span><span class="check-when">4 &ndash; 8 weeks out</span>The starred tables &mdash; Albert 1er and, if we add a night in Verbier, La Table d'Adrien. Both are dinner-only and shut two nights a week, so the anniversary dinner has to land on the right evening.</span></label>
+        <label class="checkline"><input type="checkbox" class="bookcheck" data-key="lifts"><span><span class="check-when">A few days out</span>The Aiguille du Midi slot &mdash; free to reserve, but <strong>compulsory</strong>, and released only a few days ahead. Same week: Skyway Monte Bianco and any QC Terme spa booking.</span></label>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-title">What it all costs</span>
+        <span class="panel-sub">Roughly, for the two of us &mdash; and what is already included above</span>
+        <span class="chevron">&#9662;</span>
+      </summary>
+      <div class="panel-body">
+        <table class="budget-table">
+          <thead><tr><th>Line</th><th>Estimate</th></tr></thead>
+          <tbody>
+            <tr><td>Flights <small>two round trips, Montreal &ndash; Geneva</small></td><td><span class="px" data-cur="CAD" data-v="1800–2600">CAD 1,800–2,600</span></td></tr>
+            <tr><td>The residence <small>seven nights, apartment</small></td><td><span class="px" data-cur="CAD" data-v="1800–2300">CAD 1,800–2,300</span></td></tr>
+            <tr><td>Car hire <small>seven days, collected at Geneva</small></td><td><span class="px" data-cur="EUR" data-v="250–350">€250–350</span></td></tr>
+            <tr><td>Mont Blanc tunnel <small>return, if the Courmayeur day happens</small></td><td><span class="px" data-cur="EUR" data-v="70">€70</span></td></tr>
+            <tr><td>Fuel and motorway tolls</td><td><span class="px" data-cur="EUR" data-v="50–65">€50–65</span></td></tr>
+            <tr><td>Lifts, the two of us <small>Montenvers, Aiguille du Midi and the Skyway</small></td><td><span class="px" data-cur="EUR" data-v="347">€347</span></td></tr>
+            <tr><td>Meals for the week <small>a rough allowance &mdash; mostly casual, one starred dinner</small></td><td><span class="px" data-cur="EUR" data-v="700–1000">€700–1,000</span></td></tr>
+            <tr><td>Insurance, eSIM, incidentals</td><td><span class="px" data-cur="EUR" data-v="150–250">€150–250</span></td></tr>
+            <tr class="total"><td>Roughly, all in</td><td><span class="px" data-cur="CAD" data-v="6100–8300">CAD 6,100–8,300</span></td></tr>
+          </tbody>
+        </table>
+        <p class="panel-sub" style="margin-top:.6rem;">A planning estimate, not a quote. It assumes the default exchange rates above; the flights and residence are quoted in C$ and the rest in euros, so moving the EUR rate shifts the total by a few hundred either way. Excludes shopping and anything splurged on the ground.</p>
+      </div>
+    </details>
+
+    <details class="panel">
+      <summary>
+        <span class="panel-title">What mid-September is actually like</span>
+        <span class="panel-sub">Light, temperature and crowds &mdash; and why it shapes the start times</span>
+        <span class="chevron">&#9662;</span>
+      </summary>
+      <div class="panel-body">
+        <ul class="cond-list">
+          <li><strong>About 12&frac12; hours of daylight</strong>, and it goes quickly in a valley this deep &mdash; dark by around 19:45. A six-hour walk wants a morning start, not an after-lunch one.</li>
+          <li><strong>September is one of the driest months of the season</strong>, and the most stable. It is also the month the trails empty out.</li>
+          <li><strong>Warm days, cold mornings.</strong> Expect low twenties in the valley by afternoon and single digits at dawn &mdash; and above roughly 2,400 m the overnight frost is routine rather than exceptional.</li>
+          <li><strong>Layers, not a coat.</strong> A day that starts at 4&deg;C on a pass can finish at 22&deg;C coming down. Poles earn their keep on the steep descents, especially after rain.</li>
+          <li><strong>Check the conditions daily</strong> rather than once at the start of the week. A dusting of snow on the high cols is possible from late September, which is exactly when the higher variants stop being a good idea.</li>
+          <li><strong>The one hard constraint:</strong> the lift season, not the weather, is what limits this window. See the dates in the notes above &mdash; several of the valley's lifts close on 13, 20 and 27 September, and the Mer de Glace ice cave shuts on the 28th.</li>
+        </ul>
+      </div>
+    </details>
+
   </section>
 
   <details class="chapter-archive" id="howItStarted">
@@ -1123,6 +1210,22 @@
       var canvas = this.querySelector('.map-canvas');
       if (!canvas || canvas.getAttribute('data-built')) return;
       loadLeaflet(function () { build(canvas); });
+    });
+  }
+})();
+</script>
+<script>
+/* Booking ticks, remembered per device like the FX rates. */
+(function () {
+  var KEY = 'tripChecks', state = {};
+  try { state = JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) {}
+  var boxes = document.getElementsByClassName('bookcheck');
+  for (var i = 0; i < boxes.length; i++) {
+    var b = boxes[i], id = b.getAttribute('data-key');
+    if (state[id]) b.checked = true;
+    b.addEventListener('change', function () {
+      state[this.getAttribute('data-key')] = this.checked;
+      try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {}
     });
   }
 })();
